@@ -30,6 +30,21 @@ export dealer=$(cat addons-in/modules/services/addons/vendor/dealer/git-ref/ref)
 envsubst < repo/template.md > repo/README.md
 cat repo/README.md
 
+# Generate yml
+cat << EOF > repo/release.yml
+galoy: ${galoy}
+infra: ${infra}
+bitcoind: ${bitcoind}
+lnd: ${lnd}
+rtl: ${rtl}
+specter: ${specter}
+monitoring: ${monitoring}
+lndmon: ${lndmon}
+admin_panel: ${admin_panel}
+galoy_pay: ${galoy_pay}
+dealer: ${dealer}
+EOF
+
 cd repo
 
 if [[ -z $(git config --global user.email) ]]; then
