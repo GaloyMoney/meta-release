@@ -63,27 +63,19 @@ jobs:
   plan:
   - in_parallel:
     - get: repo
-      trigger: true
     - get: #@ cepler_resource_name(depl)
       trigger: true
-    #@ for d in deployments:
-    #@ if d != depl:
-    - get: #@ cepler_resource_name(d)
-    #@ end
-    #@ end
   - task: release
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
       - name: repo
-      #@ for d in deployments:
-      - name: #@ cepler_resource_name(d)
-      #@ end
+      - name: #@ cepler_resource_name(depl)
       outputs:
       - name: repo
       run:
-        path: repo/ci/tasks/release.sh
+        path: #@ "repo/ci/tasks/release-" + depl + ".sh"
   - put: repo
     params:
       repository: repo
@@ -91,6 +83,7 @@ jobs:
     params:
       repository: #@ cepler_resource_name(depl)
       environment: #@ data.values.release_environment
+      rebase: true
 #@ end
 
 - name: build-release-pipeline-image
