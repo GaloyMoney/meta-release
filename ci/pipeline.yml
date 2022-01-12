@@ -48,27 +48,37 @@ source:
 #@ end
 
 jobs:
-#@ for depl in deployments:
-- name: #@ depl + "-release"
+- name: release
   plan:
   - in_parallel:
     - get: repo
+      trigger: true
+    #@ for depl in deployments:
     - get: #@ cepler_resource_name(depl)
       trigger: true
+    #@ end
   - task: release
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
       - name: repo
+      #@ for depl in deployments:
       - name: #@ cepler_resource_name(depl)
+      #@ end
+      outputs:
+      - name: repo
       run:
-        path: #@ "repo/ci/tasks/release-" + depl + ".sh"
+        path: repo/ci/tasks/release.sh
+  - put: repo
+    params:
+      repository: repo
+  #@ for depl in deployments:
   - put: #@ cepler_out_name(depl)
     params:
       repository: #@ cepler_resource_name(depl)
       environment: #@ data.values.release_environment
-#@ end
+  #@ end
 
 resources:
 - name: repo
@@ -82,3 +92,16 @@ resources:
 - #@ cepler_in(depl)
 - #@ cepler_out(depl)
 #@ end
+
+resource_types:
+- name: cepler-in
+  type: registry-image
+  source:
+    repository: cepler/cepler-concourse-resource
+    tag: latest
+
+- name: cepler-out
+  type: registry-image
+  source:
+    repository: cepler/cepler-concourse-resource
+    tag: latest
