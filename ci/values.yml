@@ -1,6 +1,6 @@
 #@data/values
 ---
-git_uri: git@github.com:GaloyMoney/meta-releases.git
+git_uri: git@github.com:GaloyMoney/meta-release.git
 git_branch: main
 github_private_key: ((github.private_key))
 release_environment: meta-release
