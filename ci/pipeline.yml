@@ -56,6 +56,12 @@ groups:
 - name: image
   jobs:
   - build-release-pipeline-image
+- name: all
+  jobs:
+#@ for depl in deployments:
+  - #@ depl + "-release"
+#@ end
+  - build-release-pipeline-image
 
 jobs:
 #@ for depl in deployments:
