@@ -3,7 +3,7 @@
 #@ deployments = ["infra", "bitcoin", "galoy", "monitoring", "addons"]
 
 #@ def pipeline_image():
-#@   return data.values.docker_registry + "/galoy-app-pipeline"
+#@   return data.values.docker_registry + "/release-pipeline"
 #@ end
 
 #@ def task_image_config():
@@ -48,14 +48,18 @@ source:
 #@ end
 
 jobs:
-- name: release
+#@ for depl in deployments:
+- name: #@ depl + "-release"
   plan:
   - in_parallel:
     - get: repo
       trigger: true
-    #@ for depl in deployments:
     - get: #@ cepler_resource_name(depl)
       trigger: true
+    #@ for d in deployments:
+    #@ if d != depl:
+    - get: #@ cepler_resource_name(d)
+    #@ end
     #@ end
   - task: release
     config:
@@ -63,8 +67,8 @@ jobs:
       image_resource: #@ task_image_config()
       inputs:
       - name: repo
-      #@ for depl in deployments:
-      - name: #@ cepler_resource_name(depl)
+      #@ for d in deployments:
+      - name: #@ cepler_resource_name(d)
       #@ end
       outputs:
       - name: repo
@@ -73,17 +77,57 @@ jobs:
   - put: repo
     params:
       repository: repo
-  #@ for depl in deployments:
   - put: #@ cepler_out_name(depl)
     params:
       repository: #@ cepler_resource_name(depl)
       environment: #@ data.values.release_environment
-  #@ end
+#@ end
+
+- name: build-release-pipeline-image
+  serial: true
+  plan:
+  - get: release-pipeline-image-def
+    trigger: true
+  - task: build
+    privileged: true
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: vito/oci-build-task
+      inputs:
+      - name: release-pipeline-image-def
+      outputs:
+      - name: image
+      params:
+        CONTEXT: release-pipeline-image-def/ci/image
+      run:
+        path: build
+  - put: release-pipeline-image
+    params:
+      image: image/image.tar
 
 resources:
 - name: repo
   type: git
   source:
+    uri: #@ data.values.git_uri
+    branch: #@ data.values.git_branch
+    private_key: #@ data.values.github_private_key
+  
+- name: release-pipeline-image
+  type: registry-image
+  source:
+    tag: latest
+    username: #@ data.values.docker_registry_user
+    password: #@ data.values.docker_registry_password
+    repository: #@ pipeline_image()
+
+- name: release-pipeline-image-def
+  type: git
+  source:
+    paths: [ci/image/Dockerfile]
     uri: #@ data.values.git_uri
     branch: #@ data.values.git_branch
     private_key: #@ data.values.github_private_key
