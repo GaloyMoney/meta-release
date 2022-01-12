@@ -1,0 +1,84 @@
+#@ load("@ytt:data", "data")
+
+#@ deployments = ["infra", "bitcoin", "galoy", "monitoring", "addons"]
+
+#@ def pipeline_image():
+#@   return data.values.docker_registry + "/galoy-app-pipeline"
+#@ end
+
+#@ def task_image_config():
+type: registry-image
+source:
+  username: #@ data.values.docker_registry_user
+  password: #@ data.values.docker_registry_password
+  repository: #@ pipeline_image()
+#@ end
+
+#@ def cepler_config(deployment):
+#@   return "cepler/" + deployment + ".yml"
+#@ end
+
+#@ def cepler_resource_name(deployment):
+#@   return deployment + "-in"
+#@ end
+
+#@ def cepler_out_name(deployment):
+#@   return deployment + "-out"
+#@ end
+
+#@ def cepler_in(deployment):
+name: #@ cepler_resource_name(deployment)
+type: cepler-in
+source:
+  uri: #@ data.values.deployments_git_uri
+  branch: #@ data.values.deployments_git_branch
+  private_key: #@ data.values.github_private_key
+  environment: #@ data.values.release_environment
+  config: #@ cepler_config(deployment)
+#@ end
+
+#@ def cepler_out(deployment):
+name: #@ cepler_out_name(deployment)
+type: cepler-out
+source:
+  uri: #@ data.values.deployments_git_uri
+  branch: #@ data.values.deployments_git_branch
+  private_key: #@ data.values.github_private_key
+  config: #@ cepler_config(deployment)
+#@ end
+
+jobs:
+#@ for depl in deployments:
+- name: #@ depl + "-release"
+  plan:
+  - in_parallel:
+    - get: repo
+    - get: #@ cepler_resource_name(depl)
+      trigger: true
+  - task: release
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: repo
+      - name: #@ cepler_resource_name(depl)
+      run:
+        path: #@ "repo/ci/tasks/release-" + depl + ".sh"
+  - put: #@ cepler_out_name(depl)
+    params:
+      repository: #@ cepler_resource_name(depl)
+      environment: #@ data.values.release_environment
+#@ end
+
+resources:
+- name: repo
+  type: git
+  source:
+    uri: #@ data.values.git_uri
+    branch: #@ data.values.git_branch
+    private_key: #@ data.values.github_private_key
+
+#@ for depl in deployments:
+- #@ cepler_in(depl)
+- #@ cepler_out(depl)
+#@ end
