@@ -47,6 +47,16 @@ source:
   config: #@ cepler_config(deployment)
 #@ end
 
+groups:
+#@ for depl in deployments:
+- name: #@ depl
+  jobs:
+  - #@ depl + "-release"
+#@ end
+- name: image
+  jobs:
+  - build-release-pipeline-image
+
 jobs:
 #@ for depl in deployments:
 - name: #@ depl + "-release"
