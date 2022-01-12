@@ -29,3 +29,19 @@ export dealer=$(cat addons-in/modules/services/addons/vendor/dealer/git-ref/ref)
 # Generate readme
 envsubst < repo/template.md > repo/README.md
 cat repo/README.md
+
+cd repo
+
+if [[ -z $(git config --global user.email) ]]; then
+  git config --global user.email "bot@galoy.io"
+fi
+if [[ -z $(git config --global user.name) ]]; then
+  git config --global user.name "CI Bot"
+fi
+
+(cd $(git rev-parse --show-toplevel)
+git merge --no-edit main
+git add -A
+git status
+git commit -m "Publish new release"
+)
