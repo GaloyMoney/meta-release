@@ -1,4 +1,4 @@
-# Galoy Meta Releases 📦
+# Galoy Meta Release 📦
 
 This repository groups together the latest stable combination of the [Galoy stack](https://github.com/GaloyMoney/awesome-galoy#tech-components). 
 Releases to this repository happen after we complete testing out the individual components on staging and therefore should be good to go together with.
