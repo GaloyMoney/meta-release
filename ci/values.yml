@@ -3,6 +3,7 @@
 git_uri: git@github.com:GaloyMoney/meta-release.git
 git_branch: main
 github_private_key: ((github.private_key))
+github_api_token: ((github.api_token))
 release_environment: meta-release
 
 docker_registry: us.gcr.io/galoy-org
@@ -11,3 +12,5 @@ docker_registry_password: ((docker-creds.password))
 
 deployments_git_uri: git@github.com:GaloyMoney/galoy-deployments.git
 deployments_git_branch: main
+
+infra_git_uri: git@github.com:GaloyMoney/galoy-infra.git

@@ -23,6 +23,16 @@ export admin_panel=$(yq e '.admin_panel' repo/release.yml)
 export galoy_pay=$(yq e '.galoy_pay' repo/release.yml)
 export dealer=$(yq e '.dealer' repo/release.yml)
 
+# Create release in galoy-infra
+pushd infra-repo
+
+echo y | npx -p @semantic-release/commit-analyzer \
+  -p @semantic-release/release-notes-generator \
+  -p @semantic-release/github -- \
+  semantic-release
+
+popd
+
 # Generate readme
 envsubst < repo/template.md > repo/README.md
 cat repo/README.md
