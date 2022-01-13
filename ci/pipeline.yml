@@ -55,6 +55,10 @@ jobs:
   plan:
   - in_parallel:
     - get: repo
+    - get: pipeline-tasks
+    #@ if depl == "infra":
+    - get: infra-repo
+    #@ end
     - get: #@ cepler_resource_name(depl)
       trigger: true
   - task: release
@@ -64,10 +68,18 @@ jobs:
       inputs:
       - name: repo
       - name: #@ cepler_resource_name(depl)
+      #@ if depl == "infra":
+      - name: infra-repo
+      #@ end
       outputs:
       - name: repo
+      #@ if depl == "infra":
+      - name: infra-repo
+      #@ end
+      params:
+        GH_TOKEN: #@ data.values.github_api_token
       run:
-        path: #@ "repo/ci/tasks/release-" + depl + ".sh"
+        path: #@ "pipeline-tasks/ci/tasks/release-" + depl + ".sh"
   - put: repo
     params:
       repository: repo
@@ -103,7 +115,23 @@ resources:
 - name: repo
   type: git
   source:
+    ignore_paths: ["ci/*[^md]"]
     uri: #@ data.values.git_uri
+    branch: #@ data.values.git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: pipeline-tasks
+  type: git
+  source:
+    paths: [ci/tasks/*, Makefile]
+    uri: #@ data.values.git_uri
+    branch: #@ data.values.git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: infra-repo
+  type: git
+  source:
+    uri: #@ data.values.infra_git_uri
     branch: #@ data.values.git_branch
     private_key: #@ data.values.github_private_key
   
