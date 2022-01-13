@@ -67,6 +67,7 @@ jobs:
       image_resource: #@ task_image_config()
       inputs:
       - name: repo
+      - name: pipeline-tasks
       - name: #@ cepler_resource_name(depl)
       #@ if depl == "infra":
       - name: infra-repo
