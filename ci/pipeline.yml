@@ -22,10 +22,6 @@ source:
 #@   return deployment + "-in"
 #@ end
 
-#@ def cepler_out_name(deployment):
-#@   return deployment + "-out"
-#@ end
-
 #@ def cepler_in(deployment):
 name: #@ cepler_resource_name(deployment)
 type: cepler-in
@@ -34,16 +30,6 @@ source:
   branch: #@ data.values.deployments_git_branch
   private_key: #@ data.values.github_private_key
   environment: #@ data.values.release_environment
-  config: #@ cepler_config(deployment)
-#@ end
-
-#@ def cepler_out(deployment):
-name: #@ cepler_out_name(deployment)
-type: cepler-out
-source:
-  uri: #@ data.values.deployments_git_uri
-  branch: #@ data.values.deployments_git_branch
-  private_key: #@ data.values.github_private_key
   config: #@ cepler_config(deployment)
 #@ end
 
@@ -85,10 +71,6 @@ jobs:
   - put: repo
     params:
       repository: repo
-  - put: #@ cepler_out_name(depl)
-    params:
-      repository: #@ cepler_resource_name(depl)
-      environment: #@ data.values.release_environment
       rebase: true
 #@ end
 
@@ -143,17 +125,10 @@ resources:
 
 #@ for depl in deployments:
 - #@ cepler_in(depl)
-- #@ cepler_out(depl)
 #@ end
 
 resource_types:
 - name: cepler-in
-  type: registry-image
-  source:
-    repository: cepler/cepler-concourse-resource
-    tag: latest
-
-- name: cepler-out
   type: registry-image
   source:
     repository: cepler/cepler-concourse-resource
