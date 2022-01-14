@@ -68,6 +68,7 @@ jobs:
       - name: infra-repo
       outputs:
       - name: changelog
+      - name: source-release-commitid
       run:
         path: repo/ci/tasks/gen-changelog-infra.sh
   - task: bump-version
@@ -84,11 +85,6 @@ jobs:
         path: version
       run:
         path: repo/ci/tasks/bump-version.sh
-  - put: infra-repo-stable
-    params:
-      repository: infra-repo-stable
-      tag: infra-version/version
-      tag_prefix: v
   - task: prep-release-source
     config:
       platform: linux
@@ -98,10 +94,20 @@ jobs:
       - name: changelog
       - name: infra-version
         path: version
+      - name: infra-repo-stable
+        path: source-repo
+      - name: source-release-commitid
       outputs:
       - name: gh-release
+      - name: infra-repo-stable
+        path: source-repo
       run:
         path: repo/ci/tasks/prep-release-source.sh
+  - put: infra-repo-stable
+    params:
+      repository: infra-repo-stable
+      tag: infra-version/version
+      tag_prefix: v
   - put: github-release-infra
     params:
       name: gh-release/name
