@@ -28,6 +28,6 @@ Source Code diff for the releases will be added soon.
 
 #### Infra
 
-- [Galoy Infra](https://github.com/GaloyMoney/galoy-infra/tree/170c822e1ecc44e11a3d7eec8897d86ffdc2c10c): `170c822e1ecc44e11a3d7eec8897d86ffdc2c10c` | [link](https://github.com/GaloyMoney/galoy-infra/tree/170c822e1ecc44e11a3d7eec8897d86ffdc2c10c) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/v0.1.5)
+- [Galoy Infra](https://github.com/GaloyMoney/galoy-infra/tree/170c822e1ecc44e11a3d7eec8897d86ffdc2c10c): `170c822e1ecc44e11a3d7eec8897d86ffdc2c10c` | [link](https://github.com/GaloyMoney/galoy-infra/tree/170c822e1ecc44e11a3d7eec8897d86ffdc2c10c) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/v0.1.6)
 
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) file.
