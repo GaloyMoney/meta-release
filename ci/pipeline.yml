@@ -1,6 +1,6 @@
 #@ load("@ytt:data", "data")
 
-#@ deployments = ["infra", "bitcoin", "galoy", "monitoring", "addons"]
+#@ deployments = ["infra"]
 
 #@ def pipeline_image():
 #@   return data.values.docker_registry + "/release-pipeline"
@@ -50,42 +50,80 @@ groups:
   - build-release-pipeline-image
 
 jobs:
-#@ for depl in deployments:
-- name: #@ depl + "-release"
+- name: infra-release
   plan:
   - in_parallel:
-    - get: repo
-    - get: pipeline-tasks
-    #@ if depl == "infra":
-    - get: infra-repo
-    #@ end
-    - get: #@ cepler_resource_name(depl)
-      trigger: true
-  - task: release
+    - { get: infra-in, trigger: true }
+    - { get: infra-version }
+    - { get: repo }
+    - { get: infra-repo }
+  - task: gen-changelog
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: infra-in
+      - name: repo
+      - name: infra-repo
+      outputs:
+      - name: changelog
+      run:
+        path: repo/ci/tasks/gen-changelog-infra.sh
+  - task: bump-version
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
       - name: repo
-      - name: pipeline-tasks
-      - name: #@ cepler_resource_name(depl)
-      #@ if depl == "infra":
-      - name: infra-repo
-      #@ end
+      - name: changelog
+      - name: infra-version
+        path: version
       outputs:
+      - name: infra-version
+        path: version
+      run:
+        path: repo/ci/tasks/bump-version.sh
+  - put: infra-repo
+    params:
+      repository: infra-repo
+      tag: infra-version/version
+      tag_prefix: v
+      branch: stable
+  - task: release-source
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
       - name: repo
-      #@ if depl == "infra":
       - name: infra-repo
-      #@ end
+        path: source-repo
+      - name: changelog
+      - name: infra-version
+        path: version
       params:
         GH_TOKEN: #@ data.values.github_api_token
       run:
-        path: #@ "pipeline-tasks/ci/tasks/release-" + depl + ".sh"
+        path: repo/ci/tasks/release-source.sh
+  - task: update-meta-release
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: repo
+      - name: changelog
+      - name: infra-version
+        path: version
+      outputs:
+      - name: repo
+      run:
+        path: repo/ci/tasks/update-meta-release.sh
+  - put: infra-version
+    params: { file: infra-version/version }
   - put: repo
     params:
       repository: repo
+      branch: #@ data.values.git_branch
       rebase: true
-#@ end
 
 - name: build-release-pipeline-image
   serial: true
@@ -113,26 +151,32 @@ jobs:
       image: image/image.tar
 
 resources:
-- name: repo
-  type: git
-  source:
-    ignore_paths: ["ci/*[^md]"]
-    uri: #@ data.values.git_uri
-    branch: #@ data.values.git_branch
-    private_key: #@ data.values.github_private_key
-
-- name: pipeline-tasks
-  type: git
-  source:
-    paths: [ci/tasks/*, Makefile]
-    uri: #@ data.values.git_uri
-    branch: #@ data.values.git_branch
-    private_key: #@ data.values.github_private_key
-
 - name: infra-repo
   type: git
   source:
     uri: #@ data.values.infra_git_uri
+    branch: #@ data.values.infra_git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: infra-version
+  type: semver
+  source:
+    initial_version: 0.1.0
+    driver: git
+    file: infra-version
+    uri: #@ data.values.git_uri
+    branch: #@ data.values.git_version_branch
+    private_key: #@ data.values.github_private_key
+
+- name: repo
+  type: git
+  source:
+    paths: 
+    - "template.md"
+    - "release.yml"
+    - "ci/tasks/*"
+    - "config.toml"
+    uri: #@ data.values.git_uri
     branch: #@ data.values.git_branch
     private_key: #@ data.values.github_private_key
   
