@@ -82,7 +82,7 @@ jobs:
       - name: infra-version
         path: version
       run:
-        path: repo/ci/tasks/bump-version-infra.sh
+        path: repo/ci/tasks/bump-version.sh
   - put: infra-repo
     params:
       repository: infra-repo
@@ -94,16 +94,17 @@ jobs:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
+      - name: repo
       - name: infra-repo
         path: source-repo
       - name: changelog
       - name: infra-version
         path: version
       params:
-        GH_TOKEN: (( github.api_token ))
+        GH_TOKEN: #@ data.values.github_api_token
       run:
         path: repo/ci/tasks/release-source.sh
-  - task: release-meta-release
+  - task: update-meta-release
     config:
       platform: linux
       image_resource: #@ task_image_config()
