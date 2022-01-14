@@ -6,11 +6,12 @@ set -eu
 
 export infra_new=$(cat infra-in/modules/infra/vendor/git-ref/ref)
 
-echo $infra
-echo $infra_new
+if [[ $infra_new == $infra ]]; then
+exit 0
+fi
 
 pushd infra-repo
-git cliff $infra...$infra_new > ../changelog/changelog
+git cliff --config ../repo/config.toml $infra..$infra_new > ../changelog/changelog
 popd
 
 cat changelog/changelog

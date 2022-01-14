@@ -143,7 +143,7 @@ resources:
   type: git
   source:
     uri: #@ data.values.infra_git_uri
-    branch: #@ data.values.git_branch
+    branch: #@ data.values.infra_git_branch
     private_key: #@ data.values.github_private_key
 
 - name: infra-version
@@ -163,6 +163,7 @@ resources:
     - "template.md"
     - "release.yml"
     - "ci/tasks/*"
+    - "config.toml"
     uri: #@ data.values.git_uri
     branch: #@ data.values.git_branch
     private_key: #@ data.values.github_private_key
