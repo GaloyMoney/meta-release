@@ -1,10 +1,12 @@
 #@data/values
 ---
 git_uri: git@github.com:GaloyMoney/meta-release.git
-git_branch: main
+git_branch: refactor-release
 github_private_key: ((github.private_key))
 github_api_token: ((github.api_token))
 release_environment: meta-release
+
+git_version_branch: version
 
 docker_registry: us.gcr.io/galoy-org
 docker_registry_user: ((docker-creds.username))
