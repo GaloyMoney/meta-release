@@ -108,6 +108,7 @@ jobs:
       repository: infra-repo-stable
       tag: infra-version/version
       tag_prefix: v
+      force: true
   - put: github-release-infra
     params:
       name: gh-release/name
