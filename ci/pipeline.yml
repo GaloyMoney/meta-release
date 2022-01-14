@@ -112,10 +112,18 @@ jobs:
       - name: repo
       - name: changelog
       - name: infra-version
+        path: version
+      outputs:
+      - name: repo
       run:
-        path: repo/ci/tasks/release-meta-release.sh
+        path: repo/ci/tasks/update-meta-release.sh
   - put: infra-version
-    params: { file: infra-version/version  }
+    params: { file: infra-version/version }
+  - put: repo
+    params:
+      repository: repo
+      branch: #@ data.values.git_branch
+      rebase: true
 
 - name: build-release-pipeline-image
   serial: true
