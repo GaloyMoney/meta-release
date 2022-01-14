@@ -77,12 +77,15 @@ jobs:
       - name: repo
       - name: changelog
       - name: infra-version
+        path: version
       outputs:
       - name: infra-version
+        path: version
       run:
         path: repo/ci/tasks/bump-version-infra.sh
   - put: infra-repo
     params:
+      repository: infra-repo
       tag: infra-version/version
       tag_prefix: v
       branch: stable

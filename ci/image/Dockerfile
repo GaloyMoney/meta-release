@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM alpine
 
 RUN apk update \
   && apk add bash curl wget tar git github-cli gettext \
