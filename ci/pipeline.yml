@@ -57,6 +57,7 @@ jobs:
     - { get: infra-version }
     - { get: repo }
     - { get: infra-repo }
+    - { get: infra-repo-stable }
   - task: gen-changelog
     config:
       platform: linux
@@ -83,27 +84,29 @@ jobs:
         path: version
       run:
         path: repo/ci/tasks/bump-version.sh
-  - put: infra-repo
+  - put: infra-repo-stable
     params:
-      repository: infra-repo
+      repository: infra-repo-stable
       tag: infra-version/version
       tag_prefix: v
-      branch: stable
-  - task: release-source
+  - task: prep-release-source
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
       - name: repo
-      - name: infra-repo
-        path: source-repo
       - name: changelog
       - name: infra-version
         path: version
-      params:
-        GH_TOKEN: #@ data.values.github_api_token
+      outputs:
+      - name: gh-release
       run:
-        path: repo/ci/tasks/release-source.sh
+        path: repo/ci/tasks/prep-release-source.sh
+  - put: github-release-infra
+    params:
+      name: gh-release/name
+      tag: gh-release/tag
+      body: gh-release/notes.md
   - task: update-meta-release
     config:
       platform: linux
@@ -157,6 +160,20 @@ resources:
     uri: #@ data.values.infra_git_uri
     branch: #@ data.values.infra_git_branch
     private_key: #@ data.values.github_private_key
+
+- name: infra-repo-stable
+  type: git
+  source:
+    uri: #@ data.values.infra_git_uri
+    branch: #@ data.values.stable_git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: github-release-infra
+  type: github-release
+  source:
+    owner: #@ data.values.gh_org
+    repository: #@ data.values.infra_gh_repo
+    access_token: #@ data.values.github_api_token
 
 - name: infra-version
   type: semver
