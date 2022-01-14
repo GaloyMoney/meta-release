@@ -116,6 +116,7 @@ jobs:
       - name: changelog
       - name: infra-version
         path: version
+      - name: infra-in
       outputs:
       - name: repo
       run:
