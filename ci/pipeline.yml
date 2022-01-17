@@ -57,7 +57,6 @@ jobs:
     - { get: infra-version }
     - { get: repo }
     - { get: infra-repo }
-    - { get: infra-repo-stable }
   - task: gen-changelog
     config:
       platform: linux

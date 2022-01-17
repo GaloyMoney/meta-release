@@ -6,7 +6,7 @@ set -eu
 export galoy=$(yq e '.galoy' repo/release.yml)
 
 # Infra
-export infra=$(yq e '.infra' repo/release.yml)
+export infra=$(yq e '.infra.commit' repo/release.yml)
 
 # Bitcoind
 export bitcoind=$(yq e '.bitcoind' repo/release.yml)
