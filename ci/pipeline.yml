@@ -197,6 +197,43 @@ jobs:
       branch: #@ data.values.charts_gh_pages_branch
       rebase: true
 
+#! ------------ BUMP AND MERGE BACK ------------
+
+  - task: bump-version
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: changelog
+      - name: #@ version_resource_name(chart)
+        path: version
+      - name: charts-repo
+        path: repo
+      outputs:
+      - name: #@ version_resource_name(chart)
+        path: version
+      - name: charts-repo
+        path: repo
+      params:
+        CHART: #@ chart
+      run:
+        path: meta-release/ci/tasks/bump-version.sh
+
+  - task: merge-back
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: charts-repo
+        path: repo
+      outputs:
+      - name: charts-repo
+        path: repo
+      run:
+        path: meta-release/ci/tasks/merge-back.sh
+
 #@ end
 
 - name: infra-release
