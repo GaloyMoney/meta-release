@@ -13,7 +13,6 @@ pushd repo
 
 git checkout main
 git status
-git diff main release
 git merge -X theirs --no-edit release
 git status
 git log -n 5
