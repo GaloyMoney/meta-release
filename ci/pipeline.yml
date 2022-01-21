@@ -252,9 +252,13 @@ jobs:
       - name: meta-release
       - name: charts-repo
         path: repo
+      - name: #@ version_resource_name(chart)
+        path: version
       outputs:
       - name: charts-repo
         path: repo
+      params:
+        CHART: #@ chart
       run:
         path: meta-release/ci/tasks/merge-back.sh
 
