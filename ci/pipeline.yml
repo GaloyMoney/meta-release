@@ -191,6 +191,12 @@ jobs:
       run:
         path: meta-release/ci/tasks/update-helm-index.sh
 
+  - put: charts-gh-pages-repo
+    params:
+      repository: charts-gh-pages-repo
+      branch: #@ data.values.charts_gh_pages_branch
+      rebase: true
+
 #@ end
 
 - name: infra-release
