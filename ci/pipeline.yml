@@ -165,6 +165,7 @@ jobs:
       repository: charts-repo
       branch: #@ chart + "-" + data.values.stable_git_branch
       tag: gh-release/tag
+      rebase: true
 
   - put: #@ gh_release_resource_name(chart)
     params:
@@ -191,6 +192,8 @@ jobs:
         path: repo
       params:
         CHART: #@ chart
+        CR_OWNER: #@ data.values.gh_org
+        CR_GIT_REPO: #@ data.values.charts_gh_repo
         CHART_GIT_REPO_HTTPS_URL: #@ gh_https_url(data.values.gh_org, data.values.charts_gh_repo)
       run:
         path: meta-release/ci/tasks/update-helm-index.sh
@@ -306,6 +309,7 @@ jobs:
       repository: infra-repo
       branch: #@ data.values.stable_git_branch
       tag: gh-release/tag
+      rebase: true
 
   - put: #@ gh_release_resource_name("infra")
     params:

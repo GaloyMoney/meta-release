@@ -8,7 +8,7 @@ pushd repo
 mkdir -p .cr-index .cr-release-packages
 cp -R ../gh-release/files/* .cr-release-packages
 
-cr index -c $CHART_GIT_REPO_HTTPS_URL
+cr index -c $CHART_GIT_REPO_HTTPS_URL --release-name-template "{{ .Name }}-v{{ .Version }}"
 
 # Fetching index change
 export NEW_CHART_ENTRY=$(yq e '.entries.[strenv(CHART)].0' .cr-index/index.yaml)
