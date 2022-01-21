@@ -1,6 +1,6 @@
 #@ load("@ytt:data", "data")
 
-#@ deployments = ["infra"]
+#@ infra = ["infra"]
 
 #@ def pipeline_image():
 #@   return data.values.docker_registry + "/release-pipeline"
@@ -34,19 +34,13 @@ source:
 #@ end
 
 groups:
-#@ for depl in deployments:
-- name: #@ depl
+- name: all
   jobs:
+#@ for depl in infra:
   - #@ depl + "-release"
 #@ end
 - name: image
   jobs:
-  - build-release-pipeline-image
-- name: all
-  jobs:
-#@ for depl in deployments:
-  - #@ depl + "-release"
-#@ end
   - build-release-pipeline-image
 
 jobs:
@@ -55,53 +49,46 @@ jobs:
   - in_parallel:
     - { get: infra-in, trigger: true }
     - { get: infra-version }
-    - { get: repo }
+    - { get: meta-release }
     - { get: infra-repo }
-  - task: gen-changelog
+
+#! ------------ CHANGELOG ----------------
+  - task: create-changelog
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: infra-in
-      - name: repo
+      - name: meta-release
       - name: infra-repo
+        path: repo
+      - name: infra-in
       outputs:
       - name: changelog
-      - name: source-release-commitid
+      - name: release-commitid
+      params:
+        new_git_ref_path: infra-in/modules/infra/vendor/git-ref/ref
       run:
-        path: repo/ci/tasks/gen-changelog-infra.sh
-  - task: bump-version
+        path: meta-release/ci/tasks/changelog.sh
+
+#! ------------ RELEASE ----------------
+  - task: prep-release
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: repo
+      - name: meta-release
       - name: changelog
-      - name: infra-version
-        path: version
-      outputs:
-      - name: infra-version
-        path: version
-      run:
-        path: repo/ci/tasks/bump-version.sh
-  - task: prep-release-source
-    config:
-      platform: linux
-      image_resource: #@ task_image_config()
-      inputs:
-      - name: repo
-      - name: changelog
+      - name: release-commitid
       - name: infra-version
         path: version
       - name: infra-repo-stable
-        path: source-repo
-      - name: source-release-commitid
+        path: repo-stable
       outputs:
       - name: gh-release
       - name: infra-repo-stable
-        path: source-repo
+        path: repo-stable
       run:
-        path: repo/ci/tasks/prep-release-source.sh
+        path: meta-release/ci/tasks/prep-release-infra.sh
   - put: infra-repo-stable
     params:
       repository: infra-repo-stable
@@ -113,27 +100,8 @@ jobs:
       name: gh-release/name
       tag: gh-release/tag
       body: gh-release/notes.md
-  - task: update-meta-release
-    config:
-      platform: linux
-      image_resource: #@ task_image_config()
-      inputs:
-      - name: repo
-      - name: changelog
-      - name: infra-version
-        path: version
-      - name: infra-in
-      outputs:
-      - name: repo
-      run:
-        path: repo/ci/tasks/update-meta-release.sh
   - put: infra-version
     params: { file: infra-version/version }
-  - put: repo
-    params:
-      repository: repo
-      branch: #@ data.values.git_branch
-      rebase: true
 
 - name: build-release-pipeline-image
   serial: true
@@ -192,7 +160,7 @@ resources:
     branch: #@ data.values.git_version_branch
     private_key: #@ data.values.github_private_key
 
-- name: repo
+- name: meta-release
   type: git
   source:
     paths: 
@@ -220,7 +188,7 @@ resources:
     branch: #@ data.values.git_branch
     private_key: #@ data.values.github_private_key
 
-#@ for depl in deployments:
+#@ for depl in infra:
 - #@ cepler_in(depl)
 #@ end
 
