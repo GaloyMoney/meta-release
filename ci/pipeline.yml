@@ -55,6 +55,8 @@ jobs:
     - { get: infra-version }
     - { get: meta-release }
     - { get: infra-repo }
+
+#! ------------ CHANGELOG ----------------
   - task: create-changelog
     config:
       platform: linux
@@ -71,38 +73,26 @@ jobs:
         new_git_ref_path: infra-in/modules/infra/vendor/git-ref/ref
       run:
         path: meta-release/ci/tasks/changelog.sh
-  - task: bump-version
+
+#! ------------ RELEASE ----------------
+  - task: prep-release
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
       - name: meta-release
       - name: changelog
-      - name: infra-version
-        path: version
-      outputs:
-      - name: infra-version
-        path: version
-      run:
-        path: meta-release/ci/tasks/bump-version.sh
-  - task: prep-release-source
-    config:
-      platform: linux
-      image_resource: #@ task_image_config()
-      inputs:
-      - name: meta-release
-      - name: changelog
+      - name: release-commitid
       - name: infra-version
         path: version
       - name: infra-repo-stable
-        path: source-repo
-      - name: source-release-commitid
+        path: repo-stable
       outputs:
       - name: gh-release
       - name: infra-repo-stable
-        path: source-repo
+        path: repo-stable
       run:
-        path: meta-release/ci/tasks/prep-release-source.sh
+        path: meta-release/ci/tasks/prep-release-infra.sh
   - put: infra-repo-stable
     params:
       repository: infra-repo-stable
@@ -114,27 +104,8 @@ jobs:
       name: gh-release/name
       tag: gh-release/tag
       body: gh-release/notes.md
-  - task: update-meta-release
-    config:
-      platform: linux
-      image_resource: #@ task_image_config()
-      inputs:
-      - name: meta-release
-      - name: changelog
-      - name: infra-version
-        path: version
-      - name: infra-in
-      outputs:
-      - name: meta-release
-      run:
-        path: meta-release/ci/tasks/update-meta-release.sh
   - put: infra-version
     params: { file: infra-version/version }
-  - put: meta-release
-    params:
-      repository: meta-release
-      branch: #@ data.values.git_branch
-      rebase: true
 
 - name: build-release-pipeline-image
   serial: true
