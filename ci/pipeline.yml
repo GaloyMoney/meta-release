@@ -234,6 +234,16 @@ jobs:
       run:
         path: meta-release/ci/tasks/merge-back.sh
 
+  - put: charts-repo
+    params:
+      repository: charts-repo
+      branch: #@ data.values.charts_git_branch
+      rebase: true
+  
+  - put: #@ version_resource_name(chart)
+    params: 
+      file: #@ version_resource_name(chart) + "/version"
+
 #@ end
 
 - name: infra-release
