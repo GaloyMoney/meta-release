@@ -4,6 +4,10 @@
 #@   "bitcoind": "bitcoind-in/modules/services/bitcoin/vendor/bitcoind/git-ref/ref"
 #@ }
 
+#@ override_config = {
+#@   "bitcoind": "bitcoin"
+#@ }
+
 #@ infra_git_ref = "infra-in/modules/infra/vendor/git-ref/ref"
 
 #@ charts = charts_vendir_refs.keys()
@@ -36,7 +40,7 @@ source:
   branch: #@ data.values.deployments_git_branch
   private_key: #@ data.values.github_private_key
   environment: #@ data.values.release_environment
-  config: #@ cepler_config(deployment)
+  config: #@ cepler_config(override_config[deployment] if deployment in override_config.keys() else deployment)
 #@ end
 
 #@ def version_resource_name(deployment):
