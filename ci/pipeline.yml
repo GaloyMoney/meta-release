@@ -128,6 +128,43 @@ jobs:
       run:
         path: meta-release/ci/tasks/checkout-release-branch.sh
 
+  - task: prep-release
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: changelog
+      - name: release-commitid
+      - name: #@ version_resource_name(chart)
+        path: version
+      - name: charts-repo
+        path: repo
+      outputs:
+      - name: gh-release
+      - name: charts-repo
+        path: repo
+      - name: #@ version_resource_name(chart)
+        path: version
+      params:
+        CHART: #@ chart
+      run:
+        path: meta-release/ci/tasks/prep-release-chart.sh
+  
+  - put: charts-repo
+    params:
+      repository: charts-repo
+      branch: #@ data.values.stable_git_branch + "-stable"
+      tag: gh-release/tag
+
+  - put: #@ gh_release_resource_name(chart)
+    params:
+      name: gh-release/name
+      tag: gh-release/tag
+      body: gh-release/notes.md
+      globs:
+      - gh-release/files/*.tgz
+
 #@ end
 
 - name: infra-release
@@ -180,17 +217,19 @@ jobs:
         path: version
       run:
         path: meta-release/ci/tasks/prep-release-infra.sh
+
   - put: infra-repo
     params:
       repository: infra-repo
       branch: #@ data.values.stable_git_branch
-      tag: #@ version_resource_name("infra") + "/version"
-      tag_prefix: v
+      tag: gh-release/tag
+
   - put: #@ gh_release_resource_name("infra")
     params:
       name: gh-release/name
       tag: gh-release/tag
       body: gh-release/notes.md
+
   - put: #@ version_resource_name("infra")
     params: 
       file: #@ version_resource_name("infra") + "/version"
