@@ -68,6 +68,10 @@ source:
   access_token: #@ data.values.github_api_token
 #@ end
 
+#@ def gh_https_url(org, repo):
+#@   return "https://github.com/" + org + "/" + repo
+#@ end
+
 groups:
 - name: all
   jobs:
@@ -90,6 +94,7 @@ jobs:
     - get: #@ version_resource_name(chart)
     - get: meta-release
     - get: charts-repo
+    - get: charts-gh-pages-repo
 
 #! ------------ CHANGELOG ----------------
 
@@ -99,7 +104,7 @@ jobs:
       image_resource: #@ task_image_config()
       inputs:
       - name: meta-release
-      - name: #@ chart + "-repo"
+      - name: charts-repo
         path: repo
       - name: #@ cepler_resource_name(chart)
       outputs:
@@ -120,10 +125,10 @@ jobs:
       inputs:
       - name: meta-release
       - name: release-commitid
-      - name: #@ chart + "-repo"
+      - name: charts-repo
         path: repo
       outputs:
-      - name: #@ chart + "-repo"
+      - name: charts-repo
         path: repo
       run:
         path: meta-release/ci/tasks/checkout-release-branch.sh
@@ -164,6 +169,27 @@ jobs:
       body: gh-release/notes.md
       globs:
       - gh-release/files/*.tgz
+
+#! ------------ UPDATE HELM INDEX ------------
+
+  - task: update-helm-index
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: changelog
+      - name: gh-release
+      - name: charts-gh-pages-repo
+        path: repo
+      outputs:
+      - name: charts-gh-pages-repo
+        path: repo
+      params:
+        CHART: #@ chart
+        CHART_GIT_REPO_HTTPS_URL: #@ gh_https_url(data.values.gh_org, data.values.charts_gh_repo)
+      run:
+        path: meta-release/ci/tasks/update-helm-index.sh
 
 #@ end
 
@@ -265,6 +291,13 @@ resources:
   source:
     uri: #@ data.values.charts_git_uri
     branch: #@ data.values.charts_git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: charts-gh-pages-repo
+  type: git
+  source:
+    uri: #@ data.values.charts_git_uri
+    branch: #@ data.values.charts_gh_pages_branch
     private_key: #@ data.values.github_private_key
 
 #@ for chart in charts:
