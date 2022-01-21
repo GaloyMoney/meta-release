@@ -1,8 +1,9 @@
 #@ load("@ytt:data", "data")
 
 #@ charts_vendir_refs = {
-#@   "bitcoind": "bitcoind-in/"
+#@   "bitcoind": "bitcoind-in/modules/services/bitcoin/vendor/bitcoind/git-ref/ref"
 #@ }
+
 #@ infra_git_ref = "infra-in/modules/infra/vendor/git-ref/ref"
 
 #@ charts = charts_vendir_refs.keys()
@@ -89,7 +90,25 @@ jobs:
     - get: #@ version_resource_name(chart)
     - get: meta-release
     - get: charts-repo
-  
+
+  - task: create-changelog
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: #@ chart + "-repo"
+        path: repo
+      - name: #@ cepler_resource_name(chart)
+      outputs:
+      - name: changelog
+      - name: release-commitid
+      params:
+        INCLUDE_PATH: #@ "charts/" + chart + "/*"
+        new_git_ref_path: #@ charts_vendir_refs[chart]
+      run:
+        path: meta-release/ci/tasks/changelog.sh
+
 #@ end
 
 - name: infra-release
