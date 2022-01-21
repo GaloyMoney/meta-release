@@ -81,20 +81,22 @@ jobs:
       - name: release-commitid
       - name: infra-version
         path: version
-      - name: infra-repo-stable
+      - name: infra-repo
         path: repo-stable
       outputs:
       - name: gh-release
-      - name: infra-repo-stable
+      - name: infra-repo
         path: repo-stable
+      - name: infra-version
+        path: version
       run:
         path: meta-release/ci/tasks/prep-release-infra.sh
-  - put: infra-repo-stable
+  - put: infra-repo
     params:
-      repository: infra-repo-stable
+      repository: infra-repo
+      branch: #@ data.values.stable_git_branch
       tag: infra-version/version
       tag_prefix: v
-      force: true
   - put: github-release-infra
     params:
       name: gh-release/name
@@ -134,13 +136,6 @@ resources:
   source:
     uri: #@ data.values.infra_git_uri
     branch: #@ data.values.infra_git_branch
-    private_key: #@ data.values.github_private_key
-
-- name: infra-repo-stable
-  type: git
-  source:
-    uri: #@ data.values.infra_git_uri
-    branch: #@ data.values.stable_git_branch
     private_key: #@ data.values.github_private_key
 
 - name: github-release-infra
