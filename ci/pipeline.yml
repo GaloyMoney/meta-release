@@ -91,6 +91,8 @@ jobs:
     - get: meta-release
     - get: charts-repo
 
+#! ------------ CHANGELOG ----------------
+
   - task: create-changelog
     config:
       platform: linux
@@ -109,6 +111,23 @@ jobs:
       run:
         path: meta-release/ci/tasks/changelog.sh
 
+#! ------------ RELEASE ----------------
+
+  - task: checkout-release-branch
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: release-commitid
+      - name: #@ chart + "-repo"
+        path: repo
+      outputs:
+      - name: #@ chart + "-repo"
+        path: repo
+      run:
+        path: meta-release/ci/tasks/checkout-release-branch.sh
+
 #@ end
 
 - name: infra-release
@@ -121,6 +140,7 @@ jobs:
     - { get: infra-repo }
 
 #! ------------ CHANGELOG ----------------
+
   - task: create-changelog
     config:
       platform: linux
@@ -139,6 +159,7 @@ jobs:
         path: meta-release/ci/tasks/changelog.sh
 
 #! ------------ RELEASE ----------------
+
   - task: prep-release
     config:
       platform: linux
