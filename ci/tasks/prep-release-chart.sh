@@ -39,7 +39,7 @@ pushd repo
 
   # Getting TGZ files for release
   cr package charts/$CHART
-  cp -R .cr-release-packages ../gh-release/files
+  cp -R .cr-release-packages/* ../gh-release/files
 popd
 
 echo "$CHART-v$version Release" > gh-release/name

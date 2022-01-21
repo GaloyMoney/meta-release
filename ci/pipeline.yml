@@ -163,7 +163,7 @@ jobs:
   - put: charts-repo
     params:
       repository: charts-repo
-      branch: #@ data.values.stable_git_branch + "-stable"
+      branch: #@ chart + "-" + data.values.stable_git_branch
       tag: gh-release/tag
 
   - put: #@ gh_release_resource_name(chart)
