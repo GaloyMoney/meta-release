@@ -1,14 +1,38 @@
 #@ load("@ytt:data", "data")
 
+#@ depl_groups = {
+#@   "galoy": ["galoy"],
+#@   "infra": ["infra"],
+#@   "bitcoin": ["bitcoind", "lnd", "rtl", "specter"],
+#@   "monitoring": ["monitoring", "lndmon"],
+#@   "addons": ["admin-panel", "galoy-pay", "dealer"],
+#@ }
+
 #@ charts_vendir_refs = {
-#@   "bitcoind": "bitcoind-in/modules/services/bitcoin/vendor/bitcoind/git-ref/ref"
+#@   "galoy": "galoy-in/modules/galoy/vendor/galoy/git-ref/ref",
+#@   "bitcoind": "bitcoind-in/modules/services/bitcoin/vendor/bitcoind/git-ref/ref",
+#@   "lnd": "lnd-in/modules/services/bitcoin/vendor/lnd1/git-ref/ref",
+#@   "rtl": "rtl-in/modules/services/bitcoin/vendor/rtl/git-ref/ref",
+#@   "specter": "specter-in/modules/services/bitcoin/vendor/specter/git-ref/ref",
+#@   "monitoring": "monitoring-in/modules/services/monitoring/vendor/monitoring/git-ref/ref",
+#@   "lndmon": "lndmon-in/modules/services/monitoring/vendor/lndmon/git-ref/ref",
+#@   "admin-panel": "admin-panel-in/modules/services/addons/vendor/admin-panel/git-ref/ref",
+#@   "galoy-pay": "galoy-pay-in/modules/services/addons/vendor/galoy-pay/git-ref/ref",
+#@   "dealer": "dealer-in/modules/services/addons/vendor/dealer/git-ref/ref"
 #@ }
 
 #@ override_config = {
-#@   "bitcoind": "bitcoin"
+#@   "bitcoind": "bitcoin",
+#@   "lnd": "bitcoin",
+#@   "rtl": "bitcoin",
+#@   "specter": "bitcoin",
+#@   "lndmon": "monitoring",
+#@   "admin-panel": "addons",
+#@   "galoy-pay": "addons",
+#@   "dealer": "addons",
 #@ }
 
-#@ infra_git_ref = "infra-in/modules/infra/vendor/git-ref/ref"
+#@ infra_vendir_ref = "infra-in/modules/infra/vendor/git-ref/ref"
 
 #@ charts = charts_vendir_refs.keys()
 
@@ -94,6 +118,13 @@ source:
 #@ end
 
 groups:
+#@ for group in depl_groups.keys():
+- name: #@ group
+  jobs:
+  #@ for job in depl_groups[group]:
+  - #@ job + "-release"
+  #@ end
+#@ end
 - name: all
   jobs:
 #@ for depl in charts:
@@ -298,7 +329,7 @@ jobs:
       - name: changelog
       - name: release-commitid
       params:
-        new_git_ref_path: #@ infra_git_ref
+        new_git_ref_path: #@ infra_vendir_ref
       run:
         path: meta-release/ci/tasks/changelog.sh
 
