@@ -1,7 +1,6 @@
 #@ load("@ytt:data", "data")
 
 #@ infra = ["infra"]
-#@ charts = ["bitcoind", "lnd", "rtl", "specter"]
 
 #@ def pipeline_image():
 #@   return data.values.docker_registry + "/release-pipeline"
@@ -39,9 +38,6 @@ groups:
   jobs:
 #@ for depl in infra:
   - #@ depl + "-release"
-#@ end
-#@ for chart in charts:
-  - #@ chart + "-release"
 #@ end
 - name: image
   jobs:
@@ -192,7 +188,7 @@ resources:
     branch: #@ data.values.git_branch
     private_key: #@ data.values.github_private_key
 
-#@ for depl in deployments:
+#@ for depl in infra:
 - #@ cepler_in(depl)
 #@ end
 
