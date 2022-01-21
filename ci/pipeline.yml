@@ -1,6 +1,12 @@
 #@ load("@ytt:data", "data")
 
-#@ infra = ["infra"]
+#@ charts_vendir_refs = {
+#@   "bitcoind": "bitcoind-in/modules/services/bitcoin/vendor/bitcoind/git-ref/ref"
+#@ }
+
+#@ infra_git_ref = "infra-in/modules/infra/vendor/git-ref/ref"
+
+#@ charts = charts_vendir_refs.keys()
 
 #@ def pipeline_image():
 #@   return data.values.docker_registry + "/release-pipeline"
@@ -33,44 +39,100 @@ source:
   config: #@ cepler_config(deployment)
 #@ end
 
+#@ def version_resource_name(deployment):
+#@   return deployment + "-version"
+#@ end
+
+#@ def version_resource(deployment):
+name: #@ version_resource_name(deployment)
+type: semver
+source:
+  initial_version: 0.1.0
+  driver: git
+  file: #@ version_resource_name(deployment)
+  uri: #@ data.values.git_uri
+  branch: #@ data.values.git_version_branch
+  private_key: #@ data.values.github_private_key
+#@ end
+
+#@ def gh_release_resource_name(deployment):
+#@   return "gh-release-" + deployment
+#@ end
+
+#@ def gh_release_resource(deployment, repository):
+name: #@ gh_release_resource_name(deployment)
+type: github-release
+source:
+  owner: #@ data.values.gh_org
+  repository: #@ repository
+  access_token: #@ data.values.github_api_token
+#@ end
+
+#@ def gh_https_url(org, repo):
+#@   return "https://github.com/" + org + "/" + repo
+#@ end
+
 groups:
 - name: all
   jobs:
-#@ for depl in infra:
+#@ for depl in charts:
   - #@ depl + "-release"
 #@ end
+  - infra-release
+  - build-release-pipeline-image
 - name: image
   jobs:
   - build-release-pipeline-image
 
 jobs:
-- name: infra-release
+#@ for chart in charts:
+- name: #@ chart + "-release"
   plan:
   - in_parallel:
-    - { get: infra-in, trigger: true }
-    - { get: infra-version }
-    - { get: meta-release }
-    - { get: infra-repo }
+    - get: #@ cepler_resource_name(chart)
+      trigger: true
+    - get: #@ version_resource_name(chart)
+    - get: meta-release
+    - get: charts-repo
+    - get: charts-gh-pages-repo
 
 #! ------------ CHANGELOG ----------------
+
   - task: create-changelog
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
       - name: meta-release
-      - name: infra-repo
+      - name: charts-repo
         path: repo
-      - name: infra-in
+      - name: #@ cepler_resource_name(chart)
       outputs:
       - name: changelog
       - name: release-commitid
       params:
-        new_git_ref_path: infra-in/modules/infra/vendor/git-ref/ref
+        INCLUDE_PATH: #@ "charts/" + chart + "/*"
+        new_git_ref_path: #@ charts_vendir_refs[chart]
       run:
         path: meta-release/ci/tasks/changelog.sh
 
 #! ------------ RELEASE ----------------
+
+  - task: checkout-release-branch
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: release-commitid
+      - name: charts-repo
+        path: repo
+      outputs:
+      - name: charts-repo
+        path: repo
+      run:
+        path: meta-release/ci/tasks/checkout-release-branch.sh
+
   - task: prep-release
     config:
       platform: linux
@@ -79,7 +141,150 @@ jobs:
       - name: meta-release
       - name: changelog
       - name: release-commitid
-      - name: infra-version
+      - name: #@ version_resource_name(chart)
+        path: version
+      - name: charts-repo
+        path: repo
+      outputs:
+      - name: gh-release
+      - name: charts-repo
+        path: repo
+      - name: #@ version_resource_name(chart)
+        path: version
+      params:
+        CHART: #@ chart
+      run:
+        path: meta-release/ci/tasks/prep-release-chart.sh
+  
+  - put: charts-repo
+    params:
+      repository: charts-repo
+      branch: #@ data.values.stable_git_branch + "-stable"
+      tag: gh-release/tag
+
+  - put: #@ gh_release_resource_name(chart)
+    params:
+      name: gh-release/name
+      tag: gh-release/tag
+      body: gh-release/notes.md
+      globs:
+      - gh-release/files/*.tgz
+
+#! ------------ UPDATE HELM INDEX ------------
+
+  - task: update-helm-index
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: changelog
+      - name: gh-release
+      - name: charts-gh-pages-repo
+        path: repo
+      outputs:
+      - name: charts-gh-pages-repo
+        path: repo
+      params:
+        CHART: #@ chart
+        CHART_GIT_REPO_HTTPS_URL: #@ gh_https_url(data.values.gh_org, data.values.charts_gh_repo)
+      run:
+        path: meta-release/ci/tasks/update-helm-index.sh
+
+  - put: charts-gh-pages-repo
+    params:
+      repository: charts-gh-pages-repo
+      branch: #@ data.values.charts_gh_pages_branch
+      rebase: true
+
+#! ------------ BUMP AND MERGE BACK ------------
+
+  - task: bump-version
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: changelog
+      - name: #@ version_resource_name(chart)
+        path: version
+      - name: charts-repo
+        path: repo
+      outputs:
+      - name: #@ version_resource_name(chart)
+        path: version
+      - name: charts-repo
+        path: repo
+      params:
+        CHART: #@ chart
+      run:
+        path: meta-release/ci/tasks/bump-version.sh
+
+  - task: merge-back
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: charts-repo
+        path: repo
+      outputs:
+      - name: charts-repo
+        path: repo
+      run:
+        path: meta-release/ci/tasks/merge-back.sh
+
+  - put: charts-repo
+    params:
+      repository: charts-repo
+      branch: #@ data.values.charts_git_branch
+      rebase: true
+  
+  - put: #@ version_resource_name(chart)
+    params: 
+      file: #@ version_resource_name(chart) + "/version"
+
+#@ end
+
+- name: infra-release
+  plan:
+  - in_parallel:
+    - get: #@ cepler_resource_name("infra")
+      trigger: true
+    - get: #@ version_resource_name("infra")
+    - { get: meta-release }
+    - { get: infra-repo }
+
+#! ------------ CHANGELOG ----------------
+
+  - task: create-changelog
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: infra-repo
+        path: repo
+      - name: #@ cepler_resource_name("infra")
+      outputs:
+      - name: changelog
+      - name: release-commitid
+      params:
+        new_git_ref_path: #@ infra_git_ref
+      run:
+        path: meta-release/ci/tasks/changelog.sh
+
+#! ------------ RELEASE ----------------
+
+  - task: prep-release
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: changelog
+      - name: release-commitid
+      - name: #@ version_resource_name("infra")
         path: version
       - name: infra-repo
         path: repo-stable
@@ -87,23 +292,26 @@ jobs:
       - name: gh-release
       - name: infra-repo
         path: repo-stable
-      - name: infra-version
+      - name: #@ version_resource_name("infra")
         path: version
       run:
         path: meta-release/ci/tasks/prep-release-infra.sh
+
   - put: infra-repo
     params:
       repository: infra-repo
       branch: #@ data.values.stable_git_branch
-      tag: infra-version/version
-      tag_prefix: v
-  - put: github-release-infra
+      tag: gh-release/tag
+
+  - put: #@ gh_release_resource_name("infra")
     params:
       name: gh-release/name
       tag: gh-release/tag
       body: gh-release/notes.md
-  - put: infra-version
-    params: { file: infra-version/version }
+
+  - put: #@ version_resource_name("infra")
+    params: 
+      file: #@ version_resource_name("infra") + "/version"
 
 - name: build-release-pipeline-image
   serial: true
@@ -131,6 +339,26 @@ jobs:
       image: image/image.tar
 
 resources:
+- name: charts-repo
+  type: git
+  source:
+    uri: #@ data.values.charts_git_uri
+    branch: #@ data.values.charts_git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: charts-gh-pages-repo
+  type: git
+  source:
+    uri: #@ data.values.charts_git_uri
+    branch: #@ data.values.charts_gh_pages_branch
+    private_key: #@ data.values.github_private_key
+
+#@ for chart in charts:
+- #@ version_resource(chart)
+- #@ cepler_in(chart)
+- #@ gh_release_resource(chart, data.values.charts_gh_repo)
+#@ end
+
 - name: infra-repo
   type: git
   source:
@@ -138,22 +366,9 @@ resources:
     branch: #@ data.values.infra_git_branch
     private_key: #@ data.values.github_private_key
 
-- name: github-release-infra
-  type: github-release
-  source:
-    owner: #@ data.values.gh_org
-    repository: #@ data.values.infra_gh_repo
-    access_token: #@ data.values.github_api_token
-
-- name: infra-version
-  type: semver
-  source:
-    initial_version: 0.1.0
-    driver: git
-    file: infra-version
-    uri: #@ data.values.git_uri
-    branch: #@ data.values.git_version_branch
-    private_key: #@ data.values.github_private_key
+- #@ version_resource("infra")
+- #@ cepler_in("infra")
+- #@ gh_release_resource("infra", data.values.infra_gh_repo)
 
 - name: meta-release
   type: git
@@ -182,10 +397,6 @@ resources:
     uri: #@ data.values.git_uri
     branch: #@ data.values.git_branch
     private_key: #@ data.values.github_private_key
-
-#@ for depl in infra:
-- #@ cepler_in(depl)
-#@ end
 
 resource_types:
 - name: cepler-in
