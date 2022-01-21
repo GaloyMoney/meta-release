@@ -15,4 +15,19 @@ echo $version > version/version
 
 echo "Dev Version bumped to: $version"
 
-yq e -i '.version = strenv(version)' repo/charts/$CHART/Chart.yaml
+pushd repo
+
+yq e -i '.version = strenv(version)' charts/$CHART/Chart.yaml
+
+# Setup Config
+if [[ -z $(git config --global user.email) ]]; then
+  git config --global user.email "bot@galoy.io"
+fi
+if [[ -z $(git config --global user.name) ]]; then
+  git config --global user.name "CI Bot"
+fi
+
+# Add change to Git
+git add charts/$CHART/Chart.yaml
+git status
+git commit -m "ci(release): bump $CHART to v$version"

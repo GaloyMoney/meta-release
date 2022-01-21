@@ -76,6 +76,23 @@ source:
 #@   return "https://github.com/" + org + "/" + repo
 #@ end
 
+#@ def stable_branch_name(deployment):
+#@   return deployment + "-" + data.values.stable_git_branch
+#@ end
+
+#@ def out_resource_name(deployment):
+#@   return deployment + "-repo-out"
+#@ end
+
+#@ def out_resource(deployment, uri):
+name: #@ out_resource_name(deployment)
+type: git
+source:
+  uri: #@ uri
+  branch: #@ stable_branch_name(deployment)
+  private_key: #@ data.values.github_private_key
+#@ end
+
 groups:
 - name: all
   jobs:
@@ -160,10 +177,10 @@ jobs:
       run:
         path: meta-release/ci/tasks/prep-release-chart.sh
   
-  - put: charts-repo
+  - put: #@ out_resource_name(chart)
     params:
       repository: charts-repo
-      branch: #@ chart + "-" + data.values.stable_git_branch
+      branch: #@ stable_branch_name(chart)
       tag: gh-release/tag
       rebase: true
 
@@ -304,10 +321,10 @@ jobs:
       run:
         path: meta-release/ci/tasks/prep-release-infra.sh
 
-  - put: infra-repo
+  - put: #@ out_resource_name("infra")
     params:
       repository: infra-repo
-      branch: #@ data.values.stable_git_branch
+      branch: #@ stable_branch_name("infra")
       tag: gh-release/tag
       rebase: true
 
@@ -365,6 +382,7 @@ resources:
 - #@ version_resource(chart)
 - #@ cepler_in(chart)
 - #@ gh_release_resource(chart, data.values.charts_gh_repo)
+- #@ out_resource(chart, data.values.charts_git_uri)
 #@ end
 
 - name: infra-repo
@@ -377,6 +395,7 @@ resources:
 - #@ version_resource("infra")
 - #@ cepler_in("infra")
 - #@ gh_release_resource("infra", data.values.infra_gh_repo)
+- #@ out_resource("infra", data.values.infra_git_uri)
 
 - name: meta-release
   type: git
