@@ -373,6 +373,34 @@ jobs:
     params: 
       file: #@ version_resource_name("infra") + "/version"
 
+- name: update-lsc-infra
+  plan:
+  - in_parallel:
+    - get: #@ gh_release_resource_name("infra")
+      trigger: true
+    - get: meta-release
+  
+  - task: update-release-yml-and-readme
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: #@ gh_release_resource_name("infra")
+        path: release
+      outputs:
+      - name: meta-release
+      params:
+        ENTITY: infra
+      run:
+        path: meta-release/ci/tasks/update-release-yml-and-readme.sh
+
+  - put: meta-release
+    params:
+      repository: meta-release
+      branch: #@ data.values.git_branch
+      rebase: true
+
 - name: build-release-pipeline-image
   serial: true
   plan:
