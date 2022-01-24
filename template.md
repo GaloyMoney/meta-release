@@ -9,22 +9,22 @@ The components we provide have been grouped into the following lifecycles, using
 Source Code diff for the releases will be added soon.
 
 #### Galoy Charts
-- [Galoy](https://github.com/GaloyMoney/charts/tree/${bitcoind}/charts/galoy): `${galoy}` | [link](https://github.com/GaloyMoney/charts/tree/${galoy})
+- Galoy: Release ${galoy_release_tag} @ `${galoy}` | [tree](https://github.com/GaloyMoney/charts/tree/${galoy}/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/${galoy_release_tag})
 
 #### Bitcoin Charts
-- [Bitcoind](https://github.com/GaloyMoney/charts/tree/${bitcoind}/charts/bitcoind): `${bitcoind}` | [link](https://github.com/GaloyMoney/charts/tree/${bitcoind})
-- [LND](https://github.com/GaloyMoney/charts/tree/${lnd}/charts/lnd): `${lnd}` | [link](https://github.com/GaloyMoney/charts/tree/${lnd})
-- [RTL](https://github.com/GaloyMoney/charts/tree/${rtl}/charts/rtl): `${rtl}` | [link](https://github.com/GaloyMoney/charts/tree/${rtl})
-- [Specter](https://github.com/GaloyMoney/charts/tree/${specter}/charts/specter): `${specter}` | [link](https://github.com/GaloyMoney/charts/tree/${specter})
+- Bitcoind: Release ${bitcoind_release_tag} @ `${bitcoind}` | [tree](https://github.com/GaloyMoney/charts/tree/${bitcoind}/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/${bitcoind_release_tag})
+- LND: Release ${lnd_release_tag} @ `${lnd}` | [tree](https://github.com/GaloyMoney/charts/tree/${lnd}/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/${lnd_release_tag})
+- RTL: Release ${rtl_release_tag} @ `${rtl}` | [tree](https://github.com/GaloyMoney/charts/tree/${rtl}/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/${rtl_release_tag})
+- Specter: Release ${specter_release_tag} @ `${specter}` | [tree](https://github.com/GaloyMoney/charts/tree/${specter}/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/${specter_release_tag})
 
 #### Monitoring Charts
-- [Monitoring](https://github.com/GaloyMoney/charts/tree/${monitoring}/charts/monitoring): `${monitoring}` | [link](https://github.com/GaloyMoney/charts/tree/${monitoring})
-- [LNDMon](https://github.com/GaloyMoney/charts/tree/${lndmon}/charts/lnd/charts/lndmon): `${lndmon}` | [link](https://github.com/GaloyMoney/charts/tree/${lndmon})
+- Monitoring: Release ${monitoring_release_tag} @ `${monitoring}` | [tree](https://github.com/GaloyMoney/charts/tree/${monitoring}/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/${monitoring_release_tag})
+- LNDMon: Release ${lndmon_release_tag} @ `${lndmon}` | [tree](https://github.com/GaloyMoney/charts/tree/${lndmon}/charts/lnd/charts/lndmon) | [release](https://github.com/GaloyMoney/charts/releases/tag/${lndmon_release_tag})
 
 #### Addons Charts
-- [Galoy Pay](https://github.com/GaloyMoney/charts/tree/${galoy_pay}/charts/galoy-pay): `${galoy_pay}` | [link](https://github.com/GaloyMoney/charts/tree/${galoy_pay})
-- [Admin Panel](https://github.com/GaloyMoney/charts/tree/${admin_panel}/charts/admin-panel): `${admin_panel}` | [link](https://github.com/GaloyMoney/charts/tree/${admin_panel})
-- [Dealer](https://github.com/GaloyMoney/charts/tree/${dealer}/charts/dealer): `${dealer}` | [link](https://github.com/GaloyMoney/charts/tree/${dealer})
+- Galoy Pay: Release ${galoy_pay_release_tag} @ `${galoy_pay}` | [tree](https://github.com/GaloyMoney/charts/tree/${galoy_pay}/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/${galoy_pay_release_tag})
+- Admin Panel: Release ${admin_panel_release_tag} @ `${admin_panel}` | [tree](https://github.com/GaloyMoney/charts/tree/${admin_panel}/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/${admin_panel_release_tag})
+- Dealer: Release ${dealer_release_tag} @ `${dealer}` | [tree](https://github.com/GaloyMoney/charts/tree/${dealer}/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/${dealer_release_tag})
 
 #### Infra
 
