@@ -176,6 +176,7 @@ jobs:
       params:
         INCLUDE_PATH: #@ "charts/" + chart + "/*"
         new_git_ref_path: #@ charts_vendir_refs[chart]
+        depl_name: #@ chart
       run:
         path: meta-release/ci/tasks/changelog.sh
 
@@ -224,7 +225,7 @@ jobs:
       repository: charts-repo
       branch: #@ stable_branch_name(chart)
       tag: gh-release/tag
-      rebase: true
+      force: true
 
   - put: #@ gh_release_resource_name(chart)
     params:
@@ -341,6 +342,7 @@ jobs:
       - name: release-commitid
       params:
         new_git_ref_path: #@ infra_vendir_ref
+        depl_name: infra
       run:
         path: meta-release/ci/tasks/changelog.sh
 
@@ -372,7 +374,7 @@ jobs:
       repository: infra-repo
       branch: #@ stable_branch_name("infra")
       tag: gh-release/tag
-      rebase: true
+      force: true
 
   - put: #@ gh_release_resource_name("infra")
     params:
