@@ -12,7 +12,7 @@ eval "export `echo $ENTITY`_release_tag=$tag"
 
 envsubst < meta-release/template.md > meta-release/README.md
 
-yq e -i ".$ENTITY = strenv(commit_sha)" meta-release/release.yml
+yq e -i ".$ENTITY.commit = strenv(commit_sha)" meta-release/release.yml
 yq e -i ".$ENTITY.release_tag = strenv(commit_sha)" meta-release/release.yml
 
 if [[ -z $(git config --global user.email) ]]; then
