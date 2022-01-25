@@ -5,8 +5,8 @@ galoy:
   release_tag: galoy-v0.1.0
   commit: b4f0c57dfaf3e5e8665cb9cd450bdf261f6f9e50
 bitcoind:
-  release_tag: specter-0.1.1
-  commit: d49f9d7737714df137d31ea4439ffb932d310510
+  release_tag: bitcoind-v0.4.2
+  commit: 35a3c11f56e79def602b400bcc606b0889c88ae9
 lnd:
   release_tag: lnd-v0.1.0
   commit: cb1ad9d7cae905010d0cf066e388173ac981b675
