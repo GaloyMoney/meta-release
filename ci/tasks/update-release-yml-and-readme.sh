@@ -8,7 +8,7 @@ export tag=$(cat release/tag)
 export commit_sha=$(cat release/commit_sha)
 
 eval "export $ENTITY=$commit_sha"
-eval "export `$ENTITY`_release_tag=$commit_sha"
+eval "export `echo $ENTITY`_release_tag=$tag"
 
 envsubst < meta-release/template.md > meta-release/README.md
 
