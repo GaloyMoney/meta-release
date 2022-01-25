@@ -125,6 +125,9 @@ groups:
   - #@ job + "-release"
   #@ end
 #@ end
+- name: update-lsc
+  jobs:
+  - update-lsc-infra
 - name: all
   jobs:
 #@ for depl in charts:
