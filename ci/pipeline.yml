@@ -94,6 +94,9 @@ source:
   owner: #@ data.values.gh_org
   repository: #@ repository
   access_token: #@ data.values.github_api_token
+  #@ if repository == data.values.charts_gh_repo:
+  tag_filter: #@ deployment + "-.*"
+  #@ end
 #@ end
 
 #@ def gh_https_url(org, repo):
@@ -123,15 +126,20 @@ groups:
   jobs:
   #@ for job in depl_groups[group]:
   - #@ job + "-release"
+  - #@ "update-lsc-" + job
   #@ end
 #@ end
 - name: update-lsc
   jobs:
+#@ for depl in charts:
+  - #@ "update-lsc-" + depl
+#@ end
   - update-lsc-infra
 - name: all
   jobs:
 #@ for depl in charts:
   - #@ depl + "-release"
+  - #@ "update-lsc-" + depl
 #@ end
   - infra-release
   - build-release-pipeline-image
@@ -375,6 +383,36 @@ jobs:
   - put: #@ version_resource_name("infra")
     params: 
       file: #@ version_resource_name("infra") + "/version"
+
+#@ for chart in charts:
+- name: #@ "update-lsc-" + chart
+  plan:
+  - in_parallel:
+    - get: #@ gh_release_resource_name(chart)
+      trigger: true
+    - get: meta-release
+
+  - task: update-release-yml-and-readme
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      - name: #@ gh_release_resource_name(chart)
+        path: release
+      outputs:
+      - name: meta-release
+      params:
+        ENTITY: #@ chart
+      run:
+        path: meta-release/ci/tasks/update-release-yml-and-readme.sh
+
+  - put: meta-release
+    params:
+      repository: meta-release
+      branch: #@ data.values.git_branch
+      rebase: true
+#@ end
 
 - name: update-lsc-infra
   plan:
