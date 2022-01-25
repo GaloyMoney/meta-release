@@ -20,7 +20,7 @@ rtl:
   repository: https://github.com/GaloyMoney/charts
 specter:
   release_tag: specter-v0.1.0
-  commit: 2dbe942943c6c56af57a3b8b2fa13cf511c0247f
+  commit: 44c08c789221e525e6bc4125f8d1cea978e82890
   repository: https://github.com/GaloyMoney/charts
 monitoring:
   release_tag: monitoring-v0.1.0
