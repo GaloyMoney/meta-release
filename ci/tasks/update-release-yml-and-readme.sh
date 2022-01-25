@@ -18,7 +18,11 @@ yq e -i ".$ENTITY.release_tag = strenv(tag)" meta-release/release.yml
 pushd meta-release
   git add README.md release.yml
   git status
-  git commit -m "ci(release): publish new release for $ENTITY"
+
+  # Only commit if there are uncommitted staged files
+  if ! git diff --cached --exit-code; then
+    git commit -m "ci(release): publish new release for $ENTITY"
+  fi
 popd
 
 echo "README:"
