@@ -15,13 +15,6 @@ envsubst < meta-release/template.md > meta-release/README.md
 yq e -i ".$ENTITY.commit = strenv(commit_sha)" meta-release/release.yml
 yq e -i ".$ENTITY.release_tag = strenv(tag)" meta-release/release.yml
 
-if [[ -z $(git config --global user.email) ]]; then
-  git config --global user.email "bot@galoy.io"
-fi
-if [[ -z $(git config --global user.name) ]]; then
-  git config --global user.name "CI Bot"
-fi
-
 pushd meta-release
   git add README.md release.yml
   git status

@@ -28,4 +28,8 @@ RUN wget https://github.com/helm/chart-releaser/releases/download/v${CR_VERSION}
 # Cache repository, used frequently during chart releasing
 RUN helm repo add bitnami https://charts.bitnami.com/bitnami
 
+# Setup Committer information
+RUN git config --global user.email "bot@galoy.io" \
+  && git config --global user.name "CI Bot"
+
 RUN pip install --upgrade bump2version
