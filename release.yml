@@ -1,43 +1,31 @@
-infra:
-  release_tag: v0.1.0
-  commit: 170c822e1ecc44e11a3d7eec8897d86ffdc2c10c
-
+infra: dca18b4738b8653c9293823dfa35dcbfa6451905
 galoy:
   release_tag: galoy-v0.1.0
   commit: b4f0c57dfaf3e5e8665cb9cd450bdf261f6f9e50
-
-bitcoind: 
+bitcoind:
   release_tag: bitcoind-v0.1.0
   commit: 7750949bb9a159a308fa411b600e4649dfd9e56b
-
-lnd: 
+lnd:
   release_tag: lnd-v0.1.0
   commit: cb1ad9d7cae905010d0cf066e388173ac981b675
-
-rtl: 
+rtl:
   release_tag: rtl-v0.1.0
   commit: 2dbe942943c6c56af57a3b8b2fa13cf511c0247f
-
-specter: 
+specter:
   release_tag: specter-v0.1.0
   commit: 2dbe942943c6c56af57a3b8b2fa13cf511c0247f
-
-monitoring: 
+monitoring:
   release_tag: monitoring-v0.1.0
   commit: 2e4af447c665cba79737091a4672ba0e18ef002d
-
-lndmon: 
+lndmon:
   release_tag: lndmon-v0.1.0
   commit: 4500c237995c131caef48c3d7fab03152b30996c
-
-galoy_pay: 
+galoy_pay:
   release_tag: galoy_pay-v0.1.0
   commit: 0216b8753cae2df3a8e93b487d99ad81d23f2ca1
-
-admin_panel: 
+admin_panel:
   release_tag: admin_panel-v0.1.0
   commit: 2dbe942943c6c56af57a3b8b2fa13cf511c0247f
-
-dealer: 
+dealer:
   release_tag: dealer-v0.1.0
   commit: 80e3d2cad09007dbc77740628245e5123227d106
