@@ -33,11 +33,6 @@ monitoring:
   commit: ${monitoring}
   repository: https://github.com/GaloyMoney/charts
 
-lndmon:
-  release_tag: ${lndmon_release_tag}
-  commit: ${lndmon}
-  repository: https://github.com/GaloyMoney/charts
-
 galoy_pay:
   release_tag: ${galoy_pay_release_tag}
   commit: ${galoy_pay}

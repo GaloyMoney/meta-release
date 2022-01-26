@@ -23,10 +23,7 @@ export specter_release_tag=$(yq e '.specter.release_tag' meta-release/release.ym
 
 # Monitoring
 export monitoring=$(yq e '.monitoring.commit' meta-release/release.yml)
-export lndmon=$(yq e '.lndmon.commit' meta-release/release.yml)
-
 export monitoring_release_tag=$(yq e '.monitoring.release_tag' meta-release/release.yml)
-export lndmon_release_tag=$(yq e '.lndmon.release_tag' meta-release/release.yml)
 
 # Addons
 export admin_panel=$(yq e '.admin_panel.commit' meta-release/release.yml)
