@@ -390,6 +390,7 @@ jobs:
       trigger: true
     #@ end
     - get: #@ gh_release_resource_name("infra")
+      trigger: true
     - get: meta-release
 
   - task: update-release-yml-and-readme
