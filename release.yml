@@ -1,54 +1,49 @@
 infra:
-  release_tag: v0.0.0-dev
-  commit: aa1a1bf6069fce0b9f64c745e711597ab8a103ee
+  release_tag: v0.1.0
+  commit: dca18b4738b8653c9293823dfa35dcbfa6451905
   repository: https://github.com/GaloyMoney/galoy-infra
 
 galoy:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: galoy-pay-v0.1.0
+  commit: d7f86bd116d95c4691058f96e72755e89e699fb7
   repository: https://github.com/GaloyMoney/charts
 
 bitcoind:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: bitcoind-v0.1.0
+  commit: b7ad8057a6f97698ab57803c727e84b192a8e431
   repository: https://github.com/GaloyMoney/charts
 
 lnd:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: lnd-v0.1.0
+  commit: 129b2dcc6f8795bc4295f28224bb098f0a55a5f5
   repository: https://github.com/GaloyMoney/charts
 
 rtl:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: rtl-v0.1.0
+  commit: 638364ae864b237dec6379ff83f36eb5e1637efa
   repository: https://github.com/GaloyMoney/charts
 
 specter:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: specter-v0.1.0
+  commit: 7085d336648e23863feead52e817bd8bc84a759d
   repository: https://github.com/GaloyMoney/charts
 
 monitoring:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
-  repository: https://github.com/GaloyMoney/charts
-
-lndmon:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: monitoring-v0.1.0
+  commit: 0077901543eb2551a1a66ebe542fb0fb3669bba3
   repository: https://github.com/GaloyMoney/charts
 
 galoy_pay:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: galoy-pay-v0.1.0
+  commit: d7f86bd116d95c4691058f96e72755e89e699fb7
   repository: https://github.com/GaloyMoney/charts
 
 admin_panel:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: admin-panel-v0.1.0
+  commit: 81879da17b84cc3d8fe7063a629c8db8af16ebf6
   repository: https://github.com/GaloyMoney/charts
 
 dealer:
-  release_tag: v0.0.0-dev
-  commit: 183c636e33b641b1aba8b944b59d1edef6daf337
+  release_tag: dealer-v0.1.0
+  commit: 44c12087c2e97dc9db84864d34bf449d831d1dc5
   repository: https://github.com/GaloyMoney/charts

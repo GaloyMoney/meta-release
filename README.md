@@ -9,25 +9,25 @@ The components we provide have been grouped into the following lifecycles, using
 Source Code diff for the releases will be added soon.
 
 #### Galoy Charts
-- Galoy: Release galoy-v0.1.0 @ `b4f0c57dfaf3e5e8665cb9cd450bdf261f6f9e50` | [tree](https://github.com/GaloyMoney/charts/tree/b4f0c57dfaf3e5e8665cb9cd450bdf261f6f9e50/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.1.0)
+- Galoy: Release galoy-pay-v0.1.0 @ `d7f86bd116d95c4691058f96e72755e89e699fb7` | [tree](https://github.com/GaloyMoney/charts/tree/d7f86bd116d95c4691058f96e72755e89e699fb7/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.1.0)
 
 #### Bitcoin Charts
-- Bitcoind: Release bitcoind-v0.4.2 @ `35a3c11f56e79def602b400bcc606b0889c88ae9` | [tree](https://github.com/GaloyMoney/charts/tree/35a3c11f56e79def602b400bcc606b0889c88ae9/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.4.2)
-- LND: Release lnd-v0.1.0 @ `b97e5e9d5f0fd2b64fa6b172ea9b636ece68a427` | [tree](https://github.com/GaloyMoney/charts/tree/b97e5e9d5f0fd2b64fa6b172ea9b636ece68a427/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.1.0)
-- RTL: Release rtl-v0.1.0 @ `729d594330f9f3378221dc4a678aa8c01fbd13f9` | [tree](https://github.com/GaloyMoney/charts/tree/729d594330f9f3378221dc4a678aa8c01fbd13f9/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.0)
-- Specter: Release specter-v0.1.0 @ `44c08c789221e525e6bc4125f8d1cea978e82890` | [tree](https://github.com/GaloyMoney/charts/tree/44c08c789221e525e6bc4125f8d1cea978e82890/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.1.0)
+- Bitcoind: Release bitcoind-v0.1.0 @ `b7ad8057a6f97698ab57803c727e84b192a8e431` | [tree](https://github.com/GaloyMoney/charts/tree/b7ad8057a6f97698ab57803c727e84b192a8e431/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.1.0)
+- LND: Release lnd-v0.1.0 @ `129b2dcc6f8795bc4295f28224bb098f0a55a5f5` | [tree](https://github.com/GaloyMoney/charts/tree/129b2dcc6f8795bc4295f28224bb098f0a55a5f5/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.1.0)
+- RTL: Release rtl-v0.1.0 @ `638364ae864b237dec6379ff83f36eb5e1637efa` | [tree](https://github.com/GaloyMoney/charts/tree/638364ae864b237dec6379ff83f36eb5e1637efa/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.0)
+- Specter: Release specter-v0.1.0 @ `7085d336648e23863feead52e817bd8bc84a759d` | [tree](https://github.com/GaloyMoney/charts/tree/7085d336648e23863feead52e817bd8bc84a759d/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.1.0)
 
 #### Monitoring Charts
-- Monitoring: Release monitoring-v0.1.0 @ `2e4af447c665cba79737091a4672ba0e18ef002d` | [tree](https://github.com/GaloyMoney/charts/tree/2e4af447c665cba79737091a4672ba0e18ef002d/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.0)
-- LNDMon: Release lndmon-v0.1.0 @ `4500c237995c131caef48c3d7fab03152b30996c` | [tree](https://github.com/GaloyMoney/charts/tree/4500c237995c131caef48c3d7fab03152b30996c/charts/lnd/charts/lndmon) | [release](https://github.com/GaloyMoney/charts/releases/tag/lndmon-v0.1.0)
+- Monitoring: Release monitoring-v0.1.0 @ `0077901543eb2551a1a66ebe542fb0fb3669bba3` | [tree](https://github.com/GaloyMoney/charts/tree/0077901543eb2551a1a66ebe542fb0fb3669bba3/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.0)
+- LNDMon: Release  @ `` | [tree](https://github.com/GaloyMoney/charts/tree//charts/lnd/charts/lndmon) | [release](https://github.com/GaloyMoney/charts/releases/tag/)
 
 #### Addons Charts
-- Galoy Pay: Release galoy_pay-v0.1.0 @ `0216b8753cae2df3a8e93b487d99ad81d23f2ca1` | [tree](https://github.com/GaloyMoney/charts/tree/0216b8753cae2df3a8e93b487d99ad81d23f2ca1/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy_pay-v0.1.0)
-- Admin Panel: Release admin_panel-v0.1.0 @ `2dbe942943c6c56af57a3b8b2fa13cf511c0247f` | [tree](https://github.com/GaloyMoney/charts/tree/2dbe942943c6c56af57a3b8b2fa13cf511c0247f/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin_panel-v0.1.0)
-- Dealer: Release dealer-v0.1.0 @ `80e3d2cad09007dbc77740628245e5123227d106` | [tree](https://github.com/GaloyMoney/charts/tree/80e3d2cad09007dbc77740628245e5123227d106/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/dealer-v0.1.0)
+- Galoy Pay: Release galoy-pay-v0.1.0 @ `d7f86bd116d95c4691058f96e72755e89e699fb7` | [tree](https://github.com/GaloyMoney/charts/tree/d7f86bd116d95c4691058f96e72755e89e699fb7/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.1.0)
+- Admin Panel: Release admin-panel-v0.1.0 @ `81879da17b84cc3d8fe7063a629c8db8af16ebf6` | [tree](https://github.com/GaloyMoney/charts/tree/81879da17b84cc3d8fe7063a629c8db8af16ebf6/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.1.0)
+- Dealer: Release dealer-v0.1.0 @ `44c12087c2e97dc9db84864d34bf449d831d1dc5` | [tree](https://github.com/GaloyMoney/charts/tree/44c12087c2e97dc9db84864d34bf449d831d1dc5/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/dealer-v0.1.0)
 
 #### Infra
 
-- Galoy Infra: Release v0.1.8 @ `dca18b4738b8653c9293823dfa35dcbfa6451905` | [tree](https://github.com/GaloyMoney/galoy-infra/tree/dca18b4738b8653c9293823dfa35dcbfa6451905) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/v0.1.8)
+- Galoy Infra: Release v0.1.0 @ `dca18b4738b8653c9293823dfa35dcbfa6451905` | [tree](https://github.com/GaloyMoney/galoy-infra/tree/dca18b4738b8653c9293823dfa35dcbfa6451905) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/v0.1.0)
 
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) file.
