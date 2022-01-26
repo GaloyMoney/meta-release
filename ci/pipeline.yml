@@ -126,22 +126,18 @@ groups:
   jobs:
   #@ for job in depl_groups[group]:
   - #@ job + "-release"
-  - #@ "update-lsc-" + job
   #@ end
 #@ end
 - name: update-lsc
   jobs:
-#@ for depl in charts:
-  - #@ "update-lsc-" + depl
-#@ end
-  - update-lsc-infra
+  - update-lsc
 - name: all
   jobs:
 #@ for depl in charts:
   - #@ depl + "-release"
-  - #@ "update-lsc-" + depl
 #@ end
   - infra-release
+  - update-lsc
   - build-release-pipeline-image
 - name: image
   jobs:
@@ -386,55 +382,30 @@ jobs:
     params: 
       file: #@ version_resource_name("infra") + "/version"
 
-#@ for chart in charts:
-- name: #@ "update-lsc-" + chart
+- name: update-lsc
   plan:
   - in_parallel:
+    #@ for chart in charts:
     - get: #@ gh_release_resource_name(chart)
       trigger: true
-    - get: meta-release
-
-  - task: update-release-yml-and-readme
-    config:
-      platform: linux
-      image_resource: #@ task_image_config()
-      inputs:
-      - name: meta-release
-      - name: #@ gh_release_resource_name(chart)
-        path: release
-      outputs:
-      - name: meta-release
-      params:
-        ENTITY: #@ chart
-      run:
-        path: meta-release/ci/tasks/update-release-yml-and-readme.sh
-
-  - put: meta-release
-    params:
-      repository: meta-release
-      branch: #@ data.values.git_branch
-      rebase: true
-#@ end
-
-- name: update-lsc-infra
-  plan:
-  - in_parallel:
+    #@ end
     - get: #@ gh_release_resource_name("infra")
-      trigger: true
     - get: meta-release
-  
+
   - task: update-release-yml-and-readme
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      #@ for chart in charts:
+      - name: #@ gh_release_resource_name(chart)
+        path: #@ chart
+      #@ end
       - name: #@ gh_release_resource_name("infra")
-        path: release
+        path: infra
+      - name: meta-release
       outputs:
       - name: meta-release
-      params:
-        ENTITY: infra
       run:
         path: meta-release/ci/tasks/update-release-yml-and-readme.sh
 
