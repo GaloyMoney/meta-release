@@ -31,7 +31,7 @@ pushd repo
 
   # Installing Helm Dependencies
   if [[ $(helm dependency list charts/$CHART | wc -l) != 1 ]]; then
-    helm dependency list charts/$CHART | tail -n +2 | awk '{ print $1,$3 }' | xargs -n 2 helm repo add
+    helm dependency list charts/$CHART | tail -n +2 | awk 'NF { print $1,$3 }' | grep -v ^WARNING | xargs -n 2 helm repo add
   fi
 
   # Getting TGZ files for release

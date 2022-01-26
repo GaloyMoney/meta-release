@@ -93,7 +93,7 @@ source:
   repository: #@ repository
   access_token: #@ data.values.github_api_token
   #@ if repository == data.values.charts_gh_repo:
-  tag_filter: #@ deployment + "-.*"
+  tag_filter: #@ deployment + "-v.*"
   #@ end
 #@ end
 
