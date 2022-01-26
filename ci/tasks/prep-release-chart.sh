@@ -30,7 +30,6 @@ pushd repo
   git commit -m "ci(release): $CHART release v$version"
 
   # Installing Helm Dependencies
-  helm dependency update charts/$CHART
   helm dependency list charts/$CHART | tail -n +2 | awk '{ print $1,$3 }' | xargs -n 2 helm repo add
 
   # Getting TGZ files for release
