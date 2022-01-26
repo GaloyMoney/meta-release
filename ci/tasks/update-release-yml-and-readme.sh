@@ -2,18 +2,43 @@
 
 set -eu
 
-. meta-release/ci/tasks/refs.sh
+# Galoy
+export galoy=$(cat galoy/commit_sha)
+export galoy_release_tag=$(cat galoy/tag)
 
-export tag=$(cat release/tag)
-export commit_sha=$(cat release/commit_sha)
+# Infra
+export infra=$(cat infra/commit_sha)
+export infra_release_tag=$(cat infra/tag)
 
-eval "export $ENTITY=$commit_sha"
-eval "export `echo $ENTITY`_release_tag=$tag"
+# Bitcoind
+export bitcoind=$(cat bitcoind/commit_sha)
+export lnd=$(cat lnd/commit_sha)
+export rtl=$(cat rtl/commit_sha)
+export specter=$(cat specter/commit_sha)
 
-envsubst < meta-release/template.md > meta-release/README.md
+export bitcoind_release_tag=$(cat bitcoind/tag)
+export lnd_release_tag=$(cat lnd/tag)
+export rtl_release_tag=$(cat rtl/tag)
+export specter_release_tag=$(cat specter/tag)
 
-yq e -i ".$ENTITY.commit = strenv(commit_sha)" meta-release/release.yml
-yq e -i ".$ENTITY.release_tag = strenv(tag)" meta-release/release.yml
+# Monitoring
+export monitoring=$(cat monitoring/commit_sha)
+export lndmon=$(cat lndmon/commit_sha)
+
+export monitoring_release_tag=$(cat monitoring/tag)
+export lndmon_release_tag=$(cat lndmon/tag)
+
+# Addons
+export admin_panel=$(cat admin_panel/commit_sha)
+export galoy_pay=$(cat galoy_pay/commit_sha)
+export dealer=$(cat dealer/commit_sha)
+
+export admin_panel_release_tag=$(cat admin_panel/tag)
+export galoy_pay_release_tag=$(cat galoy_pay/tag)
+export dealer_release_tag=$(cat dealer/tag)
+
+envsubst < meta-release/templates/README.md > meta-release/README.md
+envsubst < meta-release/templates/release.yml > meta-release/release.yml
 
 pushd meta-release
   git add README.md release.yml
@@ -21,7 +46,7 @@ pushd meta-release
 
   # Only commit if there are uncommitted staged files
   if ! git diff --cached --exit-code; then
-    git commit -m "ci(release): publish new release for $ENTITY"
+    git commit -m "ci(release): publish new release"
   fi
 popd
 
