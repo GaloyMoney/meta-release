@@ -29,6 +29,10 @@ pushd repo
   git status
   git commit -m "ci(release): $CHART release v$version"
 
+  # Installing Helm Dependencies
+  helm dependency update charts/$CHART
+  helm dependency list charts/$CHART | tail -n +2 | awk '{ print $1,$3 }' | xargs -n 2 helm repo add
+
   # Getting TGZ files for release
   cr package charts/$CHART
   cp -R .cr-release-packages/* ../gh-release/files
