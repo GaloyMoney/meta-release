@@ -5,7 +5,7 @@ set -eu
 . meta-release/ci/tasks/refs.sh
 
 export new_ref=$(cat $new_git_ref_path)
-export prev_ref=$(eval "echo \$$depl_name")
+export prev_ref=$(eval "echo \$$(echo $depl_name | sed 's/-/_/g')")
 
 echo $new_ref > release-commitid/commitid
 
