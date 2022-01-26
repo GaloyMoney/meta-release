@@ -19,7 +19,6 @@ Source Code diff for the releases will be added soon.
 
 #### Monitoring Charts
 - Monitoring: Release ${monitoring_release_tag} @ `${monitoring}` | [tree](https://github.com/GaloyMoney/charts/tree/${monitoring}/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/${monitoring_release_tag})
-- LNDMon: Release ${lndmon_release_tag} @ `${lndmon}` | [tree](https://github.com/GaloyMoney/charts/tree/${lndmon}/charts/lnd/charts/lndmon) | [release](https://github.com/GaloyMoney/charts/releases/tag/${lndmon_release_tag})
 
 #### Addons Charts
 - Galoy Pay: Release ${galoy_pay_release_tag} @ `${galoy_pay}` | [tree](https://github.com/GaloyMoney/charts/tree/${galoy_pay}/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/${galoy_pay_release_tag})

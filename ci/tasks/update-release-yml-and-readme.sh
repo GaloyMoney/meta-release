@@ -23,10 +23,7 @@ export specter_release_tag=$(cat specter/tag)
 
 # Monitoring
 export monitoring=$(cat monitoring/commit_sha)
-export lndmon=$(cat lndmon/commit_sha)
-
 export monitoring_release_tag=$(cat monitoring/tag)
-export lndmon_release_tag=$(cat lndmon/tag)
 
 # Addons
 export admin_panel=$(cat admin-panel/commit_sha)
