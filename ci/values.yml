@@ -4,7 +4,6 @@ git_uri: git@github.com:GaloyMoney/meta-release.git
 git_branch: main
 github_private_key: ((github.private_key))
 github_api_token: ((github.api_token))
-release_environment: meta-release
 
 gh_org: GaloyMoney
 git_version_branch: version

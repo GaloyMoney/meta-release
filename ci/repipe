@@ -18,5 +18,5 @@ ytt -f ci > ${TMPDIR}/pipeline.yml
 
 echo "Updating pipeline @ ${target}"
 
-fly -t ${target} set-pipeline --team=${team} -p release -c ${TMPDIR}/pipeline.yml
-fly -t ${target} unpause-pipeline --team=${team} -p release
+fly -t ${target} set-pipeline --team=${team} -p meta-release -c ${TMPDIR}/pipeline.yml
+fly -t ${target} unpause-pipeline --team=${team} -p meta-release
