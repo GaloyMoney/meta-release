@@ -9,8 +9,8 @@ galoy:
   repository: https://github.com/GaloyMoney/charts
 
 bitcoind:
-  release_tag: bitcoind-v0.1.0
-  commit: b7ad8057a6f97698ab57803c727e84b192a8e431
+  release_tag: bitcoind-v0.1.1
+  commit: 47c428122712d917c02772f5796a89a681fb74a2
   repository: https://github.com/GaloyMoney/charts
 
 lnd:
@@ -24,8 +24,8 @@ rtl:
   repository: https://github.com/GaloyMoney/charts
 
 specter:
-  release_tag: specter-v0.1.0
-  commit: 7085d336648e23863feead52e817bd8bc84a759d
+  release_tag: specter-v0.1.1
+  commit: 3512902903ab987f8c0628c39a6455b824d36534
   repository: https://github.com/GaloyMoney/charts
 
 monitoring:
