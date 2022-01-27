@@ -14,13 +14,13 @@ bitcoind:
   repository: https://github.com/GaloyMoney/charts
 
 lnd:
-  release_tag: lnd-v0.1.0
-  commit: 129b2dcc6f8795bc4295f28224bb098f0a55a5f5
+  release_tag: lnd-v0.1.1
+  commit: 5ebdd51a0f5663d3bb36a9f38e650dab63c8850d
   repository: https://github.com/GaloyMoney/charts
 
 rtl:
-  release_tag: rtl-v0.1.0
-  commit: 638364ae864b237dec6379ff83f36eb5e1637efa
+  release_tag: rtl-v0.1.1
+  commit: 8ef2ef3ed08d7d673c5b50e4663800e902625b98
   repository: https://github.com/GaloyMoney/charts
 
 specter:
