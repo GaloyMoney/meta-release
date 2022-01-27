@@ -61,7 +61,7 @@ source:
   uri: #@ data.values.deployments_git_uri
   branch: #@ data.values.deployments_git_branch
   private_key: #@ data.values.github_private_key
-  environment: #@ data.values.release_environment
+  environment: #@ data.values.release_environment + "-" + deployment
   config: #@ cepler_config(override_config[deployment] if deployment in override_config.keys() else deployment)
 #@ end
 
