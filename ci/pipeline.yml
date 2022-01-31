@@ -75,7 +75,7 @@ type: semver
 source:
   initial_version: 0.1.0
   driver: git
-  file: #@ version_resource_name(deployment)
+  file: #@ deployment + "-version"
   uri: #@ data.values.git_uri
   branch: #@ data.values.git_version_branch
   private_key: #@ data.values.github_private_key
