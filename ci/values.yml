@@ -6,7 +6,7 @@ github_private_key: ((github.private_key))
 github_api_token: ((github.api_token))
 
 gh_org: GaloyMoney
-git_version_branch: version
+git_version_branch: versions
 stable_git_branch: stable
 
 docker_registry: us.gcr.io/galoy-org
