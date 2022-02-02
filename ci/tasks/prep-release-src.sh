@@ -6,6 +6,11 @@ set -eu
 
 # Fetching Refs
 export prev_ref=$(yq e '.image.git_ref' charts-repo/charts/$CHART/values.yaml)
+
+if [[ prev_ref == "" ]]; then
+  export prev_ref=$(yq e ".$CHART.image.git_ref" charts-repo/charts/$CHART/values.yaml)
+fi
+
 export new_ref=$(cd repo && git rev-parse HEAD)
 
 # Generate Changelog
