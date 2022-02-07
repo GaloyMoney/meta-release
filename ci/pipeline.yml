@@ -162,6 +162,8 @@ jobs:
       image_resource: #@ task_image_config()
       inputs:
       - name: meta-release
+      - name: #@ version_resource_name(chart)
+        path: version
       - name: charts-repo
         path: repo
       - name: #@ cepler_resource_name(chart)
@@ -330,6 +332,8 @@ jobs:
       image_resource: #@ task_image_config()
       inputs:
       - name: meta-release
+      - name: #@ version_resource_name(chart)
+        path: version
       - name: infra-repo
         path: repo
       - name: #@ cepler_resource_name("infra")

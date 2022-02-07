@@ -2,10 +2,11 @@
 
 set -eu
 
-. meta-release/ci/tasks/refs.sh
-
 export new_ref=$(cat $new_git_ref_path)
-export prev_ref=$(eval "echo \$$(echo $depl_name | sed 's/-/_/g')")
+
+pushd repo
+export prev_ref=$(git rev-list -n 1 $depl_name-v$(cat ../version/version))
+popd
 
 echo $new_ref > release-commitid/commitid
 
