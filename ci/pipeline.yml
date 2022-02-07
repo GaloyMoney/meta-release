@@ -393,6 +393,7 @@ jobs:
     params: { release: meta-release-lock }
 
 - name: update-lsc
+  serial: true
   plan:
   - in_parallel:
     #@ for chart in charts:
