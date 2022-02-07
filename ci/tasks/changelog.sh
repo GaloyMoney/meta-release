@@ -4,6 +4,9 @@ set -eu
 
 export new_ref=$(cat $new_git_ref_path)
 
+# Strips off "-dev"
+bump2version pre --current-version $(cat version/version) --allow-dirty version/version
+
 pushd repo
 if [[ $depl_name != 'infra' ]]; then
   export prev_ref=$(git rev-list -n 1 $depl_name-v$(cat ../version/version))
