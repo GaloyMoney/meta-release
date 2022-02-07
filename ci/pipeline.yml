@@ -73,7 +73,7 @@ source:
 name: #@ version_resource_name(deployment)
 type: semver
 source:
-  initial_version: 0.1.0
+  initial_version: 0.0.0
   driver: git
   file: #@ deployment + "-version"
   uri: #@ data.values.git_uri
