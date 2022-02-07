@@ -145,6 +145,9 @@ jobs:
 #@ for chart in charts:
 - name: #@ chart + "-release"
   plan:
+  - put: meta-release-lock
+    params: { claim: charts-release }
+
   - in_parallel:
     - get: #@ cepler_resource_name(chart)
       trigger: true
@@ -309,10 +312,16 @@ jobs:
     params: 
       file: #@ version_resource_name(chart) + "/version"
 
+  - put: meta-release-lock
+    params: { release: meta-release-lock }
+
 #@ end
 
 - name: infra-release
   plan:
+  - put: meta-release-lock
+    params: { claim: charts-release }
+
   - in_parallel:
     - get: #@ cepler_resource_name("infra")
       trigger: true
@@ -379,6 +388,9 @@ jobs:
   - put: #@ version_resource_name("infra")
     params: 
       file: #@ version_resource_name("infra") + "/version"
+
+  - put: meta-release-lock
+    params: { release: meta-release-lock }
 
 - name: update-lsc
   plan:
@@ -499,6 +511,14 @@ resources:
     paths: [ci/image/Dockerfile]
     uri: #@ data.values.git_uri
     branch: #@ data.values.git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: meta-release-lock
+  type: pool
+  source:
+    uri: #@ data.values.concourse_locks_git_uri
+    branch: #@ data.values.concourse_locks_git_branch
+    pool: meta-release
     private_key: #@ data.values.github_private_key
 
 resource_types:
