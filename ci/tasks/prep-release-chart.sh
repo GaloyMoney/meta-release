@@ -11,16 +11,23 @@ echo -n "Dev Version being released: "
 cat version/version
 echo ""
 
-# Strips off "-dev"
-bump2version pre --current-version $(cat version/version) --allow-dirty version/version
+# Initial Release
+if [[ $(cat version/version) == "0.0.0" ]]; then
+  echo "0.1.0" > version/version
 
-# Figure out proper version to release
-if [[ $(cat changelog/changelog | grep breaking) != '' ]] || [[ $(cat changelog/changelog | grep feature) != '' ]]; then
-  echo "Breaking change / Feature Addition found, bumping minor version..."
-  bump2version minor --current-version $(cat version/version) --allow-dirty version/version
+# Subsequent Releases
 else
-  echo "Only patches and fixes found - no breaking changes, bumping patch version..."
-  bump2version patch --current-version $(cat version/version) --allow-dirty version/version
+  # Strips off "-dev"
+  bump2version pre --current-version $(cat version/version) --allow-dirty version/version
+
+  # Figure out proper version to release
+  if [[ $(cat changelog/changelog | grep breaking) != '' ]] || [[ $(cat changelog/changelog | grep feature) != '' ]]; then
+    echo "Breaking change / Feature Addition found, bumping minor version..."
+    bump2version minor --current-version $(cat version/version) --allow-dirty version/version
+  else
+    echo "Only patches and fixes found - no breaking changes, bumping patch version..."
+    bump2version patch --current-version $(cat version/version) --allow-dirty version/version
+  fi
 fi
 
 export version=$(cat version/version)
