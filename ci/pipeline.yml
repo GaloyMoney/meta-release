@@ -5,7 +5,7 @@
 #@   "infra": ["infra"],
 #@   "bitcoin": ["bitcoind", "lnd", "rtl", "specter"],
 #@   "monitoring": ["monitoring"],
-#@   "addons": ["admin-panel", "galoy-pay", "dealer"],
+#@   "addons": ["admin-panel", "galoy-pay", "dealer", "web-wallet"],
 #@ }
 
 #@ charts_vendir_refs = {
@@ -17,7 +17,8 @@
 #@   "monitoring": "monitoring-in/modules/services/monitoring/vendor/monitoring/git-ref/ref",
 #@   "admin-panel": "admin-panel-in/modules/services/addons/vendor/admin-panel/git-ref/ref",
 #@   "galoy-pay": "galoy-pay-in/modules/services/addons/vendor/galoy-pay/git-ref/ref",
-#@   "dealer": "dealer-in/modules/services/addons/vendor/dealer/git-ref/ref"
+#@   "dealer": "dealer-in/modules/services/addons/vendor/dealer/git-ref/ref",
+#@   "web-wallet": "web-wallet-in/modules/services/addons/vendor/web-wallet/git-ref/ref"
 #@ }
 
 #@ override_config = {
@@ -28,6 +29,7 @@
 #@   "admin-panel": "addons",
 #@   "galoy-pay": "addons",
 #@   "dealer": "addons",
+#@   "web-wallet": "addons",
 #@ }
 
 #@ infra_vendir_ref = "infra-in/modules/infra/vendor/git-ref/ref"
