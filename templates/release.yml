@@ -47,3 +47,8 @@ dealer:
   release_tag: ${dealer_release_tag}
   commit: ${dealer}
   repository: https://github.com/GaloyMoney/charts
+
+web_wallet:
+  release_tag: ${web_wallet_release_tag}
+  commit: ${web_wallet}
+  repository: https://github.com/GaloyMoney/charts
