@@ -332,7 +332,7 @@ jobs:
       image_resource: #@ task_image_config()
       inputs:
       - name: meta-release
-      - name: #@ version_resource_name(chart)
+      - name: #@ version_resource_name("infra")
         path: version
       - name: infra-repo
         path: repo
