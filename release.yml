@@ -34,8 +34,8 @@ monitoring:
   repository: https://github.com/GaloyMoney/charts
 
 galoy_pay:
-  release_tag: galoy-pay-v0.1.0
-  commit: d7f86bd116d95c4691058f96e72755e89e699fb7
+  release_tag: galoy-pay-v0.1.1
+  commit: 2cc1b678e26a513a01e855503c220f99803a4692
   repository: https://github.com/GaloyMoney/charts
 
 admin_panel:
