@@ -1,5 +1,8 @@
 #@ load("@ytt:data", "data")
 
+#@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "dealer", "web-wallet" ]
+#@ src_to_chart_override_config = { "galoy-app": "galoy" }
+
 #@ depl_groups = {
 #@   "galoy": ["galoy"],
 #@   "infra": ["infra"],
@@ -40,12 +43,24 @@
 #@   return data.values.docker_registry + "/release-pipeline"
 #@ end
 
+#@ def dcind_pipeline_image():
+#@   return data.values.docker_registry + "/dcind-release-pipeline"
+#@ end
+
 #@ def task_image_config():
 type: registry-image
 source:
   username: #@ data.values.docker_registry_user
   password: #@ data.values.docker_registry_password
   repository: #@ pipeline_image()
+#@ end
+
+#@ def dcind_task_image_config():
+type: registry-image
+source:
+  username: #@ data.values.docker_registry_user
+  password: #@ data.values.docker_registry_password
+  repository: #@ dcind_pipeline_image()
 #@ end
 
 #@ def cepler_config(deployment):
@@ -120,6 +135,20 @@ source:
   private_key: #@ data.values.github_private_key
 #@ end
 
+#@ def src_repo_docker_image_name(src_repo):
+#@   return src_repo + "-latest-image"
+#@ end
+
+#@ def src_repo_docker_image_resource(src_repo):
+name: #@ src_repo_docker_image_name(src_repo)
+type: registry-image
+source:
+  tag: latest
+  username: #@ data.values.docker_registry_user
+  password: #@ data.values.docker_registry_password
+  repository: #@ data.values.docker_registry + "/" + src_repo
+#@ end
+
 groups:
 #@ for group in depl_groups.keys():
 - name: #@ group
@@ -131,6 +160,11 @@ groups:
 - name: update-lsc
   jobs:
   - update-lsc
+- name: docker-latest
+  jobs:
+#@ for src in src_repos:
+  - #@ "push-docker-latest-" + src
+#@ end
 - name: all
   jobs:
 #@ for depl in charts:
@@ -138,10 +172,15 @@ groups:
 #@ end
   - infra-release
   - update-lsc
+#@ for src in src_repos:
+  - #@ "push-docker-latest-" + src
+#@ end
   - build-release-pipeline-image
+  - build-dcind-pipeline-image
 - name: image
   jobs:
   - build-release-pipeline-image
+  - build-dcind-pipeline-image
 
 jobs:
 #@ for chart in charts:
@@ -425,6 +464,40 @@ jobs:
       branch: #@ data.values.git_branch
       rebase: true
 
+#@ for src in src_repos:
+#@ chart = src_to_chart_override_config[src] if src in src_to_chart_override_config.keys() else src
+#@ release_resource_name = gh_release_resource_name(chart)
+- name: #@ "push-docker-latest-" + src
+  serial: true
+  plan:
+  - in_parallel:
+    - get: #@ release_resource_name
+      trigger: true
+    - get: charts-repo
+    - get: pipeline-tasks
+  - task: get-versioned-image
+    privileged: true
+    config:
+      platform: linux
+      image_resource: #@ dcind_task_image_config()
+      inputs:
+      - name: #@ release_resource_name
+        path: charts-release
+      - name: charts-repo
+      - name: pipeline-tasks
+      outputs:
+      - name: image
+      params:
+        CHART: #@ chart
+        DOCKER_REGISTRY: #@ data.values.docker_registry
+        DOCKER_IMAGE_NAME: #@ src
+      run:
+        path: pipeline-tasks/ci/tasks/get-versioned-image.sh
+  - put: #@ src_repo_docker_image_name(src)
+    params:
+      image: image/image.tar
+#@ end
+
 - name: build-release-pipeline-image
   serial: true
   plan:
@@ -443,10 +516,35 @@ jobs:
       outputs:
       - name: image
       params:
-        CONTEXT: release-pipeline-image-def/ci/image
+        CONTEXT: release-pipeline-image-def/ci/image/release
       run:
         path: build
   - put: release-pipeline-image
+    params:
+      image: image/image.tar
+
+- name: build-dcind-pipeline-image
+  serial: true
+  plan:
+  - get: dcind-pipeline-image-def
+    trigger: true
+  - task: build
+    privileged: true
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: vito/oci-build-task
+      inputs:
+      - name: dcind-pipeline-image-def
+      outputs:
+      - name: image
+      params:
+        CONTEXT: dcind-pipeline-image-def/ci/image/dcind
+      run:
+        path: build
+  - put: dcind-pipeline-image
     params:
       image: image/image.tar
 
@@ -468,7 +566,7 @@ resources:
     - "ci/*"
     - config.toml
     uri: #@ data.values.git_uri
-    branch: #@ data.values.git_branch
+    branch: #@ data.values.pipeline_git_branch
     private_key: #@ data.values.github_private_key
 
 - name: charts-repo
@@ -503,6 +601,10 @@ resources:
 - #@ cepler_in("infra")
 - #@ gh_release_resource("infra", data.values.infra_gh_repo)
 - #@ out_resource("infra", data.values.infra_git_uri)
+
+#@ for src in src_repos:
+- #@ src_repo_docker_image_resource(src)
+#@ end
   
 - name: release-pipeline-image
   type: registry-image
@@ -512,12 +614,28 @@ resources:
     password: #@ data.values.docker_registry_password
     repository: #@ pipeline_image()
 
+- name: dcind-pipeline-image
+  type: registry-image
+  source:
+    tag: latest
+    username: #@ data.values.docker_registry_user
+    password: #@ data.values.docker_registry_password
+    repository: #@ dcind_pipeline_image()
+
 - name: release-pipeline-image-def
   type: git
   source:
-    paths: [ci/image/Dockerfile]
+    paths: [ci/image/release/Dockerfile]
     uri: #@ data.values.git_uri
-    branch: #@ data.values.git_branch
+    branch: #@ data.values.pipeline_git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: dcind-pipeline-image-def
+  type: git
+  source:
+    paths: [ci/image/dcind/Dockerfile]
+    uri: #@ data.values.git_uri
+    branch: #@ data.values.pipeline_git_branch
     private_key: #@ data.values.github_private_key
 
 resource_types:
