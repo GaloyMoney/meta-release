@@ -1,7 +1,6 @@
 #@ load("@ytt:data", "data")
 
-#! src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "dealer", "web-wallet" ]
-#@ src_repos = [ "dealer" ]
+#@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "dealer", "web-wallet" ]
 #@ src_to_chart_override_config = { "galoy-app": "galoy" }
 
 #@ depl_groups = {
@@ -480,10 +479,7 @@ jobs:
     privileged: true
     config:
       platform: linux
-      image_resource:
-        type: docker-image
-        source:
-          repository: amidos/dcind
+      image_resource: #@ dcind_task_image_config()
       inputs:
       - name: #@ release_resource_name
         path: charts-release
@@ -536,7 +532,10 @@ jobs:
     privileged: true
     config:
       platform: linux
-      image_resource: #@ dcind_task_image_config()
+      image_resource:
+        type: registry-image
+        source:
+          repository: vito/oci-build-task
       inputs:
       - name: dcind-pipeline-image-def
       outputs:

@@ -22,4 +22,4 @@ docker save $DOCKER_IMAGE -o image.tar
 # Tries to mimic https://github.com/concourse/registry-image-resource#files-created-by-the-resource
 echo "$DOCKER_REGISTRY/$DOCKER_IMAGE_NAME" > repository
 echo $appVersion > tag
-echo "$(docker inspect --format='{{index .RepoDigests 0}}' DOCKER_IMAGE | cut -d'@' -f 2)" > digest
+echo "$(docker inspect --format='{{index .RepoDigests 0}}' $DOCKER_IMAGE | cut -d'@' -f 2)" > digest
