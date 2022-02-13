@@ -132,6 +132,7 @@ source:
 name: #@ src_repo_docker_image_name(src_repo)
 type: registry-image
 source:
+  tag: latest
   username: #@ data.values.docker_registry_user
   password: #@ data.values.docker_registry_password
   repository: #@ data.values.docker_registry + "/" + src_repo
@@ -148,6 +149,11 @@ groups:
 - name: update-lsc
   jobs:
   - update-lsc
+- name: docker-latest
+  jobs:
+#@ for src in src_repos:
+  - #@ "push-docker-latest-" + src
+#@ end
 - name: all
   jobs:
 #@ for depl in charts:
@@ -155,6 +161,9 @@ groups:
 #@ end
   - infra-release
   - update-lsc
+#@ for src in src_repos:
+  - #@ "push-docker-latest-" + src
+#@ end
   - build-release-pipeline-image
 - name: image
   jobs:
@@ -454,9 +463,13 @@ jobs:
     - get: charts-repo
     - get: pipeline-tasks
   - task: get-versioned-image
+    privileged: true
     config:
       platform: linux
-      image_resource: #@ task_image_config()
+      image_resource:
+        type: docker-image
+        source:
+          repository: amidos/dcind
       inputs:
       - name: #@ release_resource_name
         path: charts-release
@@ -470,19 +483,9 @@ jobs:
         DOCKER_IMAGE_NAME: #@ src
       run:
         path: pipeline-tasks/ci/tasks/get-versioned-image.sh
-  - task: prep-docker-latest
-    config:
-      platform: linux
-      image_resource: #@ task_image_config()
-      inputs:
-      - name: pipeline-tasks
-      outputs:
-      - name: image
-      run:
-        path: pipeline-tasks/ci/tasks/prep-docker-latest.sh
   - put: #@ src_repo_docker_image_name(src)
     params:
-      image: 
+      image: image/image.tar
 #@ end
 
 - name: build-release-pipeline-image
@@ -528,7 +531,7 @@ resources:
     - "ci/*"
     - config.toml
     uri: #@ data.values.git_uri
-    branch: #@ data.values.git_branch
+    branch: latest-docker-push
     private_key: #@ data.values.github_private_key
 
 - name: charts-repo
@@ -563,6 +566,10 @@ resources:
 - #@ cepler_in("infra")
 - #@ gh_release_resource("infra", data.values.infra_gh_repo)
 - #@ out_resource("infra", data.values.infra_git_uri)
+
+#@ for src in src_repos:
+- #@ src_repo_docker_image_resource(src)
+#@ end
   
 - name: release-pipeline-image
   type: registry-image

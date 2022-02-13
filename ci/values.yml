@@ -1,7 +1,7 @@
 #@data/values
 ---
 git_uri: git@github.com:GaloyMoney/meta-release.git
-git_branch: latest-docker-push
+git_branch: main
 github_private_key: ((github.private_key))
 github_api_token: ((github.api_token))
 
