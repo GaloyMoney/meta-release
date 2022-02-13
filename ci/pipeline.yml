@@ -1,5 +1,9 @@
 #@ load("@ytt:data", "data")
 
+#! src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "dealer", "web-wallet" ]
+#@ src_repos = [ "dealer" ]
+#@ src_to_chart_override_config = { "galoy-app": "galoy" }
+
 #@ depl_groups = {
 #@   "galoy": ["galoy"],
 #@   "infra": ["infra"],
@@ -118,6 +122,19 @@ source:
   uri: #@ uri
   branch: #@ stable_branch_name(deployment)
   private_key: #@ data.values.github_private_key
+#@ end
+
+#@ def src_repo_docker_image_name(src_repo):
+#@   return src_repo + "-edge-image"
+#@ end
+
+#@ def src_repo_docker_image_resource(src_repo):
+name: #@ src_repo_docker_image_name(src_repo)
+type: registry-image
+source:
+  username: #@ data.values.docker_registry_user
+  password: #@ data.values.docker_registry_password
+  repository: #@ data.values.docker_registry + "/" + src_repo_registry_image[src_repo]
 #@ end
 
 groups:
@@ -424,6 +441,44 @@ jobs:
       repository: meta-release
       branch: #@ data.values.git_branch
       rebase: true
+
+#@ for src in src_repos:
+#@ release_resource_name = gh_release_resource_name(src_to_chart_override_config[src] if src in src_to_chart_override_config.keys() else src)
+- name: #@ "push-docker-latest-" + src
+  serial: true
+  plan:
+  - in_parallel:
+    - get: #@ release_resource_name
+      trigger: true
+    - get: meta-release
+  - task: get-versioned-image
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: #@ release_resource_name
+        path: release
+      - name: meta-release
+      outputs:
+      - name: image
+      params:
+        DOCKER_IMAGE_NAME: #@ src
+      run:
+        path: meta-release/ci/tasks/get-versioned-image.sh
+  - task: prep-push-docker-latest
+    config:
+      platform: linux
+      image_resource: #@ task_image_config()
+      inputs:
+      - name: meta-release
+      outputs:
+      - name: image
+      run:
+        path: meta-release/ci/tasks/get-versioned-image.sh
+  - put: #@ src_repo_docker_image_name(src)
+    params:
+      image: 
+#@ end
 
 - name: build-release-pipeline-image
   serial: true
