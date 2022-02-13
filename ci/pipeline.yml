@@ -452,7 +452,7 @@ jobs:
     - get: #@ release_resource_name
       trigger: true
     - get: charts-repo
-    - get: meta-release
+    - get: pipeline-tasks
   - task: get-versioned-image
     config:
       platform: linux
@@ -461,7 +461,7 @@ jobs:
       - name: #@ release_resource_name
         path: charts-release
       - name: charts-repo
-      - name: meta-release
+      - name: pipeline-tasks
       outputs:
       - name: image
       params:
@@ -469,17 +469,17 @@ jobs:
         DOCKER_REGISTRY: #@ data.values.docker_registry
         DOCKER_IMAGE_NAME: #@ src
       run:
-        path: meta-release/ci/tasks/get-versioned-image.sh
+        path: pipeline-tasks/ci/tasks/get-versioned-image.sh
   - task: prep-docker-latest
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       outputs:
       - name: image
       run:
-        path: meta-release/ci/tasks/prep-docker-latest.sh
+        path: pipeline-tasks/ci/tasks/prep-docker-latest.sh
   - put: #@ src_repo_docker_image_name(src)
     params:
       image: 
