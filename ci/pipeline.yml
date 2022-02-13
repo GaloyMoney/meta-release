@@ -152,9 +152,9 @@ jobs:
     - get: #@ cepler_resource_name(chart)
       trigger: true
     - get: #@ version_resource_name(chart)
-    - get: meta-release
     - get: charts-repo
     - get: charts-gh-pages-repo
+    - get: pipeline-tasks
 
 #! ------------ CHANGELOG ----------------
 
@@ -163,7 +163,7 @@ jobs:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       - name: #@ version_resource_name(chart)
         path: version
       - name: charts-repo
@@ -177,7 +177,7 @@ jobs:
         new_git_ref_path: #@ charts_vendir_refs[chart]
         depl_name: #@ chart
       run:
-        path: meta-release/ci/tasks/changelog.sh
+        path: pipeline-tasks/ci/tasks/changelog.sh
 
 #! ------------ RELEASE ----------------
 
@@ -186,7 +186,7 @@ jobs:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       - name: release-commitid
       - name: charts-repo
         path: repo
@@ -194,14 +194,14 @@ jobs:
       - name: charts-repo
         path: repo
       run:
-        path: meta-release/ci/tasks/checkout-release-branch.sh
+        path: pipeline-tasks/ci/tasks/checkout-release-branch.sh
 
   - task: prep-release
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       - name: changelog
       - name: release-commitid
       - name: #@ version_resource_name(chart)
@@ -217,8 +217,8 @@ jobs:
       params:
         CHART: #@ chart
       run:
-        path: meta-release/ci/tasks/prep-release-chart.sh
-  
+        path: pipeline-tasks/ci/tasks/prep-release-chart.sh
+
   - put: #@ out_resource_name(chart)
     params:
       repository: charts-repo
@@ -241,7 +241,7 @@ jobs:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       - name: changelog
       - name: gh-release
       - name: charts-gh-pages-repo
@@ -255,7 +255,7 @@ jobs:
         CR_GIT_REPO: #@ data.values.charts_gh_repo
         CHART_GIT_REPO_HTTPS_URL: #@ gh_https_url(data.values.gh_org, data.values.charts_gh_repo)
       run:
-        path: meta-release/ci/tasks/update-helm-index.sh
+        path: pipeline-tasks/ci/tasks/update-helm-index.sh
 
   - put: charts-gh-pages-repo
     params:
@@ -270,7 +270,7 @@ jobs:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       - name: changelog
       - name: #@ version_resource_name(chart)
         path: version
@@ -284,14 +284,14 @@ jobs:
       params:
         CHART: #@ chart
       run:
-        path: meta-release/ci/tasks/bump-version.sh
+        path: pipeline-tasks/ci/tasks/bump-version.sh
 
   - task: merge-back
     config:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       - name: charts-repo
         path: repo
       - name: #@ version_resource_name(chart)
@@ -302,7 +302,7 @@ jobs:
       params:
         CHART: #@ chart
       run:
-        path: meta-release/ci/tasks/merge-back.sh
+        path: pipeline-tasks/ci/tasks/merge-back.sh
 
   - put: charts-repo
     params:
@@ -323,8 +323,8 @@ jobs:
     - get: #@ cepler_resource_name("infra")
       trigger: true
     - get: #@ version_resource_name("infra")
-    - { get: meta-release }
-    - { get: infra-repo }
+    - get: infra-repo
+    - get: pipeline-tasks
 
 #! ------------ CHANGELOG ----------------
 
@@ -333,7 +333,7 @@ jobs:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       - name: #@ version_resource_name("infra")
         path: version
       - name: infra-repo
@@ -346,7 +346,7 @@ jobs:
         new_git_ref_path: #@ infra_vendir_ref
         depl_name: infra
       run:
-        path: meta-release/ci/tasks/changelog.sh
+        path: pipeline-tasks/ci/tasks/changelog.sh
 
 #! ------------ RELEASE ----------------
 
@@ -355,7 +355,7 @@ jobs:
       platform: linux
       image_resource: #@ task_image_config()
       inputs:
-      - name: meta-release
+      - name: pipeline-tasks
       - name: changelog
       - name: release-commitid
       - name: #@ version_resource_name("infra")
@@ -369,7 +369,7 @@ jobs:
       - name: #@ version_resource_name("infra")
         path: version
       run:
-        path: meta-release/ci/tasks/prep-release-infra.sh
+        path: pipeline-tasks/ci/tasks/prep-release-infra.sh
 
   - put: #@ out_resource_name("infra")
     params:
@@ -399,6 +399,7 @@ jobs:
     - get: #@ gh_release_resource_name("infra")
       trigger: true
     - get: meta-release
+    - get: pipeline-tasks
 
   - task: update-release-yml-and-readme
     config:
@@ -411,11 +412,12 @@ jobs:
       #@ end
       - name: #@ gh_release_resource_name("infra")
         path: infra
+      - name: pipeline-tasks
       - name: meta-release
       outputs:
       - name: meta-release
       run:
-        path: meta-release/ci/tasks/update-release-yml-and-readme.sh
+        path: pipeline-tasks/ci/tasks/update-release-yml-and-readme.sh
 
   - put: meta-release
     params:
@@ -449,6 +451,26 @@ jobs:
       image: image/image.tar
 
 resources:
+- name: meta-release
+  type: git
+  source:
+    ignore_paths:
+    - "ci/*"
+    - config.toml
+    uri: #@ data.values.git_uri
+    branch: #@ data.values.git_branch
+    private_key: #@ data.values.github_private_key
+
+- name: pipeline-tasks
+  type: git
+  source:
+    paths:
+    - "ci/*"
+    - config.toml
+    uri: #@ data.values.git_uri
+    branch: #@ data.values.git_branch
+    private_key: #@ data.values.github_private_key
+
 - name: charts-repo
   type: git
   source:
@@ -481,18 +503,6 @@ resources:
 - #@ cepler_in("infra")
 - #@ gh_release_resource("infra", data.values.infra_gh_repo)
 - #@ out_resource("infra", data.values.infra_git_uri)
-
-- name: meta-release
-  type: git
-  source:
-    paths: 
-    - "template.md"
-    - "release.yml"
-    - "ci/tasks/*"
-    - "config.toml"
-    uri: #@ data.values.git_uri
-    branch: #@ data.values.git_branch
-    private_key: #@ data.values.github_private_key
   
 - name: release-pipeline-image
   type: registry-image

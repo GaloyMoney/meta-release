@@ -8,7 +8,7 @@ echo $new_ref > release-commitid/commitid
 # Initial Release
 if [[ $(cat version/version) == "0.0.0" ]]; then
   pushd repo
-    git cliff --config ../meta-release/config.toml > ../changelog/changelog
+    git cliff --config ../pipeline-tasks/config.toml > ../changelog/changelog
   popd
 
 # Subsequent Releases
@@ -29,7 +29,7 @@ else
     echo "" > changelog/changelog
   else
     pushd repo
-      git cliff --config ../meta-release/config.toml $prev_ref..$new_ref > ../changelog/changelog
+      git cliff --config ../pipeline-tasks/config.toml $prev_ref..$new_ref > ../changelog/changelog
     popd
   fi
 fi
