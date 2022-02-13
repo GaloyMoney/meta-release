@@ -134,7 +134,7 @@ type: registry-image
 source:
   username: #@ data.values.docker_registry_user
   password: #@ data.values.docker_registry_password
-  repository: #@ data.values.docker_registry + "/" + src_repo_registry_image[src_repo]
+  repository: #@ data.values.docker_registry + "/" + src_repo
 #@ end
 
 groups:
