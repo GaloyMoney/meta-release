@@ -443,13 +443,15 @@ jobs:
       rebase: true
 
 #@ for src in src_repos:
-#@ release_resource_name = gh_release_resource_name(src_to_chart_override_config[src] if src in src_to_chart_override_config.keys() else src)
+#@ chart = src_to_chart_override_config[src] if src in src_to_chart_override_config.keys() else src
+#@ release_resource_name = gh_release_resource_name(chart)
 - name: #@ "push-docker-latest-" + src
   serial: true
   plan:
   - in_parallel:
     - get: #@ release_resource_name
       trigger: true
+    - get: charts-repo
     - get: meta-release
   - task: get-versioned-image
     config:
@@ -457,15 +459,18 @@ jobs:
       image_resource: #@ task_image_config()
       inputs:
       - name: #@ release_resource_name
-        path: release
+        path: charts-release
+      - name: charts-repo
       - name: meta-release
       outputs:
       - name: image
       params:
+        CHART: #@ chart
+        DOCKER_REGISTRY: #@ data.values.docker_registry
         DOCKER_IMAGE_NAME: #@ src
       run:
         path: meta-release/ci/tasks/get-versioned-image.sh
-  - task: prep-push-docker-latest
+  - task: prep-docker-latest
     config:
       platform: linux
       image_resource: #@ task_image_config()
@@ -474,7 +479,7 @@ jobs:
       outputs:
       - name: image
       run:
-        path: meta-release/ci/tasks/get-versioned-image.sh
+        path: meta-release/ci/tasks/prep-docker-latest.sh
   - put: #@ src_repo_docker_image_name(src)
     params:
       image: 
