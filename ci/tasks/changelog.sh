@@ -48,6 +48,7 @@ if [[ $gen_src == "true" ]] && [[ $no_change != "1" ]]; then
 
   if [[ $prev_src_ref != $new_src_ref ]]; then
     pushd src-repo
+      unset INCLUDE_PATH
       git cliff --config ../pipeline-tasks/config.toml $prev_src_ref..$new_src_ref > ../src-changes
     popd
 
