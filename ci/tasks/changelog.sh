@@ -10,6 +10,7 @@ if [[ $(cat version/version) == "0.0.0" ]]; then
   pushd repo
     git cliff --config ../pipeline-tasks/config.toml > ../changelog/changelog
   popd
+  export no_change=1 # Initial Release should block source diffing
 
 # Subsequent Releases
 else
@@ -29,6 +30,7 @@ else
     echo "Refs didn't change, changelog will be empty..."
     echo "" > changelog/changelog
   else
+    export no_change=0
     pushd repo
       git cliff --config ../pipeline-tasks/config.toml $prev_ref..$new_ref > ../changelog/changelog
     popd
