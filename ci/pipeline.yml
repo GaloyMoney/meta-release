@@ -3,6 +3,15 @@
 #@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "dealer", "web-wallet" ]
 #@ src_to_chart_override_config = { "galoy-app": "galoy" }
 
+#@ src_charts = []
+#@ for src in src_repos:
+#@   if src in src_to_chart_override_config.keys():
+#@     src_charts.append(src_to_chart_override_config[src])
+#@   else:
+#@     src_charts.append(src)
+#@   end
+#@ end
+
 #@ depl_groups = {
 #@   "galoy": ["galoy"],
 #@   "infra": ["infra"],
@@ -149,6 +158,19 @@ source:
   repository: #@ data.values.docker_registry + "/" + src_repo
 #@ end
 
+#@ chart_src_repo_name(chart):
+#@   return chart + "-repo"
+#@ end
+
+#@ chart_src_repo(chart):
+name: #@ chart_src_repo_name(chart)
+type: git
+source:
+  uri: #@ data.values.src_repo_git_uri_prefix + "/" + chart + ".git"
+  branch: #@ data.values.git_branch
+  private_key: #@ data.values.github_private_key
+#@
+
 groups:
 #@ for group in depl_groups.keys():
 - name: #@ group
@@ -191,6 +213,9 @@ jobs:
     - get: #@ cepler_resource_name(chart)
       trigger: true
     - get: #@ version_resource_name(chart)
+    #@ if chart in src_charts:
+    - get: #@ chart_src_repo_name(chart)
+    #@ end
     - get: charts-repo
     - get: charts-gh-pages-repo
     - get: pipeline-tasks
@@ -208,6 +233,10 @@ jobs:
       - name: charts-repo
         path: repo
       - name: #@ cepler_resource_name(chart)
+      #@ if chart in src_charts:
+      - name: #@ chart_src_repo_name(chart)
+        path: src-repo
+      #@ end
       outputs:
       - name: changelog
       - name: release-commitid
@@ -215,6 +244,9 @@ jobs:
         INCLUDE_PATH: #@ "charts/" + chart + "/*"
         new_git_ref_path: #@ charts_vendir_refs[chart]
         depl_name: #@ chart
+        #@ if chart in src_charts:
+        gen_src: TRUE
+        #@ end
       run:
         path: pipeline-tasks/ci/tasks/changelog.sh
 
@@ -611,6 +643,10 @@ resources:
 
 #@ for src in src_repos:
 - #@ src_repo_docker_image_resource(src)
+#@ end
+
+#@ for src in src_charts:
+- #@ chart_src_repo_name(src)
 #@ end
   
 - name: release-pipeline-image

@@ -2,13 +2,14 @@
 ---
 git_uri: git@github.com:GaloyMoney/meta-release.git
 git_branch: main
-pipeline_git_branch: main
+pipeline_git_branch: src-diff-chart-releases
 github_private_key: ((github.private_key))
 github_api_token: ((github.api_token))
 
 gh_org: GaloyMoney
 git_version_branch: versions
 stable_git_branch: stable
+src_repo_git_uri_prefix: git@github.com:GaloyMoney
 
 docker_registry: us.gcr.io/galoy-org
 docker_registry_user: ((docker-creds.username))
