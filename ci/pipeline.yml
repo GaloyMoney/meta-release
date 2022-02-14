@@ -158,18 +158,18 @@ source:
   repository: #@ data.values.docker_registry + "/" + src_repo
 #@ end
 
-#@ chart_src_repo_name(chart):
+#@ def chart_src_repo_name(chart):
 #@   return chart + "-repo"
 #@ end
 
-#@ chart_src_repo(chart):
+#@ def chart_src_repo(chart):
 name: #@ chart_src_repo_name(chart)
 type: git
 source:
   uri: #@ data.values.src_repo_git_uri_prefix + "/" + chart + ".git"
   branch: #@ data.values.git_branch
   private_key: #@ data.values.github_private_key
-#@
+#@ end
 
 groups:
 #@ for group in depl_groups.keys():
@@ -646,7 +646,7 @@ resources:
 #@ end
 
 #@ for src in src_charts:
-- #@ chart_src_repo_name(src)
+- #@ chart_src_repo(src)
 #@ end
   
 - name: release-pipeline-image

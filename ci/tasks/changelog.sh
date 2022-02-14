@@ -35,7 +35,7 @@ else
   fi
 fi
 
-if [[ $gen_src == "TRUE" ]] && [[ $no_change != "1" ]]; then
+if [[ $gen_src == "true" ]] && [[ $no_change != "1" ]]; then
   pushd repo
 
   git checkout $prev_ref
@@ -52,7 +52,7 @@ if [[ $gen_src == "TRUE" ]] && [[ $no_change != "1" ]]; then
     popd
 
 cat <<EOF >changes
-## Source Code Changes
+## Source Changes
 $(cat src-changes)
 
 ## Chart Changes
