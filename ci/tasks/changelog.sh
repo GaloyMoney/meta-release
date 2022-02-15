@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -e
 
 export new_ref=$(cat $new_git_ref_path)
 echo $new_ref > release-commitid/commitid
@@ -21,7 +21,7 @@ else
   if [[ $depl_name != 'infra' ]]; then
     export prev_ref=$(git rev-list -n 1 $depl_name-v$(cat ../version/version))
   else
-    export prev_ref=$(git rev-list -n 1 $(cat ../version/version))
+    export prev_ref=$(git rev-list -n 1 v$(cat ../version/version))
   fi
   popd
 
