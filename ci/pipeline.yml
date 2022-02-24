@@ -508,14 +508,7 @@ jobs:
     - get: #@ release_resource_name
       trigger: true
     - get: pipeline-tasks
-  - task: wait-30s
-    config:
-      platform: linux
-      image_resource: #@ task_image_config()
-      run:
-        path: sleep
-        args: [ "30" ]
-  - get: charts-repo
+    - get: charts-repo
   - task: get-versioned-image
     privileged: true
     config:
