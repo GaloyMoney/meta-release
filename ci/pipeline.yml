@@ -215,6 +215,8 @@ jobs:
     - get: #@ version_resource_name(chart)
     #@ if chart in src_charts:
     - get: #@ chart_src_repo_name(chart)
+      params:
+        fetch_tags: true
     #@ end
     - get: charts-repo
     - get: charts-gh-pages-repo
