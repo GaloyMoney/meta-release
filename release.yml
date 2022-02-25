@@ -44,8 +44,8 @@ admin_panel:
   repository: https://github.com/GaloyMoney/charts
 
 dealer:
-  release_tag: dealer-v0.1.5
-  commit: 19c55e9fd87569a30e6341a839c13d7fb8dc61ff
+  release_tag: dealer-v0.1.6
+  commit: adaf5998f9c96dc280f2f7373186dbc73ab06727
   repository: https://github.com/GaloyMoney/charts
 
 web_wallet:
