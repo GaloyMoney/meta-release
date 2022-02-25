@@ -49,6 +49,6 @@ dealer:
   repository: https://github.com/GaloyMoney/charts
 
 web_wallet:
-  release_tag: web-wallet-v0.1.9
-  commit: 33865551d9a6d017b4120f1f09b514fa705ca13c
+  release_tag: web-wallet-v0.1.10
+  commit: 1124ad1836661add046cae0f9bec210892a1b791
   repository: https://github.com/GaloyMoney/charts
