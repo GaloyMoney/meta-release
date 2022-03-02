@@ -144,20 +144,6 @@ source:
   private_key: #@ data.values.github_private_key
 #@ end
 
-#@ def src_repo_docker_image_name(src_repo):
-#@   return src_repo + "-latest-image"
-#@ end
-
-#@ def src_repo_docker_image_resource(src_repo):
-name: #@ src_repo_docker_image_name(src_repo)
-type: registry-image
-source:
-  tag: latest
-  username: #@ data.values.docker_registry_user
-  password: #@ data.values.docker_registry_password
-  repository: #@ data.values.docker_registry + "/" + src_repo
-#@ end
-
 #@ def chart_src_repo_name(chart):
 #@   return chart + "-repo"
 #@ end
@@ -182,11 +168,6 @@ groups:
 - name: update-lsc
   jobs:
   - update-lsc
-- name: docker-latest
-  jobs:
-#@ for src in src_repos:
-  - #@ "push-docker-latest-" + src
-#@ end
 - name: all
   jobs:
 #@ for depl in charts:
@@ -194,9 +175,6 @@ groups:
 #@ end
   - infra-release
   - update-lsc
-#@ for src in src_repos:
-  - #@ "push-docker-latest-" + src
-#@ end
   - build-release-pipeline-image
   - build-dcind-pipeline-image
 - name: image
@@ -498,40 +476,6 @@ jobs:
       branch: #@ data.values.git_branch
       rebase: true
 
-#@ for src in src_repos:
-#@ chart = src_to_chart_override_config[src] if src in src_to_chart_override_config.keys() else src
-#@ release_resource_name = gh_release_resource_name(chart)
-- name: #@ "push-docker-latest-" + src
-  serial: true
-  plan:
-  - in_parallel:
-    - get: #@ release_resource_name
-      trigger: true
-    - get: pipeline-tasks
-    - get: charts-repo
-  - task: get-versioned-image
-    privileged: true
-    config:
-      platform: linux
-      image_resource: #@ dcind_task_image_config()
-      inputs:
-      - name: #@ release_resource_name
-        path: charts-release
-      - name: charts-repo
-      - name: pipeline-tasks
-      outputs:
-      - name: image
-      params:
-        CHART: #@ chart
-        DOCKER_REGISTRY: #@ data.values.docker_registry
-        DOCKER_IMAGE_NAME: #@ src
-      run:
-        path: pipeline-tasks/ci/tasks/get-versioned-image.sh
-  - put: #@ src_repo_docker_image_name(src)
-    params:
-      image: image/image.tar
-#@ end
-
 - name: build-release-pipeline-image
   serial: true
   plan:
@@ -635,10 +579,6 @@ resources:
 - #@ cepler_in("infra")
 - #@ gh_release_resource("infra", data.values.infra_gh_repo)
 - #@ out_resource("infra", data.values.infra_git_uri)
-
-#@ for src in src_repos:
-- #@ src_repo_docker_image_resource(src)
-#@ end
 
 #@ for src in src_charts:
 - #@ chart_src_repo(src)
