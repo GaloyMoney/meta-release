@@ -427,7 +427,6 @@ jobs:
       repository: infra-repo
       branch: #@ stable_branch_name("infra")
       tag: gh-release/tag
-      force: true
 
   - put: #@ gh_release_resource_name("infra")
     params:
