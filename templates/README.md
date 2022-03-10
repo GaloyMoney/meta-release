@@ -30,4 +30,8 @@ Source Code diff for the releases will be added soon.
 
 - Galoy Infra: Release ${infra_release_tag} @ `${infra}` | [tree](https://github.com/GaloyMoney/galoy-infra/tree/${infra}) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/${infra_release_tag})
 
+#### Galoy Mobile
+
+- Galoy Mobile: Release ${galoy_mobile_release_tag} @ `${galoy_mobile}` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/${galoy_mobile}) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/${galoy_mobile_release_tag})
+
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) file.

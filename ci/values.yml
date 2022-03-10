@@ -26,3 +26,5 @@ charts_gh_repo: charts
 charts_git_uri: git@github.com:GaloyMoney/charts.git
 charts_git_branch: main
 charts_gh_pages_branch: gh-pages
+
+mobile_gh_repo: galoy-mobile

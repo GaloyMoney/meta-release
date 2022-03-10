@@ -448,6 +448,8 @@ jobs:
     #@ end
     - get: #@ gh_release_resource_name("infra")
       trigger: true
+    - get: #@ gh_release_resource_name("galoy-mobile")
+      trigger: true
     - get: meta-release
     - get: pipeline-tasks
 
@@ -462,6 +464,8 @@ jobs:
       #@ end
       - name: #@ gh_release_resource_name("infra")
         path: infra
+      - name: #@ gh_release_resource_name("galoy-mobile")
+        path: galoy-mobile
       - name: pipeline-tasks
       - name: meta-release
       outputs:
@@ -578,6 +582,8 @@ resources:
 - #@ cepler_in("infra")
 - #@ gh_release_resource("infra", data.values.infra_gh_repo)
 - #@ out_resource("infra", data.values.infra_git_uri)
+
+- #@ gh_release_resource("galoy-mobile", data.values.mobile_gh_repo)
 
 #@ for src in src_charts:
 - #@ chart_src_repo(src)
