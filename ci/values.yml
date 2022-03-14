@@ -21,6 +21,7 @@ deployments_git_branch: main
 infra_gh_repo: galoy-infra
 infra_git_uri: git@github.com:GaloyMoney/galoy-infra.git
 infra_git_branch: main
+infra_git_version_branch: version
 
 charts_gh_repo: charts
 charts_git_uri: git@github.com:GaloyMoney/charts.git
