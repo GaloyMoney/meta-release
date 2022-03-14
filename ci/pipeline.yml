@@ -107,6 +107,18 @@ source:
   private_key: #@ data.values.github_private_key
 #@ end
 
+#@ def infra_version_resource():
+name: #@ version_resource_name("infra")
+type: semver
+source:
+  initial_version: 0.0.0
+  driver: git
+  file: version
+  uri: #@ data.values.infra_git_uri
+  branch: #@ data.values.infra_git_version_branch
+  private_key: #@ data.values.github_private_key
+#@ end
+
 #@ def gh_release_resource_name(deployment):
 #@   return "gh-release-" + deployment
 #@ end
@@ -578,7 +590,7 @@ resources:
     branch: #@ data.values.infra_git_branch
     private_key: #@ data.values.github_private_key
 
-- #@ version_resource("infra")
+- #@ infra_version_resource()
 - #@ cepler_in("infra")
 - #@ gh_release_resource("infra", data.values.infra_gh_repo)
 - #@ out_resource("infra", data.values.infra_git_uri)
