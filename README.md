@@ -9,7 +9,7 @@ The components we provide have been grouped into the following lifecycles, using
 Source Code diff for the releases will be added soon.
 
 #### Galoy Charts
-- Galoy: Release galoy-v0.2.45 @ `5e94d0020269d3b0c82fa3f465e85cc096f82baf` | [tree](https://github.com/GaloyMoney/charts/tree/5e94d0020269d3b0c82fa3f465e85cc096f82baf/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.2.45)
+- Galoy: Release galoy-v0.2.46 @ `20b85555ba3d95899e9cd622965a4f92d90945de` | [tree](https://github.com/GaloyMoney/charts/tree/20b85555ba3d95899e9cd622965a4f92d90945de/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.2.46)
 
 #### Bitcoin Charts
 - Bitcoind: Release bitcoind-v0.1.2 @ `2435b80d57b26934447d9c6e133d97e93f2ee56d` | [tree](https://github.com/GaloyMoney/charts/tree/2435b80d57b26934447d9c6e133d97e93f2ee56d/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.1.2)
