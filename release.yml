@@ -4,8 +4,8 @@ infra:
   repository: https://github.com/GaloyMoney/galoy-infra
 
 galoy:
-  release_tag: galoy-v0.2.49
-  commit: f70a8ff6aeb57951b3e6475d4446aae97a69be5e
+  release_tag: galoy-v0.2.50
+  commit: ae1ad794563f741e85e368dab9c1bcd82a526856
   repository: https://github.com/GaloyMoney/charts
 
 bitcoind:
@@ -20,7 +20,7 @@ lnd:
 
 rtl:
   release_tag: rtl-v0.1.1
-  commit: f2c209b06f2b64b8df4a2299237e3df70eb9d0ad
+  commit: a66fd8b55703e216f07268935c44d10e9ca6a58b
   repository: https://github.com/GaloyMoney/charts
 
 specter:
