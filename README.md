@@ -14,7 +14,7 @@ Source Code diff for the releases will be added soon.
 #### Bitcoin Charts
 - Bitcoind: Release bitcoind-v0.1.2 @ `2435b80d57b26934447d9c6e133d97e93f2ee56d` | [tree](https://github.com/GaloyMoney/charts/tree/2435b80d57b26934447d9c6e133d97e93f2ee56d/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.1.2)
 - LND: Release lnd-v0.2.5 @ `8356df608aa07084e72ef3e7af5a21c036deef81` | [tree](https://github.com/GaloyMoney/charts/tree/8356df608aa07084e72ef3e7af5a21c036deef81/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.2.5)
-- RTL: Release rtl-v0.1.1 @ `a66fd8b55703e216f07268935c44d10e9ca6a58b` | [tree](https://github.com/GaloyMoney/charts/tree/a66fd8b55703e216f07268935c44d10e9ca6a58b/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.1)
+- RTL: Release rtl-v0.1.2 @ `d7e12971f830ec406365dd4ab9f170e11c523b1d` | [tree](https://github.com/GaloyMoney/charts/tree/d7e12971f830ec406365dd4ab9f170e11c523b1d/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.2)
 - Specter: Release specter-v0.1.1 @ `b41aaff193eb70adb0245348561d6cccb172b4c3` | [tree](https://github.com/GaloyMoney/charts/tree/b41aaff193eb70adb0245348561d6cccb172b4c3/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.1.1)
 
 #### Monitoring Charts
