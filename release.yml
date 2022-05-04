@@ -14,8 +14,8 @@ bitcoind:
   repository: https://github.com/GaloyMoney/charts
 
 lnd:
-  release_tag: lnd-v0.2.7
-  commit: caff0bdcfee0682713b007629df0e4a49ba70f4c
+  release_tag: lnd-v0.2.8
+  commit: d592552fac06febea96b16d545655840ef3d4442
   repository: https://github.com/GaloyMoney/charts
 
 rtl:
