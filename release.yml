@@ -55,5 +55,5 @@ web_wallet:
 
 galoy_mobile:
   release_tag: 1.7.8
-  commit: 95c0c583d2f28b85dfc530e8a4a35fe46a46530c
+  commit: f04aee19d6c82d365f9cbc8ed90906e736a4759b
   repository: https://github.com/GaloyMoney/galoy-mobile
