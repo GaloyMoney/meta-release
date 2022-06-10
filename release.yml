@@ -4,8 +4,8 @@ infra:
   repository: https://github.com/GaloyMoney/galoy-infra
 
 galoy:
-  release_tag: galoy-v0.2.82
-  commit: 96a0c84188f99962058e5201e6e94434f4dac612
+  release_tag: galoy-v0.2.83
+  commit: ae16df3ff0cbf090336be98dfd607ab87f25c31c
   repository: https://github.com/GaloyMoney/charts
 
 bitcoind:
