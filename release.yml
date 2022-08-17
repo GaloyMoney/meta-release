@@ -29,8 +29,8 @@ specter:
   repository: https://github.com/GaloyMoney/charts
 
 monitoring:
-  release_tag: monitoring-v0.1.10
-  commit: c4653427c9f879f01e4cb7237a0d4755a9f27a20
+  release_tag: monitoring-v0.1.11
+  commit: 8d70a15fc108f8fdf41813b78f653b7ed10f0e52
   repository: https://github.com/GaloyMoney/charts
 
 galoy_pay:
