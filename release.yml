@@ -33,6 +33,11 @@ monitoring:
   commit: 8d70a15fc108f8fdf41813b78f653b7ed10f0e52
   repository: https://github.com/GaloyMoney/charts
 
+stablesats:
+  release_tag: 
+  commit: 
+  repository: https://github.com/GaloyMoney/charts
+
 galoy_pay:
   release_tag: galoy-pay-v0.1.4
   commit: 1da15731090dfd6e78575f2084fe8a5b0f296b23
