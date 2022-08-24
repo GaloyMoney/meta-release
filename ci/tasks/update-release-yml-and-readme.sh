@@ -6,6 +6,10 @@ set -eu
 export galoy=$(cat galoy/commit_sha)
 export galoy_release_tag=$(cat galoy/tag)
 
+# Stablesats
+export stablesats=$(cat stablesats/commit_sha)
+export stablesats_release_tag=$(cat stablesats/tag)
+
 # Infra
 export infra=$(cat infra/commit_sha)
 export infra_release_tag=$(cat infra/tag)
