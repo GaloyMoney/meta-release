@@ -33,6 +33,11 @@ monitoring:
   commit: ${monitoring}
   repository: https://github.com/GaloyMoney/charts
 
+stablesats:
+  release_tag: ${stablesats_release_tag}
+  commit: ${stablesats}
+  repository: https://github.com/GaloyMoney/charts
+
 galoy_pay:
   release_tag: ${galoy_pay_release_tag}
   commit: ${galoy_pay}

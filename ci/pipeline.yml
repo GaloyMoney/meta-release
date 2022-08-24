@@ -1,7 +1,8 @@
 #@ load("@ytt:data", "data")
 
-#@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "dealer", "web-wallet" ]
-#@ src_to_chart_override_config = { "galoy-app": "galoy" }
+#@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "dealer", "web-wallet", "stablesats-rs" ]
+#@ src_to_chart_override_config = { "galoy-app": "galoy", "stablesats-rs": "stablesats" }
+#@ chart_to_repo_override_config = { "stablesats": "stablesats-rs" }
 
 #@ src_charts = []
 #@ for src in src_repos:
@@ -18,6 +19,7 @@
 #@   "bitcoin": ["bitcoind", "lnd", "rtl", "specter"],
 #@   "monitoring": ["monitoring"],
 #@   "addons": ["admin-panel", "galoy-pay", "dealer", "web-wallet"],
+#@   "stablesats": ["stablesats"]
 #@ }
 
 #@ charts_vendir_refs = {
@@ -30,7 +32,8 @@
 #@   "admin-panel": "admin-panel-in/modules/services/addons/vendor/admin-panel/git-ref/ref",
 #@   "galoy-pay": "galoy-pay-in/modules/services/addons/vendor/galoy-pay/git-ref/ref",
 #@   "dealer": "dealer-in/modules/services/addons/vendor/dealer/git-ref/ref",
-#@   "web-wallet": "web-wallet-in/modules/services/addons/vendor/web-wallet/git-ref/ref"
+#@   "web-wallet": "web-wallet-in/modules/services/addons/vendor/web-wallet/git-ref/ref",
+#@   "stablesats": "stablesats-in/modules/services/stablesats/vendor/stablesats/git-ref/ref"
 #@ }
 
 #@ override_config = {
@@ -158,6 +161,14 @@ source:
 
 #@ def chart_src_repo_name(chart):
 #@   return chart + "-repo"
+#@ end
+
+#@ def chart_src_git_repo_uri(chart):
+#@   if chart in chart_to_repo_override_config.keys():
+#@     return data.values.src_repo_git_uri_prefix + "/" + chart_to_repo_override_config[chart] + ".git"
+#@   else:
+#@     return data.values.src_repo_git_uri_prefix + "/" + chart + ".git"
+#@   end
 #@ end
 
 #@ def chart_src_repo(chart):
