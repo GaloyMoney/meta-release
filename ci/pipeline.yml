@@ -175,7 +175,7 @@ source:
 name: #@ chart_src_repo_name(chart)
 type: git
 source:
-  uri: #@ data.values.src_repo_git_uri_prefix + "/" + chart + ".git"
+  uri: #@ chart_src_git_repo_uri(chart)
   branch: #@ data.values.git_branch
   private_key: #@ data.values.github_private_key
 #@ end
