@@ -19,8 +19,8 @@ lnd:
   repository: https://github.com/GaloyMoney/charts
 
 rtl:
-  release_tag: rtl-v0.1.3
-  commit: 08539bbd1deaa6d9d052e8ab52524c7aebe51c54
+  release_tag: rtl-v0.1.4
+  commit: 5ec3d6564f4b16ac42301909def030402b470207
   repository: https://github.com/GaloyMoney/charts
 
 specter:
