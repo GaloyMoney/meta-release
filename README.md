@@ -12,7 +12,7 @@ Source Code diff for the releases will be added soon.
 - Galoy: Release galoy-v0.4.40 @ `da029b087bcad50f54ba4d9dc1a28e71d0d6e81a` | [tree](https://github.com/GaloyMoney/charts/tree/da029b087bcad50f54ba4d9dc1a28e71d0d6e81a/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.4.40)
 
 #### Stablesats Chart
-- Stablesats: Release stablesats-v0.2.0 @ `9d9597ac200b13314e6d3d02b0df9f67adb49134` | [tree](https://github.com/GaloyMoney/charts/tree/9d9597ac200b13314e6d3d02b0df9f67adb49134/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.2.0)
+- Stablesats: Release stablesats-v0.3.0 @ `adaefe80bedf49770fc474cd37cc1e1434490706` | [tree](https://github.com/GaloyMoney/charts/tree/adaefe80bedf49770fc474cd37cc1e1434490706/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.3.0)
 
 #### Bitcoin Charts
 - Bitcoind: Release bitcoind-v0.2.2 @ `9b74f8aef990aba61810c29595f3d29a60ad1964` | [tree](https://github.com/GaloyMoney/charts/tree/9b74f8aef990aba61810c29595f3d29a60ad1964/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.2.2)
