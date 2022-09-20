@@ -46,9 +46,10 @@ export galoy_mobile_release_tag=$(cat galoy-mobile/tag)
 
 envsubst < meta-release/templates/README.md > meta-release/README.md
 envsubst < meta-release/templates/release.yml > meta-release/release.yml
+envsubst < meta-release/templates/release.json > meta-release/release.json
 
 pushd meta-release
-  git add README.md release.yml
+  git add README.md release.yml release.json
   git status
 
   # Only commit if there are uncommitted staged files
@@ -62,7 +63,11 @@ echo "------------------------------------------"
 cat meta-release/README.md
 echo "------------------------------------------"
 echo ""
-echo "RELEASE:"
+echo "RELEASE YAML:"
 echo "------------------------------------------"
 cat meta-release/release.yml
+echo "------------------------------------------"
+echo "RELEASE JSON:"
+echo "------------------------------------------"
+cat meta-release/release.json
 echo "------------------------------------------"

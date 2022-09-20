@@ -1,0 +1,67 @@
+{
+  "infra": {
+    "release_tag": "${infra_release_tag}",
+    "commit": "${infra}",
+    "repository": "https://github.com/GaloyMoney/galoy-infra"
+  },
+  "galoy": {
+    "release_tag": "${galoy_release_tag}",
+    "commit": "${galoy}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "bitcoind": {
+    "release_tag": "${bitcoind_release_tag}",
+    "commit": "${bitcoind}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "lnd": {
+    "release_tag": "${lnd_release_tag}",
+    "commit": "${lnd}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "rtl": {
+    "release_tag": "${rtl_release_tag}",
+    "commit": "${rtl}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "specter": {
+    "release_tag": "${specter_release_tag}",
+    "commit": "${specter}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "monitoring": {
+    "release_tag": "${monitoring_release_tag}",
+    "commit": "${monitoring}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "stablesats": {
+    "release_tag": "${stablesats_release_tag}",
+    "commit": "${stablesats}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "galoy_pay": {
+    "release_tag": "${galoy_pay_release_tag}",
+    "commit": "${galoy_pay}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "admin_panel": {
+    "release_tag": "${admin_panel_release_tag}",
+    "commit": "${admin_panel}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "dealer": {
+    "release_tag": "${dealer_release_tag}",
+    "commit": "${dealer}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "web_wallet": {
+    "release_tag": "${web_wallet_release_tag}",
+    "commit": "${web_wallet}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "galoy_mobile": {
+    "release_tag": "${galoy_mobile_release_tag}",
+    "commit": "${galoy_mobile}",
+    "repository": "https://github.com/GaloyMoney/galoy-mobile"
+  }
+}
