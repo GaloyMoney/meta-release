@@ -37,4 +37,48 @@ Source Code diff for the releases will be added soon.
 
 - Galoy Mobile: Release ${galoy_mobile_release_tag} @ `${galoy_mobile}` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/${galoy_mobile}) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/${galoy_mobile_release_tag})
 
-If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.
+### Scripting
+
+If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.  
+  
+Here is an example of how such a script could look:  
+```shell
+#!/bin/sh
+#Define which releases we want to download
+releases="bitcoind specter lnd rtl galoy web_wallet galoy_pay"
+
+#Create file if it does not exist, if empty all releases are downloaded
+test -f release.json || touch release.json
+
+#Rename old release file
+mv release.json release_old.json
+
+#Download latest release json
+curl -s -Lo release.json https://raw.githubusercontent.com/GaloyMoney/meta-release/main/release.json
+
+#Main loop for comparing and fetching
+for release in $releases; do
+    #Extract tags from json
+    tagnew=$(jq -r --arg release "$release" 'to_entries[] | select(.key == $release).value.release_tag' release.json)
+    tagold=$(jq -r --arg release "$release" 'to_entries[] | select(.key == $release).value.release_tag' release_old.json)
+
+    if [ "$tagnew" = "$tagold" ]; then
+        echo "$release is up to date: $tagnew"
+    else
+        echo "updating $release from $tagold to $tagnew"
+
+        #Adjust archive name if they are using "-v" in the tag
+        archive=$(echo "$tagnew.tgz" | sed -e "s/-v/-/g")
+        repository=$(jq -r --arg release "$release" 'to_entries[] | select(.key == $release).value.repository' release.json)
+
+        #Download the archive
+        echo "Downloading $repository/releases/download/$tagnew/$archive"
+        curl -s -Lo $archive "$repository/releases/download/$tagnew/$archive"
+
+        #Create target directory if not existing
+        mkdir -p charts
+        tar -xf $archive -C "charts/" --overwrite
+        rm $archive
+    fi
+done
+```
