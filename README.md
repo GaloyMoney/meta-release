@@ -27,7 +27,7 @@ Source Code diff for the releases will be added soon.
 - Galoy Pay: Release galoy-pay-v0.2.1 @ `122c4dae267f2c40f82811587ffacd74892b1d41` | [tree](https://github.com/GaloyMoney/charts/tree/122c4dae267f2c40f82811587ffacd74892b1d41/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.2.1)
 - Admin Panel: Release admin-panel-v0.1.12 @ `bf773b1083d25e25e4fbdb24c19235f6fc0095b2` | [tree](https://github.com/GaloyMoney/charts/tree/bf773b1083d25e25e4fbdb24c19235f6fc0095b2/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.1.12)
 - Dealer: Release dealer-v0.1.24 @ `e9fc73570ae7b6c6cade34753318ee217b730fc7` | [tree](https://github.com/GaloyMoney/charts/tree/e9fc73570ae7b6c6cade34753318ee217b730fc7/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/dealer-v0.1.24)
-- Web Wallet: Release web-wallet-v0.1.33 @ `2c49883a59f3bac2ab526096d2658796e2befc68` | [tree](https://github.com/GaloyMoney/charts/tree/2c49883a59f3bac2ab526096d2658796e2befc68/charts/web_wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/web-wallet-v0.1.33)
+- Web Wallet: Release web-wallet-v0.1.34 @ `89f17386b067cd367635a9a8e751e30a077e5428` | [tree](https://github.com/GaloyMoney/charts/tree/89f17386b067cd367635a9a8e751e30a077e5428/charts/web_wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/web-wallet-v0.1.34)
 
 #### Infra
 
@@ -37,4 +37,4 @@ Source Code diff for the releases will be added soon.
 
 - Galoy Mobile: Release 2.0.39 @ `abeb09ac2bdc8ce5e79672ef272e755127456a38` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/abeb09ac2bdc8ce5e79672ef272e755127456a38) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/2.0.39)
 
-If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) file.
+If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.

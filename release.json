@@ -1,1 +1,67 @@
-{"admin_panel":{"commit":"bf773b1083d25e25e4fbdb24c19235f6fc0095b2","release_tag":"admin-panel-v0.1.12","repository":"https://github.com/GaloyMoney/charts"},"bitcoind":{"commit":"9b74f8aef990aba61810c29595f3d29a60ad1964","release_tag":"bitcoind-v0.2.2","repository":"https://github.com/GaloyMoney/charts"},"dealer":{"commit":"e9fc73570ae7b6c6cade34753318ee217b730fc7","release_tag":"dealer-v0.1.24","repository":"https://github.com/GaloyMoney/charts"},"galoy":{"commit":"b9e89b8117a63169a96d3e58f96b01d7fea196da","release_tag":"galoy-v0.5.0","repository":"https://github.com/GaloyMoney/charts"},"galoy_mobile":{"commit":"5b6dc0e04abc937dbf1437065dcd30f5e348e88b","release_tag":"2.0.34","repository":"https://github.com/GaloyMoney/galoy-mobile"},"galoy_pay":{"commit":"122c4dae267f2c40f82811587ffacd74892b1d41","release_tag":"galoy-pay-v0.2.1","repository":"https://github.com/GaloyMoney/charts"},"infra":{"commit":"86b09069b8c95c5021eddba1acdc70af7794aa63","release_tag":"v0.4.1","repository":"https://github.com/GaloyMoney/galoy-infra"},"lnd":{"commit":"ceefa339d91dc7b0735aa3a4e8a362425fba414a","release_tag":"lnd-v0.3.0","repository":"https://github.com/GaloyMoney/charts"},"monitoring":{"commit":"32adb5e93840df793ad60092421541adf3522086","release_tag":"monitoring-v0.1.15","repository":"https://github.com/GaloyMoney/charts"},"rtl":{"commit":"5ec3d6564f4b16ac42301909def030402b470207","release_tag":"rtl-v0.1.4","repository":"https://github.com/GaloyMoney/charts"},"specter":{"commit":"b41aaff193eb70adb0245348561d6cccb172b4c3","release_tag":"specter-v0.1.1","repository":"https://github.com/GaloyMoney/charts"},"stablesats":{"commit":"882f5a3d8b6b72f122389601fef2e2aecebddc61","release_tag":"stablesats-v0.3.1","repository":"https://github.com/GaloyMoney/charts"},"web_wallet":{"commit":"2c49883a59f3bac2ab526096d2658796e2befc68","release_tag":"web-wallet-v0.1.33","repository":"https://github.com/GaloyMoney/charts"}}
+{
+  "infra": {
+    "release_tag": "v0.4.2",
+    "commit": "a10c6f1fe6c0a75683bfca2cb360fef619343298",
+    "repository": "https://github.com/GaloyMoney/galoy-infra"
+  },
+  "galoy": {
+    "release_tag": "galoy-v0.5.2",
+    "commit": "7efde9737b8a212885982411b31906b462397033",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "bitcoind": {
+    "release_tag": "bitcoind-v0.2.2",
+    "commit": "9b74f8aef990aba61810c29595f3d29a60ad1964",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "lnd": {
+    "release_tag": "lnd-v0.3.0",
+    "commit": "ceefa339d91dc7b0735aa3a4e8a362425fba414a",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "rtl": {
+    "release_tag": "rtl-v0.1.5",
+    "commit": "87fec5c0e483ac709e049b047765b56b0f0fecdf",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "specter": {
+    "release_tag": "specter-v0.1.1",
+    "commit": "b41aaff193eb70adb0245348561d6cccb172b4c3",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "monitoring": {
+    "release_tag": "monitoring-v0.1.16",
+    "commit": "d42d283239a224bdf33c0c0b29a3db2419b957de",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "stablesats": {
+    "release_tag": "stablesats-v0.3.3",
+    "commit": "c7fb57c152a955852b11b9c0910b8e193f6a1782",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "galoy_pay": {
+    "release_tag": "galoy-pay-v0.2.1",
+    "commit": "122c4dae267f2c40f82811587ffacd74892b1d41",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "admin_panel": {
+    "release_tag": "admin-panel-v0.1.12",
+    "commit": "bf773b1083d25e25e4fbdb24c19235f6fc0095b2",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "dealer": {
+    "release_tag": "dealer-v0.1.24",
+    "commit": "e9fc73570ae7b6c6cade34753318ee217b730fc7",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "web_wallet": {
+    "release_tag": "web-wallet-v0.1.34",
+    "commit": "89f17386b067cd367635a9a8e751e30a077e5428",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
+  "galoy_mobile": {
+    "release_tag": "2.0.39",
+    "commit": "abeb09ac2bdc8ce5e79672ef272e755127456a38",
+    "repository": "https://github.com/GaloyMoney/galoy-mobile"
+  }
+}
