@@ -15,7 +15,7 @@ Source Code diff for the releases will be added soon.
 - Stablesats: Release stablesats-v0.3.5 @ `43e8148e99f0875527428a758e0ab2600d66e039` | [tree](https://github.com/GaloyMoney/charts/tree/43e8148e99f0875527428a758e0ab2600d66e039/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.3.5)
 
 #### Bitcoin Charts
-- Bitcoind: Release bitcoind-v0.2.3 @ `2371def4ef3fe46be1b84515fc3e09a5704c86bb` | [tree](https://github.com/GaloyMoney/charts/tree/2371def4ef3fe46be1b84515fc3e09a5704c86bb/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.2.3)
+- Bitcoind: Release bitcoind-v0.2.3 @ `5ae4c7f4ca59b46d21a846d66ba5061ff42eb428` | [tree](https://github.com/GaloyMoney/charts/tree/5ae4c7f4ca59b46d21a846d66ba5061ff42eb428/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.2.3)
 - LND: Release lnd-v0.3.1 @ `55bb1abd14fe4e856e79990cec06df77be96ca88` | [tree](https://github.com/GaloyMoney/charts/tree/55bb1abd14fe4e856e79990cec06df77be96ca88/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.3.1)
 - RTL: Release rtl-v0.1.5 @ `87fec5c0e483ac709e049b047765b56b0f0fecdf` | [tree](https://github.com/GaloyMoney/charts/tree/87fec5c0e483ac709e049b047765b56b0f0fecdf/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.5)
 - Specter: Release specter-v0.1.1 @ `b41aaff193eb70adb0245348561d6cccb172b4c3` | [tree](https://github.com/GaloyMoney/charts/tree/b41aaff193eb70adb0245348561d6cccb172b4c3/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.1.1)
@@ -35,6 +35,6 @@ Source Code diff for the releases will be added soon.
 
 #### Galoy Mobile
 
-- Galoy Mobile: Release 2.0.40 @ `8123c03a2942f354f0f26fbd976ac4bf13b7a28c` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/8123c03a2942f354f0f26fbd976ac4bf13b7a28c) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/2.0.40)
+- Galoy Mobile: Release 2.0.41 @ `85b0912d9864cb129079bb73480d16c9a4673aed` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/85b0912d9864cb129079bb73480d16c9a4673aed) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/2.0.41)
 
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.
