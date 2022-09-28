@@ -11,7 +11,7 @@
   },
   "bitcoind": {
     "release_tag": "bitcoind-v0.2.3",
-    "commit": "2371def4ef3fe46be1b84515fc3e09a5704c86bb",
+    "commit": "5ae4c7f4ca59b46d21a846d66ba5061ff42eb428",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "lnd": {
@@ -35,8 +35,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "stablesats": {
-    "release_tag": "stablesats-v0.3.6",
-    "commit": "998e15b6a454bdcf71dd89114a92b6be6ee2c37a",
+    "release_tag": "stablesats-v0.3.7",
+    "commit": "687dabc2c8bd0f4f53c8ab706e8730e831c3e578",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_pay": {
