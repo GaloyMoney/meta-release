@@ -10,7 +10,7 @@ galoy:
 
 bitcoind:
   release_tag: bitcoind-v0.2.3
-  commit: 5ae4c7f4ca59b46d21a846d66ba5061ff42eb428
+  commit: 2371def4ef3fe46be1b84515fc3e09a5704c86bb
   repository: https://github.com/GaloyMoney/charts
 
 lnd:
@@ -49,8 +49,8 @@ admin_panel:
   repository: https://github.com/GaloyMoney/charts
 
 dealer:
-  release_tag: dealer-v0.1.24
-  commit: e9fc73570ae7b6c6cade34753318ee217b730fc7
+  release_tag: dealer-v0.1.25
+  commit: 32aeb0b9e94bc36aca4d96fe52553efbc6fe5651
   repository: https://github.com/GaloyMoney/charts
 
 web_wallet:
