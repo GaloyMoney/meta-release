@@ -12,10 +12,10 @@ Source Code diff for the releases will be added soon.
 - Galoy: Release galoy-v0.5.15 @ `74e5a542095eb6630e9c6af04e0fee2d3a5e3b25` | [tree](https://github.com/GaloyMoney/charts/tree/74e5a542095eb6630e9c6af04e0fee2d3a5e3b25/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.5.15)
 
 #### Stablesats Chart
-- Stablesats: Release stablesats-v0.3.8 @ `507e39c3bbe8302aa43eb7409eb2c4673bf123ff` | [tree](https://github.com/GaloyMoney/charts/tree/507e39c3bbe8302aa43eb7409eb2c4673bf123ff/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.3.8)
+- Stablesats: Release stablesats-v0.3.9 @ `594f537861fcb7a66cd55215a7e477a4b79c245e` | [tree](https://github.com/GaloyMoney/charts/tree/594f537861fcb7a66cd55215a7e477a4b79c245e/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.3.9)
 
 #### Bitcoin Charts
-- Bitcoind: Release bitcoind-v0.2.3 @ `5ae4c7f4ca59b46d21a846d66ba5061ff42eb428` | [tree](https://github.com/GaloyMoney/charts/tree/5ae4c7f4ca59b46d21a846d66ba5061ff42eb428/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.2.3)
+- Bitcoind: Release bitcoind-v0.2.3 @ `2371def4ef3fe46be1b84515fc3e09a5704c86bb` | [tree](https://github.com/GaloyMoney/charts/tree/2371def4ef3fe46be1b84515fc3e09a5704c86bb/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.2.3)
 - LND: Release lnd-v0.3.1 @ `55bb1abd14fe4e856e79990cec06df77be96ca88` | [tree](https://github.com/GaloyMoney/charts/tree/55bb1abd14fe4e856e79990cec06df77be96ca88/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.3.1)
 - RTL: Release rtl-v0.1.5 @ `87fec5c0e483ac709e049b047765b56b0f0fecdf` | [tree](https://github.com/GaloyMoney/charts/tree/87fec5c0e483ac709e049b047765b56b0f0fecdf/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.5)
 - Specter: Release specter-v0.1.1 @ `b41aaff193eb70adb0245348561d6cccb172b4c3` | [tree](https://github.com/GaloyMoney/charts/tree/b41aaff193eb70adb0245348561d6cccb172b4c3/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.1.1)

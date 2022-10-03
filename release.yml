@@ -10,7 +10,7 @@ galoy:
 
 bitcoind:
   release_tag: bitcoind-v0.2.3
-  commit: 5ae4c7f4ca59b46d21a846d66ba5061ff42eb428
+  commit: 2371def4ef3fe46be1b84515fc3e09a5704c86bb
   repository: https://github.com/GaloyMoney/charts
 
 lnd:
@@ -34,8 +34,8 @@ monitoring:
   repository: https://github.com/GaloyMoney/charts
 
 stablesats:
-  release_tag: stablesats-v0.3.8
-  commit: 507e39c3bbe8302aa43eb7409eb2c4673bf123ff
+  release_tag: stablesats-v0.3.9
+  commit: 594f537861fcb7a66cd55215a7e477a4b79c245e
   repository: https://github.com/GaloyMoney/charts
 
 galoy_pay:
