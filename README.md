@@ -15,7 +15,7 @@ Source Code diff for the releases will be added soon.
 - Stablesats: Release stablesats-v0.3.8 @ `507e39c3bbe8302aa43eb7409eb2c4673bf123ff` | [tree](https://github.com/GaloyMoney/charts/tree/507e39c3bbe8302aa43eb7409eb2c4673bf123ff/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.3.8)
 
 #### Bitcoin Charts
-- Bitcoind: Release bitcoind-v0.2.3 @ `2371def4ef3fe46be1b84515fc3e09a5704c86bb` | [tree](https://github.com/GaloyMoney/charts/tree/2371def4ef3fe46be1b84515fc3e09a5704c86bb/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.2.3)
+- Bitcoind: Release bitcoind-v0.2.3 @ `5ae4c7f4ca59b46d21a846d66ba5061ff42eb428` | [tree](https://github.com/GaloyMoney/charts/tree/5ae4c7f4ca59b46d21a846d66ba5061ff42eb428/charts/bitcoind) | [release](https://github.com/GaloyMoney/charts/releases/tag/bitcoind-v0.2.3)
 - LND: Release lnd-v0.3.1 @ `55bb1abd14fe4e856e79990cec06df77be96ca88` | [tree](https://github.com/GaloyMoney/charts/tree/55bb1abd14fe4e856e79990cec06df77be96ca88/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.3.1)
 - RTL: Release rtl-v0.1.5 @ `87fec5c0e483ac709e049b047765b56b0f0fecdf` | [tree](https://github.com/GaloyMoney/charts/tree/87fec5c0e483ac709e049b047765b56b0f0fecdf/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.5)
 - Specter: Release specter-v0.1.1 @ `b41aaff193eb70adb0245348561d6cccb172b4c3` | [tree](https://github.com/GaloyMoney/charts/tree/b41aaff193eb70adb0245348561d6cccb172b4c3/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.1.1)
@@ -31,7 +31,7 @@ Source Code diff for the releases will be added soon.
 
 #### Infra
 
-- Galoy Infra: Release v0.5.1 @ `a2a7e97d9d309d287c803e8ef593bb427a5cb9f2` | [tree](https://github.com/GaloyMoney/galoy-infra/tree/a2a7e97d9d309d287c803e8ef593bb427a5cb9f2) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/v0.5.1)
+- Galoy Infra: Release v0.5.2 @ `039b8e552c4538ec69dc79901f36969b1bfdbf3a` | [tree](https://github.com/GaloyMoney/galoy-infra/tree/039b8e552c4538ec69dc79901f36969b1bfdbf3a) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/v0.5.2)
 
 #### Galoy Mobile
 
