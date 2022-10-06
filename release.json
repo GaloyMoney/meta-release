@@ -46,7 +46,7 @@
   },
   "admin_panel": {
     "release_tag": "admin-panel-v0.1.12",
-    "commit": "bf773b1083d25e25e4fbdb24c19235f6fc0095b2",
+    "commit": "799b2a5b9d995fc38abf832277731ad95cc87f20",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "dealer": {
@@ -60,8 +60,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_mobile": {
-    "release_tag": "2.0.47",
-    "commit": "711b7d4f150e457c6a761499f686d2d5a91b372b",
+    "release_tag": "2.0.48",
+    "commit": "0430ad4a2bed946f76f791a5ed5b045d2b9dedb0",
     "repository": "https://github.com/GaloyMoney/galoy-mobile"
   }
 }

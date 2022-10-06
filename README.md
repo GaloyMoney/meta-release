@@ -25,7 +25,7 @@ Source Code diff for the releases will be added soon.
 
 #### Addons Charts
 - Galoy Pay: Release galoy-pay-v0.2.2 @ `40cff4dfbd55f0522db7dbcc0ef8ae5351c9d65a` | [tree](https://github.com/GaloyMoney/charts/tree/40cff4dfbd55f0522db7dbcc0ef8ae5351c9d65a/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.2.2)
-- Admin Panel: Release admin-panel-v0.1.12 @ `bf773b1083d25e25e4fbdb24c19235f6fc0095b2` | [tree](https://github.com/GaloyMoney/charts/tree/bf773b1083d25e25e4fbdb24c19235f6fc0095b2/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.1.12)
+- Admin Panel: Release admin-panel-v0.1.12 @ `799b2a5b9d995fc38abf832277731ad95cc87f20` | [tree](https://github.com/GaloyMoney/charts/tree/799b2a5b9d995fc38abf832277731ad95cc87f20/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.1.12)
 - Dealer: Release dealer-v0.1.25 @ `32aeb0b9e94bc36aca4d96fe52553efbc6fe5651` | [tree](https://github.com/GaloyMoney/charts/tree/32aeb0b9e94bc36aca4d96fe52553efbc6fe5651/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/dealer-v0.1.25)
 - Web Wallet: Release web-wallet-v0.1.35 @ `3229dbc45f195f5a7e45d07484f9e0d01c0fc761` | [tree](https://github.com/GaloyMoney/charts/tree/3229dbc45f195f5a7e45d07484f9e0d01c0fc761/charts/web_wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/web-wallet-v0.1.35)
 
@@ -35,6 +35,6 @@ Source Code diff for the releases will be added soon.
 
 #### Galoy Mobile
 
-- Galoy Mobile: Release 2.0.47 @ `711b7d4f150e457c6a761499f686d2d5a91b372b` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/711b7d4f150e457c6a761499f686d2d5a91b372b) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/2.0.47)
+- Galoy Mobile: Release 2.0.48 @ `0430ad4a2bed946f76f791a5ed5b045d2b9dedb0` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/0430ad4a2bed946f76f791a5ed5b045d2b9dedb0) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/2.0.48)
 
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.
