@@ -35,6 +35,6 @@ Source Code diff for the releases will be added soon.
 
 #### Galoy Mobile
 
-- Galoy Mobile: Release 2.0.48 @ `0430ad4a2bed946f76f791a5ed5b045d2b9dedb0` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/0430ad4a2bed946f76f791a5ed5b045d2b9dedb0) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/2.0.48)
+- Galoy Mobile: Release 2.0.49 @ `6ee30243917a8a732659ea15d7da7b3a658a847e` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/6ee30243917a8a732659ea15d7da7b3a658a847e) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/2.0.49)
 
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.
