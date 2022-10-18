@@ -31,7 +31,7 @@ Source Code diff for the releases will be added soon.
 
 #### Infra
 
-- Galoy Infra: Release v0.6.0 @ `40d82ef81caa97a1e5e64c1fd6f4d722a71dfad3` | [tree](https://github.com/GaloyMoney/galoy-infra/tree/40d82ef81caa97a1e5e64c1fd6f4d722a71dfad3) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/v0.6.0)
+- Galoy Infra: Release v0.7.0 @ `0be248ab6c4360c9e90726231611e469e12d0bc3` | [tree](https://github.com/GaloyMoney/galoy-infra/tree/0be248ab6c4360c9e90726231611e469e12d0bc3) | [release](https://github.com/GaloyMoney/galoy-infra/releases/tag/v0.7.0)
 
 #### Galoy Mobile
 
