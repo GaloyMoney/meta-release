@@ -44,6 +44,10 @@ export web_wallet_release_tag=$(cat web-wallet/tag)
 export galoy_mobile=$(cat galoy-mobile/commit_sha)
 export galoy_mobile_release_tag=$(cat galoy-mobile/tag)
 
+# Stablesats
+export galoy_deps=$(cat stablesats/commit_sha)
+export galoy_deps_release_tag=$(cat stablesats/tag)
+
 envsubst < meta-release/templates/README.md > meta-release/README.md
 envsubst < meta-release/templates/release.yml > meta-release/release.yml
 envsubst < meta-release/templates/release.json > meta-release/release.json
