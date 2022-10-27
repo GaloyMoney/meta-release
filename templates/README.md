@@ -27,7 +27,7 @@ Source Code diff for the releases will be added soon.
 - Galoy Pay: Release ${galoy_pay_release_tag} @ `${galoy_pay}` | [tree](https://github.com/GaloyMoney/charts/tree/${galoy_pay}/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/${galoy_pay_release_tag})
 - Admin Panel: Release ${admin_panel_release_tag} @ `${admin_panel}` | [tree](https://github.com/GaloyMoney/charts/tree/${admin_panel}/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/${admin_panel_release_tag})
 - Dealer: Release ${dealer_release_tag} @ `${dealer}` | [tree](https://github.com/GaloyMoney/charts/tree/${dealer}/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/${dealer_release_tag})
-- Web Wallet: Release ${web_wallet_release_tag} @ `${web_wallet}` | [tree](https://github.com/GaloyMoney/charts/tree/${web_wallet}/charts/web_wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/${web_wallet_release_tag})
+- Web Wallet: Release ${web_wallet_release_tag} @ `${web_wallet}` | [tree](https://github.com/GaloyMoney/charts/tree/${web_wallet}/charts/web-wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/${web_wallet_release_tag})
 
 #### Infra
 
@@ -38,3 +38,6 @@ Source Code diff for the releases will be added soon.
 - Galoy Mobile: Release ${galoy_mobile_release_tag} @ `${galoy_mobile}` | [tree](https://github.com/GaloyMoney/galoy-mobile/tree/${galoy_mobile}) | [release](https://github.com/GaloyMoney/galoy-mobile/releases/tag/${galoy_mobile_release_tag})
 
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.
+
+#### Galoy Deps Chart
+- Galoy Deps: Release ${galoy_deps_release_tag} @ `${galoy_deps}` | [tree](https://github.com/GaloyMoney/charts/tree/${galoy_deps}/charts/galoy-deps) | [release](https://github.com/GaloyMoney/charts/releases/tag/${galoy_deps_release_tag})
