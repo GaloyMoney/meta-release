@@ -21,10 +21,10 @@ Source Code diff for the releases will be added soon.
 - Specter: Release specter-v0.2.0 @ `4e16e46e262b96f34eac098133e2ac10590f4019` | [tree](https://github.com/GaloyMoney/charts/tree/4e16e46e262b96f34eac098133e2ac10590f4019/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.2.0)
 
 #### Monitoring Charts
-- Monitoring: Release monitoring-v0.1.20 @ `3414b9aec4883cf0b714aa5a9f793adc85f6a43c` | [tree](https://github.com/GaloyMoney/charts/tree/3414b9aec4883cf0b714aa5a9f793adc85f6a43c/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.20)
+- Monitoring: Release monitoring-v0.1.21 @ `4f1332b9dd977399f18598c1c22cbf2000702c92` | [tree](https://github.com/GaloyMoney/charts/tree/4f1332b9dd977399f18598c1c22cbf2000702c92/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.21)
 
 #### Addons Charts
-- Galoy Pay: Release galoy-pay-v0.3.2 @ `a33b7708a1ed94aa850b51f2bcdf6dc7127fbbef` | [tree](https://github.com/GaloyMoney/charts/tree/a33b7708a1ed94aa850b51f2bcdf6dc7127fbbef/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.3.2)
+- Galoy Pay: Release galoy-pay-v0.3.3 @ `e9c2fd161f6b3a3df64bd8fe083fa3867d802028` | [tree](https://github.com/GaloyMoney/charts/tree/e9c2fd161f6b3a3df64bd8fe083fa3867d802028/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.3.3)
 - Admin Panel: Release admin-panel-v0.1.13 @ `d179b0c4ef465977430865714775bd9338f02721` | [tree](https://github.com/GaloyMoney/charts/tree/d179b0c4ef465977430865714775bd9338f02721/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.1.13)
 - Dealer: Release dealer-v0.1.26 @ `cf3388ef9eff7ba6efc6a0b901f83a89638dca86` | [tree](https://github.com/GaloyMoney/charts/tree/cf3388ef9eff7ba6efc6a0b901f83a89638dca86/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/dealer-v0.1.26)
 - Web Wallet: Release web-wallet-v0.1.42 @ `ca3c1e40f1f89ed464be8c1f3afbd95c68e66b6c` | [tree](https://github.com/GaloyMoney/charts/tree/ca3c1e40f1f89ed464be8c1f3afbd95c68e66b6c/charts/web-wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/web-wallet-v0.1.42)
