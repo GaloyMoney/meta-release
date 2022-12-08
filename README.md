@@ -9,7 +9,7 @@ The components we provide have been grouped into the following lifecycles, using
 Source Code diff for the releases will be added soon.
 
 #### Galoy Chart
-- Galoy: Release galoy-v0.8.10 @ `0008cff6fe7d7d153cf3f4f8fee51931ff2a6142` | [tree](https://github.com/GaloyMoney/charts/tree/0008cff6fe7d7d153cf3f4f8fee51931ff2a6142/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.8.10)
+- Galoy: Release galoy-v0.8.11 @ `23361efb3d03c54c14cd8dfb6e8c25644568ceda` | [tree](https://github.com/GaloyMoney/charts/tree/23361efb3d03c54c14cd8dfb6e8c25644568ceda/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.8.11)
 
 #### Stablesats Chart
 - Stablesats: Release stablesats-v0.3.18 @ `cf478dc28812d38c82fe975591efce3109573a18` | [tree](https://github.com/GaloyMoney/charts/tree/cf478dc28812d38c82fe975591efce3109573a18/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.3.18)
