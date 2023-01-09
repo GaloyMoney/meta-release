@@ -1,12 +1,12 @@
 {
   "infra": {
-    "release_tag": "v0.10.1",
-    "commit": "003e9caaef3c4598f7f6669fd0ba8dd40211c156",
+    "release_tag": "v0.10.2",
+    "commit": "13b2ef991daf73c270453e1a1cf2de41cf7c9875",
     "repository": "https://github.com/GaloyMoney/galoy-infra"
   },
   "galoy": {
-    "release_tag": "galoy-v0.8.37",
-    "commit": "0f6491c083ca78493e0b6df22b4b1e743d932fbf",
+    "release_tag": "galoy-v0.8.43",
+    "commit": "e4ca1a33a7aa42c17acf2e9ea3bebfe00797635c",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "bitcoind": {
@@ -30,8 +30,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "monitoring": {
-    "release_tag": "monitoring-v0.1.23",
-    "commit": "de5bfe63ce980d7a9488374f4a5d33ecf3e38c27",
+    "release_tag": "monitoring-v0.1.24",
+    "commit": "39a5037e4524043a9f4a56d76c4ae265f0d1ed3a",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "stablesats": {
@@ -50,8 +50,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "dealer": {
-    "release_tag": "dealer-v0.1.28",
-    "commit": "1602fe36aee11056ffd459b90fcbebfa42b55285",
+    "release_tag": "dealer-v0.1.29",
+    "commit": "b8b5e4fbe43fd95c4493fa210089abc9bb0b366b",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "web_wallet": {
@@ -60,13 +60,13 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_mobile": {
-    "release_tag": "2.0.71",
-    "commit": "44222fc85f9b21cae63635c6ae5933af06955fcf",
+    "release_tag": "2.0.73",
+    "commit": "0baf3ddb54cf6967b35580e1129d63195bfeaa9b",
     "repository": "https://github.com/GaloyMoney/galoy-mobile"
   },
   "galoy_deps": {
-    "release_tag": "",
-    "commit": "",
+    "release_tag": "galoy-deps-v0.1.0",
+    "commit": "e67b02e869c6bd61821bd80a64c48a6719dda77c",
     "repository": "https://github.com/GaloyMoney/charts"
   }
 }
