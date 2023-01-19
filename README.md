@@ -26,7 +26,7 @@ Source Code diff for the releases will be added soon.
 #### Addons Charts
 - Galoy Pay: Release galoy-pay-v0.3.9 @ `4f5f2dd01b36ee05e99852ae351394bca98410ba` | [tree](https://github.com/GaloyMoney/charts/tree/4f5f2dd01b36ee05e99852ae351394bca98410ba/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.3.9)
 - Admin Panel: Release admin-panel-v0.1.13 @ `d179b0c4ef465977430865714775bd9338f02721` | [tree](https://github.com/GaloyMoney/charts/tree/d179b0c4ef465977430865714775bd9338f02721/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.1.13)
-- Dealer: Release dealer-v0.1.29 @ `b8b5e4fbe43fd95c4493fa210089abc9bb0b366b` | [tree](https://github.com/GaloyMoney/charts/tree/b8b5e4fbe43fd95c4493fa210089abc9bb0b366b/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/dealer-v0.1.29)
+- Dealer: Release dealer-v0.1.30 @ `7a0d831180aa75b23584c1387f03918c5ac257b2` | [tree](https://github.com/GaloyMoney/charts/tree/7a0d831180aa75b23584c1387f03918c5ac257b2/charts/dealer) | [release](https://github.com/GaloyMoney/charts/releases/tag/dealer-v0.1.30)
 - Web Wallet: Release web-wallet-v0.1.45 @ `70fafb0b20fd339728ec1725088f9ae3bf1b6bb1` | [tree](https://github.com/GaloyMoney/charts/tree/70fafb0b20fd339728ec1725088f9ae3bf1b6bb1/charts/web-wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/web-wallet-v0.1.45)
 
 #### Infra
