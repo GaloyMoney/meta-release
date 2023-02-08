@@ -59,8 +59,8 @@ web_wallet:
   repository: https://github.com/GaloyMoney/charts
 
 galoy_mobile:
-  release_tag: 2.1.18
-  commit: 8a7662c47742098ca7e160eba1550344ac7e786c
+  release_tag: 2.1.19
+  commit: cd81043890594bc53b1f2998f8bee98521a5090c
   repository: https://github.com/GaloyMoney/galoy-mobile
 
 galoy_deps:
