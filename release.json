@@ -35,8 +35,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "stablesats": {
-    "release_tag": "stablesats-v0.6.1",
-    "commit": "566089b53ddc608cf122469311bd622d0ac1fafa",
+    "release_tag": "stablesats-v0.6.2",
+    "commit": "084ab191cd7a4e4f226a584c8df092692517758d",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_pay": {
