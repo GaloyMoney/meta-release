@@ -65,8 +65,8 @@
     "repository": "https://github.com/GaloyMoney/galoy-mobile"
   },
   "galoy_deps": {
-    "release_tag": "galoy-deps-v0.1.8",
-    "commit": "33e9a67a23959fcd71a2d3dec1566b8927eee0c0",
+    "release_tag": "galoy-deps-v0.1.9",
+    "commit": "9b1e43083a6f68cda47b42c89bb9c2b8b9ad7def",
     "repository": "https://github.com/GaloyMoney/charts"
   }
 }
