@@ -55,8 +55,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "web_wallet": {
-    "release_tag": "web-wallet-v0.1.48",
-    "commit": "f2dd1bed1fedc76a320370f6c634dc66c5e0c907",
+    "release_tag": "web-wallet-v0.1.49",
+    "commit": "798d46ee32b58ae9ad061ee211c77424d0a5b903",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_mobile": {
