@@ -21,7 +21,7 @@ Source Code diff for the releases will be added soon.
 - Specter: Release specter-v0.2.0 @ `4e16e46e262b96f34eac098133e2ac10590f4019` | [tree](https://github.com/GaloyMoney/charts/tree/4e16e46e262b96f34eac098133e2ac10590f4019/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.2.0)
 
 #### Monitoring Charts
-- Monitoring: Release monitoring-v0.1.35 @ `e83e313515cd2f77759e0b5aa734cdd8ebb20632` | [tree](https://github.com/GaloyMoney/charts/tree/e83e313515cd2f77759e0b5aa734cdd8ebb20632/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.35)
+- Monitoring: Release monitoring-v0.1.36 @ `02eee155650d7e8b14ccdceea073de3f3eca8198` | [tree](https://github.com/GaloyMoney/charts/tree/02eee155650d7e8b14ccdceea073de3f3eca8198/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.36)
 
 #### Addons Charts
 - Galoy Pay: Release galoy-pay-v0.3.17 @ `5d9c162f7fb78d7fd6584ba8ea2108bf84523d26` | [tree](https://github.com/GaloyMoney/charts/tree/5d9c162f7fb78d7fd6584ba8ea2108bf84523d26/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.3.17)
