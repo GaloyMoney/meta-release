@@ -40,8 +40,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_pay": {
-    "release_tag": "galoy-pay-v0.3.17",
-    "commit": "5d9c162f7fb78d7fd6584ba8ea2108bf84523d26",
+    "release_tag": "galoy-pay-v0.3.18",
+    "commit": "9b7bab0816b59dd381f1493d60da79c816f6e1f5",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "admin_panel": {
@@ -55,8 +55,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "web_wallet": {
-    "release_tag": "web-wallet-v0.1.51",
-    "commit": "6391c7075d43c85ba08e1409d6baa34a13e96c7f",
+    "release_tag": "web-wallet-v0.1.52",
+    "commit": "ec44eced0e77f05d3aa93f3b07c9586816540312",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_mobile": {
