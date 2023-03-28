@@ -30,8 +30,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "monitoring": {
-    "release_tag": "monitoring-v0.1.37",
-    "commit": "e69a3e3341ab81b100660ad321e303f56bbc6762",
+    "release_tag": "monitoring-v0.1.38",
+    "commit": "658724b397ae9e6d83b29d975f9f3f3907635ca7",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "stablesats": {
