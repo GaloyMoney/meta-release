@@ -9,8 +9,8 @@ galoy:
   repository: https://github.com/GaloyMoney/charts
 
 bitcoind:
-  release_tag: bitcoind-v0.2.8
-  commit: 5eae066a07ceef6cace778abfc5af23e8ec42f9f
+  release_tag: bitcoind-v0.2.9
+  commit: 98d981d3241638673364771009e66cdb244a29ac
   repository: https://github.com/GaloyMoney/charts
 
 lnd:
