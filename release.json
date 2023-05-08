@@ -15,8 +15,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "lnd": {
-    "release_tag": "lnd-v0.4.8",
-    "commit": "805f1e9fcd5d69265d6fad163e8ffb6fbfc6ff3b",
+    "release_tag": "lnd-v0.4.9",
+    "commit": "44bd9715ffd775e40ff58ad5b6ee75fcc2184556",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "rtl": {
