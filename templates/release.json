@@ -29,6 +29,11 @@
     "commit": "${specter}",
     "repository": "https://github.com/GaloyMoney/charts"
   },
+  "bria": {
+    "release_tag": "${bria_release_tag}",
+    "commit": "${bria}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
   "monitoring": {
     "release_tag": "${monitoring_release_tag}",
     "commit": "${monitoring}",
