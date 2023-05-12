@@ -29,6 +29,11 @@
     "commit": "4e16e46e262b96f34eac098133e2ac10590f4019",
     "repository": "https://github.com/GaloyMoney/charts"
   },
+  "bria": {
+    "release_tag": "bria-v0.1.0",
+    "commit": "da0cb1e6685d7c67ad3b3f5532000de239c7af9d",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
   "monitoring": {
     "release_tag": "monitoring-v0.1.50",
     "commit": "783933947588726553097694f0acaf133377a0cd",
@@ -46,7 +51,7 @@
   },
   "admin_panel": {
     "release_tag": "admin-panel-v0.2.10",
-    "commit": "0f2e131e99fffad264558ed9c4f3f001c63f7499",
+    "commit": "f407d0f49de04743c592ff65955b0aa84f41cd28",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "dealer": {
