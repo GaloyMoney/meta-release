@@ -385,9 +385,9 @@ jobs:
       repository: charts-repo
       branch: #@ data.values.charts_git_branch
       rebase: true
-  
+
   - put: #@ version_resource_name(chart)
-    params: 
+    params:
       file: #@ version_resource_name(chart) + "/version"
 
 #@ end
@@ -460,7 +460,7 @@ jobs:
       body: gh-release/notes.md
 
   - put: #@ version_resource_name("infra")
-    params: 
+    params:
       file: #@ version_resource_name("infra") + "/version"
 
 - name: update-lsc
@@ -613,7 +613,7 @@ resources:
 #@ for src in src_charts:
 - #@ chart_src_repo(src)
 #@ end
-  
+
 - name: release-pipeline-image
   type: registry-image
   source:
