@@ -14,16 +14,18 @@ export stablesats_release_tag=$(cat stablesats/tag)
 export infra=$(cat infra/commit_sha)
 export infra_release_tag=$(cat infra/tag)
 
-# Bitcoind
+# Bitcoin
 export bitcoind=$(cat bitcoind/commit_sha)
 export lnd=$(cat lnd/commit_sha)
 export rtl=$(cat rtl/commit_sha)
 export specter=$(cat specter/commit_sha)
+export bria=$(cat bria/commit_sha)
 
 export bitcoind_release_tag=$(cat bitcoind/tag)
 export lnd_release_tag=$(cat lnd/tag)
 export rtl_release_tag=$(cat rtl/tag)
 export specter_release_tag=$(cat specter/tag)
+export bria_release_tag=$(cat bria/tag)
 
 # Monitoring
 export monitoring=$(cat monitoring/commit_sha)
