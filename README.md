@@ -19,7 +19,7 @@ Source Code diff for the releases will be added soon.
 - LND: Release lnd-v0.4.11 @ `63c0a3014edba7410129088ef2ae50339cab8e19` | [tree](https://github.com/GaloyMoney/charts/tree/63c0a3014edba7410129088ef2ae50339cab8e19/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.4.11)
 - RTL: Release rtl-v0.1.14 @ `010fa681cdb0c5aeb7fcc2c2f4b5edc6ddcc12c3` | [tree](https://github.com/GaloyMoney/charts/tree/010fa681cdb0c5aeb7fcc2c2f4b5edc6ddcc12c3/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.14)
 - Specter: Release specter-v0.2.0 @ `4e16e46e262b96f34eac098133e2ac10590f4019` | [tree](https://github.com/GaloyMoney/charts/tree/4e16e46e262b96f34eac098133e2ac10590f4019/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.2.0)
-- Bria: Release bria-v0.2.2 @ `9420f89145ae08074fcb1bc50de9d37b0457a9fa` | [tree](https://github.com/GaloyMoney/charts/tree/9420f89145ae08074fcb1bc50de9d37b0457a9fa/charts/bria) | [release](https://github.com/GaloyMoney/charts/releases/tag/bria-v0.2.2)
+- Bria: Release bria-v0.2.3 @ `7fe54d5942a9c732255aa3c46525aa17d33cc6b8` | [tree](https://github.com/GaloyMoney/charts/tree/7fe54d5942a9c732255aa3c46525aa17d33cc6b8/charts/bria) | [release](https://github.com/GaloyMoney/charts/releases/tag/bria-v0.2.3)
 
 #### Monitoring Charts
 - Monitoring: Release monitoring-v0.1.50 @ `783933947588726553097694f0acaf133377a0cd` | [tree](https://github.com/GaloyMoney/charts/tree/783933947588726553097694f0acaf133377a0cd/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.50)
