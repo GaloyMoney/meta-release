@@ -10,8 +10,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "bitcoind": {
-    "release_tag": "bitcoind-v0.2.14",
-    "commit": "639866544cca2fd580c1c78826aaf5633c18f2c8",
+    "release_tag": "bitcoind-v0.2.15",
+    "commit": "5f26b1dc170d26b7535763bc3b82c787d10d4b6d",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "lnd": {
