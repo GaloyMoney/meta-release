@@ -20,8 +20,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "rtl": {
-    "release_tag": "rtl-v0.1.15",
-    "commit": "89b91f5dce44f0bce0748d58357f318995ffaf70",
+    "release_tag": "rtl-v0.1.16",
+    "commit": "1629d8b1432ed420d37e3e0fa4bee18ca932cefe",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "specter": {
