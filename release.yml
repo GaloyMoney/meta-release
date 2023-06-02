@@ -24,8 +24,8 @@ rtl:
   repository: https://github.com/GaloyMoney/charts
 
 specter:
-  release_tag: specter-v0.3.0
-  commit: dcc6ca0455900d1e40554f0c9846f02a859b26c4
+  release_tag: specter-v0.3.1
+  commit: 78e580c59d18753304a9995656a20c07df5978a2
   repository: https://github.com/GaloyMoney/charts
 
 bria:
