@@ -22,7 +22,7 @@ Source Code diff for the releases will be added soon.
 - Bria: Release bria-v0.2.11 @ `b2aa082a8584358711628c2677a07e04e4fa2982` | [tree](https://github.com/GaloyMoney/charts/tree/b2aa082a8584358711628c2677a07e04e4fa2982/charts/bria) | [release](https://github.com/GaloyMoney/charts/releases/tag/bria-v0.2.11)
 
 #### Monitoring Charts
-- Monitoring: Release monitoring-v0.1.53 @ `687845f1bedac55a02931a1588ae2bfa2658538b` | [tree](https://github.com/GaloyMoney/charts/tree/687845f1bedac55a02931a1588ae2bfa2658538b/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.53)
+- Monitoring: Release monitoring-v0.1.54 @ `0c3daa8093d5a64e1404ffea82b6ba23c2faacb3` | [tree](https://github.com/GaloyMoney/charts/tree/0c3daa8093d5a64e1404ffea82b6ba23c2faacb3/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.54)
 
 #### Addons Charts
 - Galoy Pay: Release galoy-pay-v0.4.2 @ `2c014a8fcec51fdf4230cf32c1b7c687027ba33e` | [tree](https://github.com/GaloyMoney/charts/tree/2c014a8fcec51fdf4230cf32c1b7c687027ba33e/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.4.2)
