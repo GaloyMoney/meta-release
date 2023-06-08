@@ -1,11 +1,11 @@
 # Galoy Meta Release 📦
 
-This repository groups together the latest stable combination of the [Galoy stack](https://github.com/GaloyMoney/awesome-galoy#tech-components). 
+This repository groups together the latest stable combination of the [Galoy stack](https://github.com/GaloyMoney/awesome-galoy#tech-components).
 Releases to this repository happen after we complete testing out the individual components on staging and therefore should be good to go together with.
 
 ### Stable Release 🎉
 
-The components we provide have been grouped into the following lifecycles, using the [charts](https://github.com/GaloyMoney/charts) and the [infra](https://github.com/GaloyMoney/galoy-infra) repository. 
+The components we provide have been grouped into the following lifecycles, using the [charts](https://github.com/GaloyMoney/charts) and the [infra](https://github.com/GaloyMoney/galoy-infra) repository.
 Source Code diff for the releases will be added soon.
 
 #### Galoy Chart
