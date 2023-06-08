@@ -20,6 +20,7 @@ Source Code diff for the releases will be added soon.
 - RTL: Release ${rtl_release_tag} @ `${rtl}` | [tree](https://github.com/GaloyMoney/charts/tree/${rtl}/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/${rtl_release_tag})
 - Specter: Release ${specter_release_tag} @ `${specter}` | [tree](https://github.com/GaloyMoney/charts/tree/${specter}/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/${specter_release_tag})
 - Bria: Release ${bria_release_tag} @ `${bria}` | [tree](https://github.com/GaloyMoney/charts/tree/${bria}/charts/bria) | [release](https://github.com/GaloyMoney/charts/releases/tag/${bria_release_tag})
+- Fulcrum: Release ${fulcrum_release_tag} @ `${fulcrum}` | [tree](https://github.com/GaloyMoney/charts/tree/${fulcrum}/charts/fulcrum) | [release](https://github.com/GaloyMoney/charts/releases/tag/${fulcrum_release_tag})
 
 #### Monitoring Charts
 - Monitoring: Release ${monitoring_release_tag} @ `${monitoring}` | [tree](https://github.com/GaloyMoney/charts/tree/${monitoring}/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/${monitoring_release_tag})
