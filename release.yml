@@ -69,6 +69,6 @@ galoy_mobile:
   repository: https://github.com/GaloyMoney/galoy-mobile
 
 galoy_deps:
-  release_tag: galoy-deps-v0.1.26
-  commit: 0e583f33a1223253f13e425d8f3697096cf93c2a
+  release_tag: galoy-deps-v0.1.27
+  commit: 930860f59cb9d4877cc22865631e97c634308f7b
   repository: https://github.com/GaloyMoney/charts
