@@ -34,6 +34,11 @@
     "commit": "${bria}",
     "repository": "https://github.com/GaloyMoney/charts"
   },
+  "fulcrum": {
+    "release_tag": "${fulcrum_release_tag}",
+    "commit": "${fulcrum}",
+    "repository": "https://github.com/GaloyMoney/charts"
+  },
   "monitoring": {
     "release_tag": "${monitoring_release_tag}",
     "commit": "${monitoring}",
