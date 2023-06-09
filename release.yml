@@ -33,6 +33,11 @@ bria:
   commit: df493612b3bb78be26764b2830f3fa81dc2313bd
   repository: https://github.com/GaloyMoney/charts
 
+fulcrum:
+  release_tag: 
+  commit: 
+  repository: https://github.com/GaloyMoney/charts
+
 monitoring:
   release_tag: monitoring-v0.1.55
   commit: 21a099db808324225482ea0d96654c80a63d7638
@@ -49,8 +54,8 @@ galoy_pay:
   repository: https://github.com/GaloyMoney/charts
 
 admin_panel:
-  release_tag: admin-panel-v0.2.13
-  commit: 4a9792554a7ea6ca758107a4935b149335ef506b
+  release_tag: admin-panel-v0.2.14
+  commit: 8e3364c433b793d5ca516f9acaf61138e976276c
   repository: https://github.com/GaloyMoney/charts
 
 dealer:
