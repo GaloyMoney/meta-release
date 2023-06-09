@@ -34,8 +34,8 @@ bria:
   repository: https://github.com/GaloyMoney/charts
 
 monitoring:
-  release_tag: monitoring-v0.1.54
-  commit: 0c3daa8093d5a64e1404ffea82b6ba23c2faacb3
+  release_tag: monitoring-v0.1.55
+  commit: 21a099db808324225482ea0d96654c80a63d7638
   repository: https://github.com/GaloyMoney/charts
 
 stablesats:
