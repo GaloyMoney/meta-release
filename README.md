@@ -1,11 +1,11 @@
 # Galoy Meta Release 📦
 
-This repository groups together the latest stable combination of the [Galoy stack](https://github.com/GaloyMoney/awesome-galoy#tech-components). 
+This repository groups together the latest stable combination of the [Galoy stack](https://github.com/GaloyMoney/awesome-galoy#tech-components).
 Releases to this repository happen after we complete testing out the individual components on staging and therefore should be good to go together with.
 
 ### Stable Release 🎉
 
-The components we provide have been grouped into the following lifecycles, using the [charts](https://github.com/GaloyMoney/charts) and the [infra](https://github.com/GaloyMoney/galoy-infra) repository. 
+The components we provide have been grouped into the following lifecycles, using the [charts](https://github.com/GaloyMoney/charts) and the [infra](https://github.com/GaloyMoney/galoy-infra) repository.
 Source Code diff for the releases will be added soon.
 
 #### Galoy Chart
@@ -19,7 +19,7 @@ Source Code diff for the releases will be added soon.
 - LND: Release lnd-v0.4.14 @ `683ca957274ea019fcce581d114479c3507f38d9` | [tree](https://github.com/GaloyMoney/charts/tree/683ca957274ea019fcce581d114479c3507f38d9/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.4.14)
 - RTL: Release rtl-v0.1.16 @ `1629d8b1432ed420d37e3e0fa4bee18ca932cefe` | [tree](https://github.com/GaloyMoney/charts/tree/1629d8b1432ed420d37e3e0fa4bee18ca932cefe/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.1.16)
 - Specter: Release specter-v0.3.1 @ `78e580c59d18753304a9995656a20c07df5978a2` | [tree](https://github.com/GaloyMoney/charts/tree/78e580c59d18753304a9995656a20c07df5978a2/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.3.1)
-- Bria: Release bria-v0.2.11 @ `b2aa082a8584358711628c2677a07e04e4fa2982` | [tree](https://github.com/GaloyMoney/charts/tree/b2aa082a8584358711628c2677a07e04e4fa2982/charts/bria) | [release](https://github.com/GaloyMoney/charts/releases/tag/bria-v0.2.11)
+- Bria: Release bria-v0.2.12 @ `df493612b3bb78be26764b2830f3fa81dc2313bd` | [tree](https://github.com/GaloyMoney/charts/tree/df493612b3bb78be26764b2830f3fa81dc2313bd/charts/bria) | [release](https://github.com/GaloyMoney/charts/releases/tag/bria-v0.2.12)
 
 #### Monitoring Charts
 - Monitoring: Release monitoring-v0.1.54 @ `0c3daa8093d5a64e1404ffea82b6ba23c2faacb3` | [tree](https://github.com/GaloyMoney/charts/tree/0c3daa8093d5a64e1404ffea82b6ba23c2faacb3/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.1.54)
