@@ -39,8 +39,8 @@ fulcrum:
   repository: https://github.com/GaloyMoney/charts
 
 monitoring:
-  release_tag: monitoring-v0.1.56
-  commit: e5424183f2595dfa2ceda3a0ba25ca0d02af99fe
+  release_tag: monitoring-v0.1.57
+  commit: bfd22b35ea269d35d88f45a87f53bc9387961665
   repository: https://github.com/GaloyMoney/charts
 
 stablesats:
