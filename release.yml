@@ -29,8 +29,8 @@ specter:
   repository: https://github.com/GaloyMoney/charts
 
 bria:
-  release_tag: bria-v0.2.14
-  commit: 2be41325c40df6cce2dc16b15e6b0aaa1f0643d1
+  release_tag: bria-v0.2.15
+  commit: 3c26ea39361a3b72e7ec454272e8f5dfe9ef941b
   repository: https://github.com/GaloyMoney/charts
 
 fulcrum:
