@@ -5,8 +5,8 @@
     "repository": "https://github.com/GaloyMoney/galoy-infra"
   },
   "galoy": {
-    "release_tag": "galoy-v0.16.0",
-    "commit": "acc889029cf7fdc1fba651612ddaccd2301ff3cc",
+    "release_tag": "galoy-v0.16.1",
+    "commit": "6886bc721c6491a4de8ecd6196fbcbe912d374e3",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "bitcoind": {
