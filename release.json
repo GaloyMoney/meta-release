@@ -5,8 +5,8 @@
     "repository": "https://github.com/GaloyMoney/galoy-infra"
   },
   "galoy": {
-    "release_tag": "galoy-v0.17.1",
-    "commit": "fea89df0b31905b311e2ffe93a8d5b4f44691f55",
+    "release_tag": "galoy-v0.17.2",
+    "commit": "6d0abfe6849bc872be20c63390b025f6eb508925",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "bitcoind": {
@@ -46,17 +46,17 @@
   },
   "stablesats": {
     "release_tag": "stablesats-v0.11.1",
-    "commit": "6325956cfb59a81e69010b05dd65695f214b2e50",
+    "commit": "3a1d7b22e6433be27cc9c591a34586c8acb16527",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_pay": {
     "release_tag": "galoy-pay-v0.5.0",
-    "commit": "39044f5488529b45fbcc73a3e58331144eb7ae1c",
+    "commit": "dddcd0f4d56b2bdda974531ac7e6b6dfc8f1f358",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "admin_panel": {
     "release_tag": "admin-panel-v0.3.3",
-    "commit": "02e7e7fbf5cfe8e49dcc002b89412e34d29e1418",
+    "commit": "53d05501dbcb63bee28d70c38f2dafffe7120153",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "dealer": {
