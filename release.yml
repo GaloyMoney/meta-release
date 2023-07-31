@@ -39,23 +39,23 @@ fulcrum:
   repository: https://github.com/GaloyMoney/charts
 
 monitoring:
-  release_tag: monitoring-v0.4.1
-  commit: b5a6f1618a679b46a84eb6cd725ab8ee854886b0
+  release_tag: monitoring-v0.4.2
+  commit: 8eb69896d68f1dbb5b11082982042107691a94f2
   repository: https://github.com/GaloyMoney/charts
 
 stablesats:
   release_tag: stablesats-v0.11.1
-  commit: 3a1d7b22e6433be27cc9c591a34586c8acb16527
+  commit: 6325956cfb59a81e69010b05dd65695f214b2e50
   repository: https://github.com/GaloyMoney/charts
 
 galoy_pay:
   release_tag: galoy-pay-v0.5.0
-  commit: dddcd0f4d56b2bdda974531ac7e6b6dfc8f1f358
+  commit: 39044f5488529b45fbcc73a3e58331144eb7ae1c
   repository: https://github.com/GaloyMoney/charts
 
 admin_panel:
   release_tag: admin-panel-v0.3.3
-  commit: 53d05501dbcb63bee28d70c38f2dafffe7120153
+  commit: 02e7e7fbf5cfe8e49dcc002b89412e34d29e1418
   repository: https://github.com/GaloyMoney/charts
 
 dealer:
