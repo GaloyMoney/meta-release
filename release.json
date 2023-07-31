@@ -5,8 +5,8 @@
     "repository": "https://github.com/GaloyMoney/galoy-infra"
   },
   "galoy": {
-    "release_tag": "galoy-v0.16.9",
-    "commit": "1ea108016ad2a1a061edd26e97d215a32c6c6915",
+    "release_tag": "galoy-v0.17.0",
+    "commit": "7966195ff2d6a5476ecc2763434b373ee0e415f5",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "bitcoind": {
@@ -56,7 +56,7 @@
   },
   "admin_panel": {
     "release_tag": "admin-panel-v0.3.3",
-    "commit": "53d05501dbcb63bee28d70c38f2dafffe7120153",
+    "commit": "02e7e7fbf5cfe8e49dcc002b89412e34d29e1418",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "dealer": {
