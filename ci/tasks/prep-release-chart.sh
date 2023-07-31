@@ -38,7 +38,7 @@ mkdir -p gh-release/files
 pushd repo
 
   # Update version in Chart.yml
-  yq e -i '.version = strenv(version)' charts/$CHART/Chart.yaml
+  yq -e --in-place -Y ".version = \"${version}\"" charts/$CHART/Chart.yaml
 
   # Add change to Git
   git add charts/$CHART/Chart.yaml
