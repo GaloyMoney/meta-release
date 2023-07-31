@@ -44,8 +44,8 @@ monitoring:
   repository: https://github.com/GaloyMoney/charts
 
 stablesats:
-  release_tag: stablesats-v0.11.1
-  commit: 3a1d7b22e6433be27cc9c591a34586c8acb16527
+  release_tag: stablesats-v0.11.2
+  commit: d0ca0b8619f68df5c3e97c65a31bd6953742b827
   repository: https://github.com/GaloyMoney/charts
 
 galoy_pay:
@@ -55,7 +55,7 @@ galoy_pay:
 
 admin_panel:
   release_tag: admin-panel-v0.3.3
-  commit: 53d05501dbcb63bee28d70c38f2dafffe7120153
+  commit: 02e7e7fbf5cfe8e49dcc002b89412e34d29e1418
   repository: https://github.com/GaloyMoney/charts
 
 dealer:
