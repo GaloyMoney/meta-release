@@ -11,11 +11,11 @@ cp -R ../gh-release/files/* .cr-release-packages
 cr index -c $CHART_GIT_REPO_HTTPS_URL --release-name-template "{{ .Name }}-v{{ .Version }}"
 
 # Fetching index change
-export NEW_CHART_ENTRY=$(yq -e ".entries.[\"${CHART}\"].0" .cr-index/index.yaml)
-export GENERATION_TIME=$(yq -e '.generated' .cr-index/index.yaml)
+export NEW_CHART_ENTRY=$(yq e '.entries.[strenv(CHART)].0' .cr-index/index.yaml)
+export GENERATION_TIME=$(yq e '.generated' .cr-index/index.yaml)
 
-yq -e --in-place -Y ".entries.[\"${CHART}\"] |= [\"${NEW_CHART_ENTRY}\"] + . " index.yaml
-yq -e --in-place -Y ".generated = \"${GENERATION_TIME}\"" index.yaml
+yq e -i '.entries.[strenv(CHART)] |= [env(NEW_CHART_ENTRY)] + . ' index.yaml
+yq e -i '.generated = strenv(GENERATION_TIME)' index.yaml
 
 git add index.yaml
 git status
