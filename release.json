@@ -41,7 +41,7 @@
   },
   "monitoring": {
     "release_tag": "monitoring-v0.4.1",
-    "commit": "f393d861cdf0e41bbd9e80522ae46a4805b50d4f",
+    "commit": "b5a6f1618a679b46a84eb6cd725ab8ee854886b0",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "stablesats": {
@@ -56,7 +56,7 @@
   },
   "admin_panel": {
     "release_tag": "admin-panel-v0.3.3",
-    "commit": "02e7e7fbf5cfe8e49dcc002b89412e34d29e1418",
+    "commit": "53d05501dbcb63bee28d70c38f2dafffe7120153",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "dealer": {
