@@ -41,10 +41,10 @@ if [[ $gen_src == "true" ]] && [[ $no_change != "1" ]]; then
   pushd repo
 
   git checkout $prev_ref
-  export prev_src_ref=$(yq e '.appVersion' charts/$depl_name/Chart.yaml)
+  export prev_src_ref=$(yq -e '.appVersion' charts/$depl_name/Chart.yaml)
 
   git checkout $new_ref
-  export new_src_ref=$(yq e '.appVersion' charts/$depl_name/Chart.yaml)
+  export new_src_ref=$(yq -e '.appVersion' charts/$depl_name/Chart.yaml)
 
   popd
 
