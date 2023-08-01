@@ -34,12 +34,10 @@ export monitoring_release_tag=$(cat monitoring/tag)
 # Addons
 export admin_panel=$(cat admin-panel/commit_sha)
 export galoy_pay=$(cat galoy-pay/commit_sha)
-export dealer=$(cat dealer/commit_sha)
 export web_wallet=$(cat web-wallet/commit_sha)
 
 export admin_panel_release_tag=$(cat admin-panel/tag)
 export galoy_pay_release_tag=$(cat galoy-pay/tag)
-export dealer_release_tag=$(cat dealer/tag)
 export web_wallet_release_tag=$(cat web-wallet/tag)
 
 # Mobile

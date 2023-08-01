@@ -59,11 +59,6 @@
     "commit": "02e7e7fbf5cfe8e49dcc002b89412e34d29e1418",
     "repository": "https://github.com/GaloyMoney/charts"
   },
-  "dealer": {
-    "release_tag": "dealer-v0.3.1",
-    "commit": "b98a416a217df7147d03e63ce49bc4306ca4f4f5",
-    "repository": "https://github.com/GaloyMoney/charts"
-  },
   "web_wallet": {
     "release_tag": "web-wallet-v0.3.0",
     "commit": "5d7580b96be0917da3e1c24669bc4a2feb193f2c",
