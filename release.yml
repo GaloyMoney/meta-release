@@ -59,8 +59,8 @@ admin_panel:
   repository: https://github.com/GaloyMoney/charts
 
 web_wallet:
-  release_tag: web-wallet-v0.3.0
-  commit: 5d7580b96be0917da3e1c24669bc4a2feb193f2c
+  release_tag: web-wallet-v0.3.1
+  commit: 3086eca6a8a15d0de77a458344534ac94dea3005
   repository: https://github.com/GaloyMoney/charts
 
 galoy_mobile:

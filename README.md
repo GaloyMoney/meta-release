@@ -28,7 +28,7 @@ Source Code diff for the releases will be added soon.
 #### Addons Charts
 - Galoy Pay: Release galoy-pay-v0.5.0 @ `39044f5488529b45fbcc73a3e58331144eb7ae1c` | [tree](https://github.com/GaloyMoney/charts/tree/39044f5488529b45fbcc73a3e58331144eb7ae1c/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.5.0)
 - Admin Panel: Release admin-panel-v0.3.3 @ `02e7e7fbf5cfe8e49dcc002b89412e34d29e1418` | [tree](https://github.com/GaloyMoney/charts/tree/02e7e7fbf5cfe8e49dcc002b89412e34d29e1418/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.3.3)
-- Web Wallet: Release web-wallet-v0.3.0 @ `5d7580b96be0917da3e1c24669bc4a2feb193f2c` | [tree](https://github.com/GaloyMoney/charts/tree/5d7580b96be0917da3e1c24669bc4a2feb193f2c/charts/web-wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/web-wallet-v0.3.0)
+- Web Wallet: Release web-wallet-v0.3.1 @ `3086eca6a8a15d0de77a458344534ac94dea3005` | [tree](https://github.com/GaloyMoney/charts/tree/3086eca6a8a15d0de77a458344534ac94dea3005/charts/web-wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/web-wallet-v0.3.1)
 
 #### Infra
 
