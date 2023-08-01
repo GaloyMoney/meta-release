@@ -19,14 +19,14 @@ Source Code diff for the releases will be added soon.
 - LND: Release lnd-v0.5.1 @ `79e3e9136d513cf11a25e5b83882846424369f78` | [tree](https://github.com/GaloyMoney/charts/tree/79e3e9136d513cf11a25e5b83882846424369f78/charts/lnd) | [release](https://github.com/GaloyMoney/charts/releases/tag/lnd-v0.5.1)
 - RTL: Release rtl-v0.2.1 @ `667eab4b4d99216d8bb9410a3af6503d4a3b3689` | [tree](https://github.com/GaloyMoney/charts/tree/667eab4b4d99216d8bb9410a3af6503d4a3b3689/charts/rtl) | [release](https://github.com/GaloyMoney/charts/releases/tag/rtl-v0.2.1)
 - Specter: Release specter-v0.3.1 @ `78e580c59d18753304a9995656a20c07df5978a2` | [tree](https://github.com/GaloyMoney/charts/tree/78e580c59d18753304a9995656a20c07df5978a2/charts/specter) | [release](https://github.com/GaloyMoney/charts/releases/tag/specter-v0.3.1)
-- Bria: Release bria-v0.4.3 @ `f6c16f14818e39d68e18cc0ac213d17be2cebba9` | [tree](https://github.com/GaloyMoney/charts/tree/f6c16f14818e39d68e18cc0ac213d17be2cebba9/charts/bria) | [release](https://github.com/GaloyMoney/charts/releases/tag/bria-v0.4.3)
+- Bria: Release bria-v0.4.4 @ `f78f60380971393d35babe6f476591ba6527608a` | [tree](https://github.com/GaloyMoney/charts/tree/f78f60380971393d35babe6f476591ba6527608a/charts/bria) | [release](https://github.com/GaloyMoney/charts/releases/tag/bria-v0.4.4)
 - Fulcrum: Release  @ `` | [tree](https://github.com/GaloyMoney/charts/tree//charts/fulcrum) | [release](https://github.com/GaloyMoney/charts/releases/tag/)
 
 #### Monitoring Charts
 - Monitoring: Release monitoring-v0.4.2 @ `8eb69896d68f1dbb5b11082982042107691a94f2` | [tree](https://github.com/GaloyMoney/charts/tree/8eb69896d68f1dbb5b11082982042107691a94f2/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.4.2)
 
 #### Addons Charts
-- Galoy Pay: Release galoy-pay-v0.5.0 @ `dddcd0f4d56b2bdda974531ac7e6b6dfc8f1f358` | [tree](https://github.com/GaloyMoney/charts/tree/dddcd0f4d56b2bdda974531ac7e6b6dfc8f1f358/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.5.0)
+- Galoy Pay: Release galoy-pay-v0.5.0 @ `39044f5488529b45fbcc73a3e58331144eb7ae1c` | [tree](https://github.com/GaloyMoney/charts/tree/39044f5488529b45fbcc73a3e58331144eb7ae1c/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.5.0)
 - Admin Panel: Release admin-panel-v0.3.3 @ `02e7e7fbf5cfe8e49dcc002b89412e34d29e1418` | [tree](https://github.com/GaloyMoney/charts/tree/02e7e7fbf5cfe8e49dcc002b89412e34d29e1418/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.3.3)
 - Web Wallet: Release web-wallet-v0.3.0 @ `5d7580b96be0917da3e1c24669bc4a2feb193f2c` | [tree](https://github.com/GaloyMoney/charts/tree/5d7580b96be0917da3e1c24669bc4a2feb193f2c/charts/web-wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/web-wallet-v0.3.0)
 
@@ -41,4 +41,4 @@ Source Code diff for the releases will be added soon.
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.
 
 #### Galoy Deps Chart
-- Galoy Deps: Release galoy-deps-v0.3.5 @ `4a1d7ed9d759939cb74b1e10faddcf802c9c4f1b` | [tree](https://github.com/GaloyMoney/charts/tree/4a1d7ed9d759939cb74b1e10faddcf802c9c4f1b/charts/galoy-deps) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-deps-v0.3.5)
+- Galoy Deps: Release galoy-deps-v0.3.5 @ `77e0c33e6048783b4c4ffde2edec25f4573cfa25` | [tree](https://github.com/GaloyMoney/charts/tree/77e0c33e6048783b4c4ffde2edec25f4573cfa25/charts/galoy-deps) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-deps-v0.3.5)

@@ -29,8 +29,8 @@ specter:
   repository: https://github.com/GaloyMoney/charts
 
 bria:
-  release_tag: bria-v0.4.3
-  commit: f6c16f14818e39d68e18cc0ac213d17be2cebba9
+  release_tag: bria-v0.4.4
+  commit: f78f60380971393d35babe6f476591ba6527608a
   repository: https://github.com/GaloyMoney/charts
 
 fulcrum:
@@ -50,7 +50,7 @@ stablesats:
 
 galoy_pay:
   release_tag: galoy-pay-v0.5.0
-  commit: dddcd0f4d56b2bdda974531ac7e6b6dfc8f1f358
+  commit: 39044f5488529b45fbcc73a3e58331144eb7ae1c
   repository: https://github.com/GaloyMoney/charts
 
 admin_panel:
@@ -70,5 +70,5 @@ galoy_mobile:
 
 galoy_deps:
   release_tag: galoy-deps-v0.3.5
-  commit: 4a1d7ed9d759939cb74b1e10faddcf802c9c4f1b
+  commit: 77e0c33e6048783b4c4ffde2edec25f4573cfa25
   repository: https://github.com/GaloyMoney/charts
