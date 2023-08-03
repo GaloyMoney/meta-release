@@ -5,7 +5,7 @@ infra:
 
 galoy:
   release_tag: galoy-v0.18.0
-  commit: 7554f377e9bcc60666f2c57f6e674b5c35dcdf10
+  commit: e109a436106a642504aacd6a1ee9c9d48c2c54f1
   repository: https://github.com/GaloyMoney/charts
 
 bitcoind:
@@ -44,8 +44,8 @@ monitoring:
   repository: https://github.com/GaloyMoney/charts
 
 stablesats:
-  release_tag: stablesats-v0.11.3
-  commit: 375b5356188ad684115aefa52320a57c48505cd3
+  release_tag: stablesats-v0.12.0
+  commit: 7cf33c05c9c034dd1471d81168c3790b953db809
   repository: https://github.com/GaloyMoney/charts
 
 galoy_pay:
