@@ -9,7 +9,7 @@ The components we provide have been grouped into the following lifecycles, using
 Source Code diff for the releases will be added soon.
 
 #### Galoy Chart
-- Galoy: Release galoy-v0.18.1 @ `fe41636a1b1a449d6ea76ada025cdf526561218e` | [tree](https://github.com/GaloyMoney/charts/tree/fe41636a1b1a449d6ea76ada025cdf526561218e/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.18.1)
+- Galoy: Release galoy-v0.18.2 @ `66fdb77fa9d54b0a74e69e5072ea89b0f91b66e8` | [tree](https://github.com/GaloyMoney/charts/tree/66fdb77fa9d54b0a74e69e5072ea89b0f91b66e8/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.18.2)
 
 #### Stablesats Chart
 - Stablesats: Release stablesats-v0.12.0 @ `7cf33c05c9c034dd1471d81168c3790b953db809` | [tree](https://github.com/GaloyMoney/charts/tree/7cf33c05c9c034dd1471d81168c3790b953db809/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.12.0)
@@ -23,7 +23,7 @@ Source Code diff for the releases will be added soon.
 - Fulcrum: Release  @ `` | [tree](https://github.com/GaloyMoney/charts/tree//charts/fulcrum) | [release](https://github.com/GaloyMoney/charts/releases/tag/)
 
 #### Monitoring Charts
-- Monitoring: Release monitoring-v0.4.3 @ `3b29b0464e42cca615f595921eea6339c9663214` | [tree](https://github.com/GaloyMoney/charts/tree/3b29b0464e42cca615f595921eea6339c9663214/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.4.3)
+- Monitoring: Release monitoring-v0.4.3 @ `7a247277e87f29016092d69db46cf492f6658083` | [tree](https://github.com/GaloyMoney/charts/tree/7a247277e87f29016092d69db46cf492f6658083/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.4.3)
 
 #### Addons Charts
 - Galoy Pay: Release galoy-pay-v0.5.0 @ `39044f5488529b45fbcc73a3e58331144eb7ae1c` | [tree](https://github.com/GaloyMoney/charts/tree/39044f5488529b45fbcc73a3e58331144eb7ae1c/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.5.0)
@@ -41,4 +41,4 @@ Source Code diff for the releases will be added soon.
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.
 
 #### Galoy Deps Chart
-- Galoy Deps: Release galoy-deps-v0.3.6 @ `17b216fe629cec353048b10e944fe59ea62b08cd` | [tree](https://github.com/GaloyMoney/charts/tree/17b216fe629cec353048b10e944fe59ea62b08cd/charts/galoy-deps) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-deps-v0.3.6)
+- Galoy Deps: Release galoy-deps-v0.3.6 @ `42eec5e83ec5c95710078f888e216cc0ff05e841` | [tree](https://github.com/GaloyMoney/charts/tree/42eec5e83ec5c95710078f888e216cc0ff05e841/charts/galoy-deps) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-deps-v0.3.6)

@@ -4,8 +4,8 @@ infra:
   repository: https://github.com/GaloyMoney/galoy-infra
 
 galoy:
-  release_tag: galoy-v0.18.1
-  commit: fe41636a1b1a449d6ea76ada025cdf526561218e
+  release_tag: galoy-v0.18.2
+  commit: 66fdb77fa9d54b0a74e69e5072ea89b0f91b66e8
   repository: https://github.com/GaloyMoney/charts
 
 bitcoind:
@@ -40,7 +40,7 @@ fulcrum:
 
 monitoring:
   release_tag: monitoring-v0.4.3
-  commit: 3b29b0464e42cca615f595921eea6339c9663214
+  commit: 7a247277e87f29016092d69db46cf492f6658083
   repository: https://github.com/GaloyMoney/charts
 
 stablesats:
@@ -70,5 +70,5 @@ galoy_mobile:
 
 galoy_deps:
   release_tag: galoy-deps-v0.3.6
-  commit: 17b216fe629cec353048b10e944fe59ea62b08cd
+  commit: 42eec5e83ec5c95710078f888e216cc0ff05e841
   repository: https://github.com/GaloyMoney/charts
