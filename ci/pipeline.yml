@@ -121,11 +121,11 @@ source:
 #@ def gh_release_resource(deployment, repository):
 name: #@ gh_release_resource_name(deployment)
 type: github-release
+check_every: never
 source:
   owner: #@ data.values.gh_org
   repository: #@ repository
   access_token: #@ data.values.github_api_token
-  check_every: never
   #@ if repository == data.values.charts_gh_repo:
   tag_filter: #@ deployment + "-v.*"
   #@ end
