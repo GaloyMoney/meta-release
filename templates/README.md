@@ -28,7 +28,6 @@ Source Code diff for the releases will be added soon.
 #### Addons Charts
 - Galoy Pay: Release ${galoy_pay_release_tag} @ `${galoy_pay}` | [tree](https://github.com/GaloyMoney/charts/tree/${galoy_pay}/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/${galoy_pay_release_tag})
 - Admin Panel: Release ${admin_panel_release_tag} @ `${admin_panel}` | [tree](https://github.com/GaloyMoney/charts/tree/${admin_panel}/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/${admin_panel_release_tag})
-- Web Wallet: Release ${web_wallet_release_tag} @ `${web_wallet}` | [tree](https://github.com/GaloyMoney/charts/tree/${web_wallet}/charts/web-wallet) | [release](https://github.com/GaloyMoney/charts/releases/tag/${web_wallet_release_tag})
 
 #### Infra
 
