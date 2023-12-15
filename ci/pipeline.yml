@@ -1,6 +1,6 @@
 #@ load("@ytt:data", "data")
 
-#@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "stablesats-rs", "bria", "fulcrum" ]
+#@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "stablesats-rs", "bria" ]
 #@ src_to_chart_override_config = { "galoy-app": "galoy", "stablesats-rs": "stablesats" }
 #@ chart_to_repo_override_config = { "stablesats": "stablesats-rs" }
 
