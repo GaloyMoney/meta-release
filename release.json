@@ -1,27 +1,27 @@
 {
   "infra": {
-    "release_tag": "v0.11.10",
-    "commit": "60b94c88fce90f9e9af693a02bff3052e3159a55",
+    "release_tag": "v0.11.20",
+    "commit": "47bd21c6ecf4cf8cca2d11ea9d30783251e3df45",
     "repository": "https://github.com/GaloyMoney/galoy-infra"
   },
   "galoy": {
-    "release_tag": "galoy-v0.18.4",
-    "commit": "861ef4ba819b59a32b8c63f10fb559c6019b517a",
+    "release_tag": "galoy-v0.30.3",
+    "commit": "b6a8def4953c3691d3c1b37900c6ceee04d782df",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "bitcoind": {
-    "release_tag": "bitcoind-v0.2.19",
-    "commit": "52f34d573b00c187bf1a2b2ed43c4a30cafc0f63",
+    "release_tag": "bitcoind-v0.3.1",
+    "commit": "b31f84cab68585d2d2b538f49bee06a23c04a0b3",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "lnd": {
-    "release_tag": "lnd-v0.5.1",
-    "commit": "79e3e9136d513cf11a25e5b83882846424369f78",
+    "release_tag": "lnd-v0.8.1",
+    "commit": "f7572365b9edc0978fad170c3529acfe42d55512",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "rtl": {
-    "release_tag": "rtl-v0.2.1",
-    "commit": "667eab4b4d99216d8bb9410a3af6503d4a3b3689",
+    "release_tag": "rtl-v0.4.3",
+    "commit": "0cbe79514d837adba1a637a13338b7f1ad04168b",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "specter": {
@@ -30,8 +30,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "bria": {
-    "release_tag": "bria-v0.5.0",
-    "commit": "7fd5ac916b4fa28f95e8af6b9c8ec8a6bdd81a71",
+    "release_tag": "bria-v0.9.4",
+    "commit": "9c1ee403759a983deb968ef8577132668a60c343",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "fulcrum": {
@@ -40,38 +40,33 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "monitoring": {
-    "release_tag": "monitoring-v0.5.0",
-    "commit": "1230f875b028379d698f0ed8d16ecec6cf795d3b",
+    "release_tag": "monitoring-v0.11.1",
+    "commit": "b1cc6a96a2c61b2d9f58014f4ddad020e665bf01",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "stablesats": {
-    "release_tag": "stablesats-v0.12.0",
-    "commit": "7cf33c05c9c034dd1471d81168c3790b953db809",
+    "release_tag": "stablesats-v0.15.0",
+    "commit": "bdd9d64adf2d91f64af8f14d271de6a8b3d9a4d6",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_pay": {
-    "release_tag": "galoy-pay-v0.5.0",
-    "commit": "39044f5488529b45fbcc73a3e58331144eb7ae1c",
+    "release_tag": "galoy-pay-v0.10.4",
+    "commit": "3edb1366c77537b38ccda724d6ae3873d78fc4f1",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "admin_panel": {
-    "release_tag": "admin-panel-v0.3.3",
-    "commit": "02e7e7fbf5cfe8e49dcc002b89412e34d29e1418",
-    "repository": "https://github.com/GaloyMoney/charts"
-  },
-  "web_wallet": {
-    "release_tag": "web-wallet-v0.3.1",
-    "commit": "3086eca6a8a15d0de77a458344534ac94dea3005",
+    "release_tag": "admin-panel-v0.11.1",
+    "commit": "f3ba1491941d5f791b03152f94326a3308f2a547",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_mobile": {
-    "release_tag": "beta-2.2.105",
-    "commit": "36d1a305ec5dcf2b62b883614b02321e46fe2896",
+    "release_tag": "beta-2.2.196",
+    "commit": "377f2fa3bfe6ba9a522799e65099b001bccb38c0",
     "repository": "https://github.com/GaloyMoney/galoy-mobile"
   },
   "galoy_deps": {
-    "release_tag": "galoy-deps-v0.3.6",
-    "commit": "17b216fe629cec353048b10e944fe59ea62b08cd",
+    "release_tag": "galoy-deps-v0.9.0",
+    "commit": "5f97fd65ad449d7c2754aeb21886a98c400e1c21",
     "repository": "https://github.com/GaloyMoney/charts"
   }
 }
