@@ -59,8 +59,8 @@ admin_panel:
   repository: https://github.com/GaloyMoney/charts
 
 galoy_mobile:
-  release_tag: beta-2.2.196
-  commit: 377f2fa3bfe6ba9a522799e65099b001bccb38c0
+  release_tag: beta-2.2.199
+  commit: 98a29748e6f7abd911da27e4349e68b0d9d87d31
   repository: https://github.com/GaloyMoney/galoy-mobile
 
 galoy_deps:
