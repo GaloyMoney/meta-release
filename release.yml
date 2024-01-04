@@ -44,8 +44,8 @@ monitoring:
   repository: https://github.com/GaloyMoney/charts
 
 stablesats:
-  release_tag: stablesats-v0.16.0
-  commit: ec9ddd3dfe8c1aea9742e3004f9975fe2d811cb9
+  release_tag: stablesats-v0.17.0
+  commit: f298e9609fda5c03fb2a59b7fda5ebae3df6f511
   repository: https://github.com/GaloyMoney/charts
 
 galoy_pay:
