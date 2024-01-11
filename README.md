@@ -23,7 +23,7 @@ Source Code diff for the releases will be added soon.
 - Fulcrum: Release  @ `` | [tree](https://github.com/GaloyMoney/charts/tree//charts/fulcrum) | [release](https://github.com/GaloyMoney/charts/releases/tag/)
 
 #### Monitoring Charts
-- Monitoring: Release monitoring-v0.11.2 @ `9a19cbac4d85d0ae70c85b4724e8a638b2222990` | [tree](https://github.com/GaloyMoney/charts/tree/9a19cbac4d85d0ae70c85b4724e8a638b2222990/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.11.2)
+- Monitoring: Release monitoring-v0.11.3 @ `203695c3ee711c0b97081c406b68f310b8bac05b` | [tree](https://github.com/GaloyMoney/charts/tree/203695c3ee711c0b97081c406b68f310b8bac05b/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.11.3)
 
 #### Addons Charts
 - Galoy Pay: Release galoy-pay-v0.10.9 @ `ec5ce542008330b6dd7f27491986d034672f4133` | [tree](https://github.com/GaloyMoney/charts/tree/ec5ce542008330b6dd7f27491986d034672f4133/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.10.9)
