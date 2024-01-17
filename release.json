@@ -30,8 +30,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "bria": {
-    "release_tag": "bria-v0.9.7",
-    "commit": "e24eb8d44cc3b74139c1f6d022c8daa56cb14fce",
+    "release_tag": "bria-v0.9.8",
+    "commit": "ebd7a218299f5bacb937b875027d35379a1183bf",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "fulcrum": {
