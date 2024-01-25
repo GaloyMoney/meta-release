@@ -50,8 +50,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_pay": {
-    "release_tag": "galoy-pay-v0.10.13",
-    "commit": "98128c6738fe4e3247168240c0745ac5c6272cd5",
+    "release_tag": "galoy-pay-v0.10.14",
+    "commit": "896575c05c8dc14d12aa54d5d6266077ba8b752c",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "admin_panel": {
