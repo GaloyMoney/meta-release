@@ -54,8 +54,8 @@ galoy_pay:
   repository: https://github.com/GaloyMoney/charts
 
 admin_panel:
-  release_tag: admin-panel-v0.12.2
-  commit: 16c127752dc1249563071deca2aae99db1013bb6
+  release_tag: admin-panel-v0.12.3
+  commit: df5349e27e83fc132fb06735f0363a6f0fc20999
   repository: https://github.com/GaloyMoney/charts
 
 galoy_mobile:
