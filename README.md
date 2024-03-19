@@ -40,4 +40,4 @@ Source Code diff for the releases will be added soon.
 If you would like to use this packaging info in a script, we publish this information in this [release.yml](./release.yml) and [release.json](./release.json) file.
 
 #### Galoy Deps Chart
-- Galoy Deps: Release galoy-deps-v0.10.12 @ `91ccaced424380c67aeeba0ba7ec8bfdf2fbae37` | [tree](https://github.com/GaloyMoney/charts/tree/91ccaced424380c67aeeba0ba7ec8bfdf2fbae37/charts/galoy-deps) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-deps-v0.10.12)
+- Galoy Deps: Release galoy-deps-v0.10.13 @ `79d4c85d19644eb630903a455add3a2b4cf4b96a` | [tree](https://github.com/GaloyMoney/charts/tree/79d4c85d19644eb630903a455add3a2b4cf4b96a/charts/galoy-deps) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-deps-v0.10.13)
