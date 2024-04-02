@@ -55,8 +55,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "admin_panel": {
-    "release_tag": "admin-panel-v0.13.16",
-    "commit": "c607a79d7217e333940ba6919742856b4d8c8912",
+    "release_tag": "admin-panel-v0.13.17",
+    "commit": "1e487dc287582aa019c5e284a3f230e8a180208c",
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "galoy_mobile": {
