@@ -26,7 +26,7 @@ Source Code diff for the releases will be added soon.
 - Monitoring: Release monitoring-v0.12.14 @ `3e63e43a40a97935df2b0f6313379edb147e860d` | [tree](https://github.com/GaloyMoney/charts/tree/3e63e43a40a97935df2b0f6313379edb147e860d/charts/monitoring) | [release](https://github.com/GaloyMoney/charts/releases/tag/monitoring-v0.12.14)
 
 #### Addons Charts
-- Galoy Pay: Release galoy-pay-v0.11.33 @ `1952463a48987e9133ec88f506b768d443ef258d` | [tree](https://github.com/GaloyMoney/charts/tree/1952463a48987e9133ec88f506b768d443ef258d/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.11.33)
+- Galoy Pay: Release galoy-pay-v0.11.34 @ `473c9ff170ace90a19be837aa0e0e2eab982c75d` | [tree](https://github.com/GaloyMoney/charts/tree/473c9ff170ace90a19be837aa0e0e2eab982c75d/charts/galoy-pay) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-pay-v0.11.34)
 - Admin Panel: Release admin-panel-v0.13.21 @ `4ab72b485570ee990d5416397b7bfdf1b7ac0f06` | [tree](https://github.com/GaloyMoney/charts/tree/4ab72b485570ee990d5416397b7bfdf1b7ac0f06/charts/admin-panel) | [release](https://github.com/GaloyMoney/charts/releases/tag/admin-panel-v0.13.21)
 
 #### Infra
