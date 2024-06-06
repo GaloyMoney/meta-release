@@ -67,3 +67,8 @@ galoy_deps:
   release_tag: ${galoy_deps_release_tag}
   commit: ${galoy_deps}
   repository: https://github.com/GaloyMoney/charts
+
+cala:
+  release_tag: ${cala_release_tag}
+  commit: ${cala}
+  repository: https://github.com/GaloyMoney/charts

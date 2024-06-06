@@ -11,6 +11,9 @@ Source Code diff for the releases will be added soon.
 #### Galoy Chart
 - Galoy: Release ${galoy_release_tag} @ `${galoy}` | [tree](https://github.com/GaloyMoney/charts/tree/${galoy}/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/${galoy_release_tag})
 
+#### Cala Chart
+- Cala: Release ${cala_release_tag} @ `${cala}` | [tree](https://github.com/GaloyMoney/charts/tree/${cala}/charts/cala) | [release](https://github.com/GaloyMoney/charts/releases/tag/${cala_release_tag})
+
 #### Stablesats Chart
 - Stablesats: Release ${stablesats_release_tag} @ `${stablesats}` | [tree](https://github.com/GaloyMoney/charts/tree/${stablesats}/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/${stablesats_release_tag})
 

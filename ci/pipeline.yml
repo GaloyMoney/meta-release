@@ -1,6 +1,6 @@
 #@ load("@ytt:data", "data")
 
-#@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "stablesats-rs", "bria" ]
+#@ src_repos = [ "galoy-app", "admin-panel", "galoy-pay", "stablesats-rs", "bria", "cala" ]
 #@ src_to_chart_override_config = { "galoy-app": "galoy", "stablesats-rs": "stablesats" }
 #@ chart_to_repo_override_config = { "stablesats": "stablesats-rs" }
 
@@ -19,6 +19,7 @@
 #@   "bitcoin": ["bitcoind", "lnd", "rtl", "specter", "bria", "fulcrum"],
 #@   "monitoring": ["monitoring"],
 #@   "addons": ["admin-panel", "galoy-pay"],
+#@   "cala": ["cala"],
 #@   "stablesats": ["stablesats"],
 #@   "galoy-deps": ["galoy-deps"]
 #@ }
@@ -30,6 +31,7 @@
 #@   "rtl": "rtl-in/modules/services/bitcoin/vendor/rtl/git-ref/ref",
 #@   "specter": "specter-in/modules/services/bitcoin/vendor/specter/git-ref/ref",
 #@   "bria": "bria-in/modules/services/bitcoin/vendor/bria/git-ref/ref",
+#@   "cala": "cala-in/modules/services/cala/vendor/cala/git-ref/ref",
 #@   "fulcrum": "fulcrum-in/modules/services/bitcoin/vendor/fulcrum/git-ref/ref",
 #@   "monitoring": "monitoring-in/modules/services/monitoring/vendor/monitoring/git-ref/ref",
 #@   "admin-panel": "admin-panel-in/modules/services/addons/vendor/admin-panel/git-ref/ref",
