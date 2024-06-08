@@ -70,8 +70,8 @@
     "repository": "https://github.com/GaloyMoney/charts"
   },
   "cala": {
-    "release_tag": "cala-v0.1.1",
-    "commit": "e3d04b59dbe2a750b3c223c0f0ffdb91dc1d676f",
+    "release_tag": "cala-v0.1.2",
+    "commit": "9fb5c2353d89bec243b90747992a35a95c05541d",
     "repository": "https://github.com/GaloyMoney/charts"
   }
 }
