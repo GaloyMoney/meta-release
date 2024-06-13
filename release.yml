@@ -69,6 +69,6 @@ galoy_deps:
   repository: https://github.com/GaloyMoney/charts
 
 cala:
-  release_tag: cala-v0.1.2
-  commit: 9fb5c2353d89bec243b90747992a35a95c05541d
+  release_tag: cala-v0.1.3
+  commit: bd067b08d6cb16efeeed88886d351d966bd2e7f9
   repository: https://github.com/GaloyMoney/charts
