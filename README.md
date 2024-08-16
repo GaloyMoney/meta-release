@@ -12,7 +12,7 @@ Source Code diff for the releases will be added soon.
 - Galoy: Release galoy-v0.33.112 @ `0cbcee6e6a9af160ca3c3f92c4e4fbe01a04ce95` | [tree](https://github.com/GaloyMoney/charts/tree/0cbcee6e6a9af160ca3c3f92c4e4fbe01a04ce95/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.33.112)
 
 #### Cala Chart
-- Cala: Release cala-v0.1.8 @ `af76f4f39822dd407f3525fc5b0bd4cc5d0fef47` | [tree](https://github.com/GaloyMoney/charts/tree/af76f4f39822dd407f3525fc5b0bd4cc5d0fef47/charts/cala) | [release](https://github.com/GaloyMoney/charts/releases/tag/cala-v0.1.8)
+- Cala: Release cala-v0.1.9 @ `4e696419c7a6abd0f467fd5c86ac768d224ca62c` | [tree](https://github.com/GaloyMoney/charts/tree/4e696419c7a6abd0f467fd5c86ac768d224ca62c/charts/cala) | [release](https://github.com/GaloyMoney/charts/releases/tag/cala-v0.1.9)
 
 #### Stablesats Chart
 - Stablesats: Release stablesats-v0.18.5 @ `93f79917d5519f217c4d1c7575ac2e08542877a2` | [tree](https://github.com/GaloyMoney/charts/tree/93f79917d5519f217c4d1c7575ac2e08542877a2/charts/stablesats) | [release](https://github.com/GaloyMoney/charts/releases/tag/stablesats-v0.18.5)
