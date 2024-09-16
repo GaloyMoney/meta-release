@@ -9,7 +9,7 @@ The components we provide have been grouped into the following lifecycles, using
 Source Code diff for the releases will be added soon.
 
 #### Galoy Chart
-- Galoy: Release galoy-v0.33.116 @ `09480a7c9d9704cacbd38c2aea45ade5e78854a0` | [tree](https://github.com/GaloyMoney/charts/tree/09480a7c9d9704cacbd38c2aea45ade5e78854a0/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.33.116)
+- Galoy: Release galoy-v0.33.117 @ `4c52ab4b0e869a5c72294635a8b4d8b050ccbeb7` | [tree](https://github.com/GaloyMoney/charts/tree/4c52ab4b0e869a5c72294635a8b4d8b050ccbeb7/charts/galoy) | [release](https://github.com/GaloyMoney/charts/releases/tag/galoy-v0.33.117)
 
 #### Cala Chart
 - Cala: Release cala-v0.1.11 @ `1a2380e57fb0cd47c025e4de932582f1dcdf1ded` | [tree](https://github.com/GaloyMoney/charts/tree/1a2380e57fb0cd47c025e4de932582f1dcdf1ded/charts/cala) | [release](https://github.com/GaloyMoney/charts/releases/tag/cala-v0.1.11)
