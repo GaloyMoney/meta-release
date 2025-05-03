@@ -1,6 +1,6 @@
 infra:
-  release_tag: v0.12.31
-  commit: 1f97050e03b27a8f7a2a633fef7801ac1bbf3e18
+  release_tag: v0.12.32
+  commit: 0e25c76fa2629e4233d47835645643ea72736ec9
   repository: https://github.com/GaloyMoney/galoy-infra
 
 galoy:
