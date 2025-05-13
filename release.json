@@ -1,7 +1,7 @@
 {
   "infra": {
-    "release_tag": "v0.13.0",
-    "commit": "5985c33c18f8486e595928024df30c1102666c25",
+    "release_tag": "v0.13.1",
+    "commit": "3725255199c958a1c11914c5020b5bb8c4b46e77",
     "repository": "https://github.com/GaloyMoney/galoy-infra"
   },
   "galoy": {
